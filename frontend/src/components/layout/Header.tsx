@@ -164,7 +164,7 @@ export function Header() {
 
         <div className="hidden items-center lg:flex">
           <Link
-            href="/contact?intent=demo"
+            href="https://lifeback-sipl.vercel.app"
             className={requestDemoLinkStyles}
           >
             Access Platform
@@ -230,7 +230,7 @@ export function Header() {
             </div>
 
             <Link
-              href="/contact?intent=demo"
+              href="https://lifeback-sipl.vercel.app"
               onClick={closeMenu}
               className={cn(requestDemoLinkStyles, "mt-2 w-full px-6")}
             >

@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { BrainWaveSeparator } from "@/features/public/landing/components/BrainWaveSeparator";
-import { requestDemoLinkStyles } from "@/shared/ui/Button";
-import { cn } from "@/shared/lib/utils";
 
 const solutionsLinks = [
   { label: "LifeBack™ Voice", href: "/solutions/lifeback-voice" },
@@ -38,23 +36,14 @@ export function Footer() {
     <footer className="w-full bg-[#F5F8FC] text-[#001B65]">
       <BrainWaveSeparator />
 
-      <div className="px-6 pb-10 pt-20 md:px-10 lg:px-16 xl:px-20">
-        <div className="grid gap-14 lg:grid-cols-[1fr_1fr_0.8fr_1.2fr] lg:items-start">
+      <div className="px-6 pb-10 pt-16 md:px-10 md:pt-20 lg:px-16 xl:px-20">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-20">
           <FooterColumn title="Solutions" links={solutionsLinks} />
           <FooterColumn title="Governance" links={governanceLinks} />
           <FooterColumn title="Socials" links={socialLinks} />
-
-          <div className="flex justify-start lg:justify-end">
-            <Link
-              href="/contact?intent=demo"
-              className={cn(requestDemoLinkStyles, "px-7")}
-            >
-              Access Platform
-            </Link>
-          </div>
         </div>
 
-        <div className="mt-20 border-t border-[#001B65] pt-8">
+        <div className="mt-16 border-t border-[#001B65] pt-8 md:mt-20">
           <p className="max-w-6xl font-body text-base leading-7 text-[#001B65]">
             {disclaimer}
           </p>

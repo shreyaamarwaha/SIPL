@@ -1,65 +1,51 @@
 import { PublicLayout } from "@/layouts/PublicLayout";
-import { CardGrid, EditorialHero, EditorialSection } from "@/components/layout/EditorialSections";
-
-const cultureCards = [
-  {
-    title: "Flat by design, deep by discipline",
-    body: "SIPL is a flat team — there is no hierarchy of importance, only clarity of role. Every person on the team is expected to think, challenge, and contribute beyond their job description. Titles describe what you do, not how much your voice matters.",
-  },
-  {
-    title: "Disagreement is a feature, not a failure",
-    body: "The best decisions at SIPL emerge from honest, rigorous debate. We expect team members to challenge assumptions — including those of leadership — with evidence and reasoning. Silence in the face of a wrong direction is not professionalism; it is a failure of courage.",
-  },
-  {
-    title: "Growth is structured, not accidental",
-    body: "We invest in the development of every team member — through research exposure, clinical immersion, conference participation, and mentorship. The people who build LifeBack™ should leave SIPL — whenever that day comes — as better scientists, engineers, and thinkers than when they arrived.",
-  },
-  {
-    title: "Mental health starts here, at home",
-    body: "We cannot build the future of mental healthcare from a team that is burned out, overlooked, or unsupported. SIPL takes the wellbeing of its people seriously — because we mean what we say about mental health being foundational to a productive and fulfilling life.",
-  },
-];
-
-const tracks = [
-  "Business Development",
-  "Data Science",
-  "Development",
-  "Sales & Marketing",
-  "Project Management",
-].map((track) => ({
-  title: track,
-  eyebrow: "Career track",
-  body: "Area of work. Future opportunities may emerge across this function.",
-}));
+import { Container } from "@/shared/ui/Container";
+import { CareerApplicationForm } from "@/features/public/careers/CareerApplicationForm";
 
 export function CareersContent() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC]">
-        <EditorialHero eyebrow="Careers" title="Build hard science for hard problems.">
-          <p>
-            SIPL is a flat, research-first team working across genomics, neuroscience, machine learning, clinical medicine, and public health.
-          </p>
-        </EditorialHero>
+      <section className="bg-[#F5F8FC] pb-28 pt-40 text-[#001B65]">
+        <Container>
+          <div className="grid gap-14 border-t border-[#001B65]/12 pt-16 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+            <div className="lg:sticky lg:top-32 lg:self-start">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#001B65]/60">
+                Careers at SIPL
+              </p>
+              <h1 className="mt-6 max-w-2xl font-heading text-5xl font-semibold leading-[1.04] tracking-[-0.03em] md:text-6xl xl:text-7xl">
+                Build technology with meaningful impact.
+              </h1>
+              <p className="mt-8 max-w-xl text-lg leading-8 text-[#001B65]/72">
+                SIPL brings together researchers, engineers, and healthcare collaborators working
+                on responsible clinical intelligence. Submit your details to express interest in
+                joining the team.
+              </p>
+              <p className="mt-8 max-w-lg border-l border-[#D4AF37] pl-5 text-sm leading-6 text-[#001B65]/68">
+                Applications are reviewed according to current project and hiring requirements.
+              </p>
+            </div>
 
-        <EditorialSection title="Curiosity over credentials.">
-          <div className="grid gap-8">
-            <p>
-              The problems we are solving sit at the intersection of genomics, neuroscience, machine learning, clinical medicine, and public health. No single discipline contains the answer. We value people who are genuinely curious across domains — who read outside their field, ask uncomfortable questions, and treat knowledge as a lifelong pursuit.
-            </p>
-            <CardGrid cards={cultureCards} columns="two" />
+            <section
+              aria-labelledby="career-form-heading"
+              className="border border-[#001B65]/12 bg-[#F9F8F3] p-6 shadow-[0_18px_54px_rgba(0,27,101,0.07)] sm:p-8 md:p-10 lg:p-12"
+            >
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#001B65]/58">
+                Expression of interest
+              </p>
+              <h2
+                id="career-form-heading"
+                className="mt-4 font-heading text-3xl font-semibold tracking-[-0.02em] md:text-4xl"
+              >
+                Tell us about yourself.
+              </h2>
+              <p className="mb-9 mt-4 max-w-xl text-sm leading-6 text-[#001B65]/66">
+                Complete the form and attach your resume or CV. All fields are required.
+              </p>
+              <CareerApplicationForm />
+            </section>
           </div>
-        </EditorialSection>
-
-        <EditorialSection title="Areas we work across.">
-          <div className="grid gap-8">
-            <p>
-              SIPL works across clinical AI, research, engineering, product, institutional partnerships, and healthcare deployment.
-            </p>
-            <CardGrid cards={tracks} />
-          </div>
-        </EditorialSection>
-      </div>
+        </Container>
+      </section>
     </PublicLayout>
   );
 }

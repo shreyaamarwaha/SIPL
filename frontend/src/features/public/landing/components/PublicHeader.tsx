@@ -72,7 +72,7 @@ export function PublicHeader() {
 
         {/* Right CTA Area */}
         <div className="hidden lg:flex items-center z-50 shrink-0">
-          <Link href="/login" passHref>
+          <Link href="https://lifeback-sipl.vercel.app" passHref>
             <Button variant={isScrolled ? "primary" : "outline"} size="sm">
               Access Platform
             </Button>

@@ -58,7 +58,7 @@ export function HeroSection() {
             </MotionWrapper>
 
             <MotionWrapper variant="slideUp" delay={0.4} className="flex flex-col sm:flex-row gap-4">
-              <Link href="/solutions" passHref className="w-full sm:w-auto">
+              <Link href="https://lifeback-sipl.vercel.app" passHref className="w-full sm:w-auto">
                 <Button size="lg" className="w-full">
                   Explore LifeBack™
                 </Button>

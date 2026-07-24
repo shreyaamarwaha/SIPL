@@ -68,7 +68,7 @@ export function MobileMenu() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Link href="/login" passHref className="w-full block">
+              <Link href="https://lifeback-sipl.vercel.app" passHref className="w-full block">
                 <Button className="w-full" size="lg" onClick={closeMenu}>
                   Access Platform
                 </Button>
