@@ -10,8 +10,8 @@ export function ResearchSection() {
     <section id="research" className="py-24 md:py-32 bg-[#F5F8FC]">
       <Container>
         <SectionHeading 
-          title="Rooted in Scientific Rigor" 
-          subtitle="LifeBack™'s methodology is built upon decades of peer-reviewed psychiatric research and the latest advancements in computational paralinguistics."
+          title="From research questions to measurable intelligence" 
+          subtitle="SIPL builds translational systems that connect research, data, modeling, and clinical application in a single evidence-driven pipeline."
           className="mb-20"
         />
 

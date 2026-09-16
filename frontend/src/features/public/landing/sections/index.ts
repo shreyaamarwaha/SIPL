@@ -3,6 +3,7 @@ export * from "./StatsSection";
 export * from "./EducationSection";
 export * from "./ImpactSection";
 export * from "./HowItWorksSection";
+export * from "./SolutionsSection";
 export * from "./TrustSection";
 export * from "./ClinicianSection";
 export * from "./ResearchSection";

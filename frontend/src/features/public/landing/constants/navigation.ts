@@ -1,10 +1,11 @@
 import { NavItem, FooterSection } from "@/features/public/landing/types/navigation";
 
 export const MAIN_NAV: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "Company", href: "/about" },
+  { label: "Capabilities", href: "/#solutions" },
+  { label: "Platforms", href: "/solutions" },
   { label: "Research", href: "/research" },
-  { label: "Past Work", href: "/past-work" },
+  { label: "LifeBack", href: "/solutions/lifeback-voice" },
 ];
 
 export const FOOTER_SECTIONS: FooterSection[] = [

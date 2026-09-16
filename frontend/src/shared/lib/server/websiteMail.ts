@@ -62,7 +62,7 @@ export async function sendWebsiteEmail(email: WebsiteEmail) {
 
   await transporter.sendMail({
     from: SMTP_FROM_EMAIL,
-    to: CONTACT_TO_EMAIL || "contact@sequoiainsilico.com",
+    to: CONTACT_TO_EMAIL || "shreya.marwaha12@gmail.com",
     replyTo: email.replyTo,
     subject: email.subject,
     text: email.text,

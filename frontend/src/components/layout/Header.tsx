@@ -8,23 +8,27 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
 import { requestDemoLinkStyles } from "@/shared/ui/Button";
 import SIPLLogo from "@/shared/assets/SIPL_Logo.png";
+import { EXTERNAL_LINKS } from "@/shared/constants/external-links";
 
 const solutionsLinks = [
+  { label: "LifeBack™", href: "/solutions" },
   { label: "LifeBack™ Voice", href: "/solutions/lifeback-voice" },
   { label: "LifeBack™ Video", href: "/solutions/lifeback-video" },
   { label: "LifeBack™ Genomics", href: "/solutions/life-genomics" },
 ];
 
 const insideLinks = [
-  { label: "Meet The Team", href: "/inside-sipl/meet-the-team" },
+  { label: "Company", href: "/about" },
+  { label: "Capabilities", href: "/#solutions" },
+  { label: "Research", href: "/research" },
   { label: "Past Projects", href: "/inside-sipl/past-projects" },
   { label: "Career", href: "/inside-sipl/career" },
 ];
 
 const staticLinks = [
+  { label: "Solutions", href: "/solutions" },
   { label: "Research", href: "/research" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Dropdown({
@@ -164,7 +168,9 @@ export function Header() {
 
         <div className="hidden items-center lg:flex">
           <Link
-            href="https://lifeback-sipl.vercel.app"
+            href={EXTERNAL_LINKS.LIFEBACK_PLATFORM}
+            target="_blank"
+            rel="noreferrer"
             className={requestDemoLinkStyles}
           >
             Access Platform
@@ -230,7 +236,9 @@ export function Header() {
             </div>
 
             <Link
-              href="https://lifeback-sipl.vercel.app"
+              href={EXTERNAL_LINKS.LIFEBACK_PLATFORM}
+              target="_blank"
+              rel="noreferrer"
               onClick={closeMenu}
               className={cn(requestDemoLinkStyles, "mt-2 w-full px-6")}
             >

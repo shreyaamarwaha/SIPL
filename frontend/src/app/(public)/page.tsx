@@ -1,17 +1,10 @@
-import { HeroSection } from "@/features/public/landing/sections/HeroSection";
-import { StatsSection } from "@/features/public/landing/sections/StatsSection";
-import { ImpactSection } from "@/features/public/landing/sections/ImpactSection";
-import { HowItWorksSection } from "@/features/public/landing/sections/HowItWorksSection";
-import { GenomicsPreviewSection } from "@/features/public/landing/sections/GenomicsPreviewSection";
-import { ClinicianSection } from "@/features/public/landing/sections/ClinicianSection";
-import { TrustSection } from "@/features/public/landing/sections/TrustSection";
-import { VisionSection } from "@/features/public/landing/sections/VisionSection";
+import { InvestorLandingPage } from "@/features/public/landing/InvestorLandingPage";
 import { PublicLayout } from "@/layouts/PublicLayout";
 import { generateSeoMetadata, organizationSchema, medicalSchema } from "@/shared/lib/seo";
 
 export const metadata = generateSeoMetadata({
-  title: "LifeBack™ | Clinical-Grade AI for Mental and Nervous System Healthcare",
-  description: "Sequoia Insilico builds clinical-grade AI infrastructure for mental and nervous system healthcare.",
+  title: "SIPL | Connected Intelligence for Brain and Mental Healthcare",
+  description: "SIPL builds connected intelligence infrastructure for brain and mental healthcare across clinical care, research, genomics, and biopharma.",
   path: "/"
 });
 
@@ -22,14 +15,7 @@ export default function Home() {
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, medicalSchema]) }} 
       />
-      <HeroSection />
-      <StatsSection />
-      <HowItWorksSection />
-      <ImpactSection />
-      <GenomicsPreviewSection />
-      <ClinicianSection />
-      <TrustSection />
-      <VisionSection />
+      <InvestorLandingPage />
     </PublicLayout>
   );
 }

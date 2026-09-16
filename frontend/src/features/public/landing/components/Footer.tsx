@@ -2,14 +2,14 @@ import Link from "next/link";
 import { BrainWaveSeparator } from "@/features/public/landing/components/BrainWaveSeparator";
 
 const solutionsLinks = [
+  { label: "Company", href: "/about" },
+  { label: "Capabilities", href: "/#solutions" },
+  { label: "LifeBack™", href: "/solutions" },
   { label: "LifeBack™ Voice", href: "/solutions/lifeback-voice" },
   { label: "LifeBack™ Video", href: "/solutions/lifeback-video" },
   { label: "LifeBack™ Genomics", href: "/solutions/life-genomics" },
-  { label: "Inside SIPL", href: "/about" },
-  { label: "How SIPL Works", href: "/#detection" },
-  { label: "Blog", href: "/blog" },
-  { label: "Career", href: "/careers" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Research", href: "/research" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const governanceLinks = [

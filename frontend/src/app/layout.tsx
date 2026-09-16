@@ -22,10 +22,10 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SIPL",
+  title: "SIPL | Biopharma-grade Clinical Intelligence",
   applicationName: "SIPL",
   description:
-    "AI-assisted behavioral screening platform focused on early depression detection.",
+    "SIPL builds biopharma-grade clinical intelligence for mental and nervous system healthcare, combining multimodal signals for precision screening and translational research.",
   icons: {
     icon: [
       {

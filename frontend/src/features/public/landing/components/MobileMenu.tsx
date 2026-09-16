@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { MAIN_NAV } from "@/features/public/landing/constants/navigation";
 import { Button } from "@/shared/ui/Button";
+import { EXTERNAL_LINKS } from "@/shared/constants/external-links";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +69,7 @@ export function MobileMenu() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Link href="https://lifeback-sipl.vercel.app" passHref className="w-full block">
+              <Link href={EXTERNAL_LINKS.LIFEBACK_PLATFORM} target="_blank" rel="noreferrer" passHref className="w-full block">
                 <Button className="w-full" size="lg" onClick={closeMenu}>
                   Access Platform
                 </Button>
