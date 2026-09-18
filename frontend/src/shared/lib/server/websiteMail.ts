@@ -41,7 +41,7 @@ export async function sendWebsiteEmail(email: WebsiteEmail) {
     CONTACT_TO_EMAIL,
   } = process.env;
 
-  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !SMTP_FROM_EMAIL) {
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !SMTP_FROM_EMAIL || !CONTACT_TO_EMAIL) {
     throw new Error("Mail transport is not configured");
   }
 
@@ -62,7 +62,7 @@ export async function sendWebsiteEmail(email: WebsiteEmail) {
 
   await transporter.sendMail({
     from: SMTP_FROM_EMAIL,
-    to: CONTACT_TO_EMAIL || "shreya.marwaha12@gmail.com",
+    to: CONTACT_TO_EMAIL,
     replyTo: email.replyTo,
     subject: email.subject,
     text: email.text,

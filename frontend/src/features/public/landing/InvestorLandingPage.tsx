@@ -90,7 +90,7 @@ export function InvestorLandingPage() {
 
       <section className="bg-[#06142f] px-6 py-16 text-white md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[.65fr_1.35fr] lg:gap-16">
-          <div><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8ed8ff]">The proof, up front</p><h2 className="font-serif text-4xl leading-tight md:text-5xl">Validated. Protected. Built for India.</h2></div>
+          <div><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8ed8ff]">The proof, up front</p><h2 className="font-serif text-4xl leading-tight md:text-5xl">Validated. Protected. Built in India. Ready for the world.</h2></div>
           <div className="grid gap-px border border-white/15 bg-white/15 sm:grid-cols-2">
             {[['01', 'Patent protected', 'Indian Patent No. 202511025669 with an active WIPO PCT filing.'], ['02', 'Validated in hospital', '97% agreement with the HAM-D clinical standard across 500+ assessments.'], ['03', 'Grant-backed', 'A BIRAC GCE-III grant deployed into product development and validation.'], ['04', 'India-native', 'Engineered with interoperability and the Indian health stack in mind.']].map(([number, title, text]) => <article key={number} className="bg-[#06142f] p-7 transition hover:bg-[#0b2753]"><span className="text-[10px] font-bold tracking-[0.16em] text-[#8ed8ff]">{number}</span><h3 className="mt-5 text-xl font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-white/60">{text}</p></article>)}
           </div>
