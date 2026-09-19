@@ -3,10 +3,14 @@
 
 @theme {
   --color-sipl-blue: #001B65;
-  --color-background: #F5F8FC;
+  --color-pharma-navy: #0d1f4d;
+  --color-pharma-midnight: #081a38;
+  --color-pharma-cyan: #ebf7ff;
+  --color-pharma-mint: #dff5ef;
+  --color-background: #F3F7FB;
   --color-eggshell: #F9F8F3;
   --color-muted-gold: #D4AF37;
-  --color-foreground: #001B65;
+  --color-foreground: #0D1F4D;
   
   --font-heading: var(--font-plus-jakarta);
   --font-body: var(--font-inter);
@@ -33,7 +37,9 @@
   }
   
   body {
-    background-color: var(--color-background);
+    background:
+      radial-gradient(circle at top left, rgba(0, 27, 101, 0.08), transparent 30%),
+      linear-gradient(180deg, #f3f7fb 0%, #eef5fb 100%);
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

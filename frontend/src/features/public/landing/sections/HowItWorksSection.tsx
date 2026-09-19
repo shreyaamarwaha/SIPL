@@ -8,8 +8,8 @@ export function HowItWorksSection() {
     <section id="detection" className="py-24 md:py-32 lg:py-40 bg-[#F5F8FC]">
       <Container>
         <SectionHeading 
-          title="How LifeBack™ Works" 
-          subtitle="A clinical-support workflow for organizing voice, video, behavioral, and genomics-informed evidence around early mental health screening."
+          title="From data to intelligence" 
+          subtitle="SIPL turns complex biological, behavioral, and clinical signals into structured intelligence that supports research, screening, and decision-making across healthcare pathways."
           className="mb-20"
         />
 

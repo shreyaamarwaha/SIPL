@@ -1,27 +1,27 @@
 export const HOW_IT_WORKS_STEPS = [
   {
     number: "01",
-    title: "Begin Assessment",
-    description: "Start a structured, clinical-grade digital screening session in a safe environment."
+    title: "Data Collection",
+    description: "Structured clinical, behavioral, and biological signals are gathered from real-world conditions."
   },
   {
     number: "02",
-    title: "Answer Guided Questions",
-    description: "Respond to evidence-informed behavioral prompts designed to surface subtle indicators."
+    title: "Signal Integration",
+    description: "AI systems connect multimodal inputs into a coherent evidence layer for analysis."
   },
   {
     number: "03",
-    title: "Capture Multimodal Signals",
-    description: "Voice, video, and structured response patterns are reviewed as complementary clinical signals."
+    title: "Computational Analysis",
+    description: "Machine learning and clinical reasoning identify patterns, risk, and relationships across cohorts."
   },
   {
     number: "04",
-    title: "Generate Evidence Context",
-    description: "LifeBack™ organizes behavioral observations into a clearer evidence layer for assessment support."
+    title: "Clinical Intelligence",
+    description: "Complex data is transformed into interpretable insights for research and decision support."
   },
   {
     number: "05",
-    title: "Clinician-Ready Insights",
-    description: "Generate structured reports that support professional review without replacing clinical judgment."
+    title: "Actionable Outcomes",
+    description: "Findings support better diagnosis, monitoring, and evidence-driven treatment pathways."
   }
 ];

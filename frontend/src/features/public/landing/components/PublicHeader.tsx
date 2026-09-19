@@ -10,6 +10,7 @@ import { MobileMenu } from "@/features/public/landing/components/MobileMenu";
 import { cn } from "@/shared/lib/utils";
 import { motion } from "framer-motion";
 import SIPLLogo from "@/shared/assets/SIPL_Logo.png";
+import { EXTERNAL_LINKS } from "@/shared/constants/external-links";
 
 export function PublicHeader() {
   const scrollY = useScrollPosition();
@@ -72,7 +73,7 @@ export function PublicHeader() {
 
         {/* Right CTA Area */}
         <div className="hidden lg:flex items-center z-50 shrink-0">
-          <Link href="https://lifeback-sipl.vercel.app" passHref>
+          <Link href={EXTERNAL_LINKS.LIFEBACK_PLATFORM} target="_blank" rel="noreferrer" passHref>
             <Button variant={isScrolled ? "primary" : "outline"} size="sm">
               Access Platform
             </Button>
