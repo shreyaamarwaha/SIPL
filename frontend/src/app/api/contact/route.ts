@@ -154,7 +154,8 @@ export async function POST(request: Request) {
     });
 
     return jsonResponse("Thank you. Your message has been sent to the SIPL team.", 200);
-  } catch {
+  } catch (error) {
+    console.error("Contact email send failed:", error);
     return jsonResponse("We could not send your message. Please try again shortly.", 500);
   }
 }
