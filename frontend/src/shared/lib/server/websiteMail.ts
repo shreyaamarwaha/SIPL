@@ -54,6 +54,9 @@ export async function sendWebsiteEmail(email: WebsiteEmail) {
     host: SMTP_HOST,
     port: smtpPort,
     secure: SMTP_SECURE === "true",
+    connectionTimeout: 15_000,
+    greetingTimeout: 15_000,
+    socketTimeout: 15_000,
     auth: {
       user: SMTP_USER,
       pass: SMTP_PASS,
