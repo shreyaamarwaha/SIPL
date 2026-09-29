@@ -1,147 +1,129 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowRight, Database, Dna, HeartPulse, Mic, ShieldCheck, Stethoscope, Video } from "lucide-react";
-import { EXTERNAL_LINKS } from "@/shared/constants/external-links";
+import { ArrowDown, ArrowRight, AudioLines, Dna, FlaskConical, Network, ShieldCheck, Users, Building2, Microscope } from "lucide-react";
+import { ContactForm } from "@/features/public/contact/ContactForm";
 
-const tabs = ["Assessment", "Longitudinal Monitoring", "Research Layer"] as const;
-type Tab = (typeof tabs)[number];
+const proofPoints = [
+  ["Granted", "Indian patent"],
+  ["97%", "HAM-D agreement"],
+  ["500+", "hospital assessments"],
+  ["BIRAC", "grant-backed validation"],
+] as const;
 
-const platformCards = [
-  {
-    icon: HeartPulse,
-    label: "CARE INTELLIGENCE",
-    title: "Care intelligence",
-    text: "Multimodal assessment, risk and severity scoring, longitudinal monitoring, and structured decision support built around the clinician.",
-    href: "/solutions/behavioral-assessment",
-  },
-  {
-    icon: Database,
-    label: "HOSPITAL INTELLIGENCE",
-    title: "Hospital intelligence",
-    text: "Connected patient context, structured psychiatric workflows, and interoperable records designed for modern health systems.",
-    href: "/solutions/clinical-reporting",
-  },
-  {
-    icon: Dna,
-    label: "DISCOVERY INTELLIGENCE",
-    title: "Discovery intelligence",
-    text: "A governed research layer for biomarkers, patient stratification, multimodal studies, and real-world evidence.",
-    href: "/research",
-  },
+const capabilities = [
+  { icon: AudioLines, number: "01", title: "Multimodal biomarkers", description: "Bring behavioural, clinical, and biological signals into a clearer research context." },
+  { icon: FlaskConical, number: "02", title: "Clinical development", description: "Support study design, patient characterisation, and meaningful outcome measurement." },
+  { icon: Dna, number: "03", title: "Genomics & discovery", description: "Connect genomic findings with longitudinal clinical context to investigate biology and response." },
 ];
 
-const systemSteps = [
-  ["01", "Understand", "Bring permitted information into one context."],
-  ["02", "Assess", "Identify clinically relevant patterns across signals."],
-  ["03", "Personalise", "Build an individualised view of risk and response."],
-  ["04", "Deliver", "Connect insight to professional workflow."],
-  ["05", "Monitor", "Track meaningful change and outcomes over time."],
-  ["06", "Discover", "Return governed evidence to the next study."],
+const partnerTypes = [
+  { icon: Building2, title: "Hospitals & health systems", text: "Explore connected clinical workflows, longitudinal outcomes, and evidence generation." },
+  { icon: Users, title: "Researchers & clinicians", text: "Shape clinically relevant questions and evaluate multimodal signals responsibly." },
+  { icon: FlaskConical, title: "Biopharma teams", text: "Investigate patient stratification, clinical development, and real-world evidence." },
+  { icon: Dna, title: "Genomics partners", text: "Connect genomic findings to phenotypes, clinical context, and outcomes over time." },
 ];
 
-const partnerCards = [
-  ["01", "Hospitals & health systems", "Structured pathways, connected workflows, longitudinal monitoring, and outcome intelligence."],
-  ["02", "Clinicians", "Clear, longitudinal, and explainable information that supports professional interpretation."],
-  ["03", "Researchers", "Governed multimodal studies, biomarker investigation, and clinical evidence generation."],
-  ["04", "Biopharma", "Patient stratification, clinical-development support, and real-world evidence built around the research question."],
-  ["05", "Genomics partners", "Connect genomic information to clinically relevant longitudinal context."],
-  ["06", "Public health & investors", "Responsible population programmes and a platform thesis connecting care with discovery."],
-];
-
-const trustCards = [
-  ["01", "Purpose & consent", "Define why information is used and the permissions that apply."],
-  ["02", "Role-based access", "Limit access to authorised responsibilities."],
-  ["03", "Data protection", "Apply appropriate safeguards to sensitive information."],
-  ["04", "Auditability", "Maintain traceable actions, versions, and review pathways."],
-  ["05", "Human oversight", "Keep qualified professionals accountable for interpretation and care."],
-  ["06", "Model governance", "Define intended use, validation, monitoring, and change control."],
+const investmentThesis = [
+  ["A focused starting point", "Brain and mental health is a high-complexity domain where clinical context and biological variation matter."],
+  ["A multimodal foundation", "SIPL brings behavioural, clinical, and genomic research into a shared evidence framework."],
+  ["A bridge from care to discovery", "The long-term opportunity is to connect real-world clinical context with better research questions and evidence."],
 ];
 
 export function InvestorLandingPage() {
-  const [activeTab, setActiveTab] = useState<Tab>("Assessment");
-
   return (
-    <div className="bg-[#f5f9fe] text-[#07152f] selection:bg-[#b9ddff]">
-      <section className="relative overflow-hidden border-b border-[#0a3470]/10 px-6 pb-20 pt-32 md:px-10 lg:px-16 lg:pb-28 lg:pt-40">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,75,145,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(16,75,145,0.045)_1px,transparent_1px)] bg-[size:48px_48px]" />
-        <div className="absolute -right-40 top-20 h-[620px] w-[620px] rounded-full bg-[#9ed9ff]/30 blur-3xl" />
-        <div className="relative mx-auto grid max-w-[1440px] items-center gap-16 lg:grid-cols-[1.03fr_.97fr] lg:gap-20">
-          <div className="max-w-3xl">
-            <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.22em] text-[#0d5da9]">Sequoia Insilico Pvt. Ltd. · BioAI for brain &amp; mental health</p>
-            <h1 className="max-w-4xl font-serif text-[48px] font-medium leading-[.98] tracking-[-0.045em] text-[#06142f] md:text-[70px] lg:text-[88px]">
-              Connected intelligence for <em className="text-[#075eaa]">brain and mental healthcare.</em>
-            </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-[#4a607b] md:text-xl">
-              SIPL connects clinical care, behavioural signals, neuroscience, genomics, and discovery in one responsible AI infrastructure. <strong className="text-[#07152f]">LifeBack™</strong> is our flagship clinical platform for multimodal, clinician-supported mental-health assessment and longitudinal care.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link href={EXTERNAL_LINKS.LIFEBACK_PLATFORM} target="_blank" rel="noreferrer" className="inline-flex min-h-13 items-center gap-2 rounded-full bg-[#06142f] px-6 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#0b2d60]">Introducing LifeBack™ <ArrowRight className="h-4 w-4" /></Link>
-              <Link href="#investors" className="inline-flex min-h-13 items-center rounded-full border border-[#07152f]/20 bg-white/60 px-6 text-sm font-bold text-[#07152f] transition hover:border-[#0d5da9] hover:bg-white">Investor overview</Link>
-            </div>
-            <div className="mt-14 grid max-w-3xl grid-cols-2 border-y border-[#07152f]/15 sm:grid-cols-4">
-              {[["Granted", "Indian patent"], ["97%", "HAM-D agreement"], ["500+", "hospital assessments"], ["BIRAC", "grant-backed validation"]].map(([value, label]) => <div key={label} className="py-5 pr-4"><strong className="block font-serif text-2xl font-semibold">{value}</strong><span className="mt-1 block text-[10px] uppercase tracking-[0.1em] text-[#61748c]">{label}</span></div>)}
+    <div className="bg-[#f4f8fb] text-[#10243b] selection:bg-[#c7eee5]">
+      <section className="relative flex min-h-[calc(100svh-80px)] flex-col justify-center overflow-hidden px-6 pb-8 pt-28 md:px-10 lg:px-16">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_42%,rgba(83,190,171,0.14),transparent_38%),linear-gradient(rgba(14,74,96,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(14,74,96,0.035)_1px,transparent_1px)] bg-[size:auto,48px_48px,48px_48px]" />
+        <div className="relative mx-auto grid w-full max-w-[1360px] items-center gap-12 lg:grid-cols-[1.08fr_.92fr]">
+          <div>
+            <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#147c79]">Sequoia Insilico Pvt. Ltd. · BioAI for brain &amp; mental health</p>
+            <h1 className="max-w-3xl text-[44px] font-semibold leading-[1.02] tracking-[-0.045em] text-[#10243b] md:text-[64px] lg:text-[76px]">Connected intelligence for <span className="text-[#147c79]">brain and mental healthcare.</span></h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-[#53687a] md:text-lg">SIPL connects clinical care, behavioural signals, neuroscience, genomics, and discovery through responsible AI infrastructure.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="#contact" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#102f49] px-6 text-sm font-semibold text-white transition hover:bg-[#147c79]">Partner with SIPL <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="#science" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#102f49]/20 bg-white/70 px-6 text-sm font-semibold text-[#102f49] transition hover:border-[#147c79]">Explore our science <ArrowDown className="h-4 w-4" /></Link>
             </div>
           </div>
-          <OrbitalVisual />
+
+          <div className="relative mx-auto w-full max-w-[500px]" aria-label="Clinical, behavioural, and genomic research signals connected into one evidence layer">
+            <div className="absolute inset-8 rounded-full bg-[#8ed5c6]/25 blur-3xl" />
+            <div className="relative rounded-[2rem] border border-[#147c79]/15 bg-white/80 p-5 shadow-[0_32px_90px_rgba(16,47,73,0.12)] backdrop-blur">
+              <div className="flex items-center justify-between border-b border-[#102f49]/10 pb-4"><div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#147c79]">SIPL · Research framework</p><h2 className="mt-1 text-lg font-semibold">A connected view of biology</h2></div><Network className="h-5 w-5 text-[#147c79]" /></div>
+              <div className="relative my-5 grid min-h-[220px] place-items-center overflow-hidden rounded-2xl bg-[#eff7f5]">
+                <div className="absolute h-48 w-48 rounded-full border border-dashed border-[#147c79]/30" />
+                <div className="absolute h-32 w-32 rounded-full border border-[#147c79]/25" />
+                <div className="absolute h-2 w-2 rounded-full bg-[#cfaa59] shadow-[0_0_0_8px_rgba(207,170,89,.14)]" />
+                <div className="absolute left-[13%] top-[23%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Clinical</div>
+                <div className="absolute right-[11%] top-[26%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Behavioural</div>
+                <div className="absolute bottom-[18%] left-[22%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Genomic</div>
+                <div className="absolute bottom-[17%] right-[18%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Outcomes</div>
+                <div className="absolute h-20 w-20 rounded-full bg-[#147c79] text-white grid place-items-center text-center text-[10px] font-bold uppercase leading-4 tracking-widest shadow-xl">Evidence<br/>layer</div>
+              </div>
+              <div className="flex items-center gap-3 rounded-xl bg-[#102f49] px-4 py-3 text-white"><ShieldCheck className="h-5 w-5 shrink-0 text-[#8ed5c6]" /><p className="text-xs leading-5 text-white/80">Research-led · Human-supervised · Evidence-linked</p></div>
+            </div>
+          </div>
+        </div>
+        <div className="relative mx-auto mt-9 grid w-full max-w-[1360px] grid-cols-2 border-y border-[#102f49]/10 py-4 sm:grid-cols-4">
+          {proofPoints.map(([value, label]) => <div key={label} className="py-2 sm:px-5 sm:first:pl-0"><p className="text-lg font-bold tracking-tight text-[#102f49] md:text-xl">{value}</p><p className="mt-1 text-[11px] text-[#647889] md:text-xs">{label}</p></div>)}
         </div>
       </section>
 
-      <section className="bg-[#06142f] px-6 py-16 text-white md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[.65fr_1.35fr] lg:gap-16">
-          <div><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8ed8ff]">The proof, up front</p><h2 className="font-serif text-4xl leading-tight md:text-5xl">Validated. Protected. Built in India. Ready for the world.</h2></div>
-          <div className="grid gap-px border border-white/15 bg-white/15 sm:grid-cols-2">
-            {[['01', 'Patent protected', 'Indian Patent No. 202511025669 with an active WIPO PCT filing.'], ['02', 'Validated in hospital', '97% agreement with the HAM-D clinical standard across 500+ assessments.'], ['03', 'Grant-backed', 'A BIRAC GCE-III grant deployed into product development and validation.'], ['04', 'India-native', 'Engineered with interoperability and the Indian health stack in mind.']].map(([number, title, text]) => <article key={number} className="bg-[#06142f] p-7 transition hover:bg-[#0b2753]"><span className="text-[10px] font-bold tracking-[0.16em] text-[#8ed8ff]">{number}</span><h3 className="mt-5 text-xl font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-white/60">{text}</p></article>)}
+      <section id="evidence" className="border-y border-[#102f49]/10 bg-white px-6 py-16 md:px-10 lg:px-16 lg:py-20">
+        <div className="mx-auto max-w-[1240px]">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#147c79]">Evidence &amp; milestones</p><h2 className="text-3xl font-semibold tracking-[-0.03em] md:text-4xl">Early proof, clearly framed.</h2></div><Link href="/inside-sipl/publications" className="inline-flex items-center gap-2 text-sm font-semibold text-[#147c79]">View evidence and IP <ArrowRight className="h-4 w-4" /></Link></div>
+          <div className="mt-9 grid gap-4 md:grid-cols-3">
+            <article className="rounded-2xl border border-[#102f49]/10 bg-[#f7fafb] p-6"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#147c79]">Clinical evaluation</p><p className="mt-4 text-3xl font-semibold tracking-tight text-[#102f49]">97%</p><h3 className="mt-1 text-sm font-bold">Reported agreement with HAM-D</h3><p className="mt-3 text-sm leading-6 text-[#647889]">Reported across 500+ hospital assessments at Dr. Ram Manohar Lohia (RML) Hospital. Agreement is a validation metric; it is not a claim of diagnostic accuracy.</p></article>
+            <article className="rounded-2xl border border-[#102f49]/10 bg-[#f7fafb] p-6"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#147c79]">Intellectual property</p><p className="mt-4 text-2xl font-semibold tracking-tight text-[#102f49]">Indian patent</p><h3 className="mt-1 text-sm font-bold">PCT filing reported</h3><p className="mt-3 text-sm leading-6 text-[#647889]">Patent No. 202511025669, with an active WIPO PCT filing, as reported by SIPL.</p></article>
+            <article className="rounded-2xl border border-[#102f49]/10 bg-[#f7fafb] p-6"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#147c79]">Research support</p><p className="mt-4 text-2xl font-semibold tracking-tight text-[#102f49]">BIRAC GCE-III</p><h3 className="mt-1 text-sm font-bold">Grant-backed development</h3><p className="mt-3 text-sm leading-6 text-[#647889]">Non-dilutive support for product development and validation, as reported by SIPL.</p></article>
+          </div>
+          <p className="mt-5 text-xs leading-5 text-[#7a8b98]">These milestones describe reported validation, IP, and grant support. They do not imply regulatory clearance, clinical utility beyond the reported evaluation, or commercial adoption. Supporting details can be requested from SIPL.</p>
+        </div>
+      </section>
+
+      <section id="science" className="px-6 py-20 md:px-10 lg:px-16 lg:py-24">
+        <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+          <div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#147c79]">BioAI for biopharma</p><h2 className="text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">Connect patient biology, clinical outcomes, and discovery.</h2></div>
+          <div><p className="max-w-2xl text-base leading-7 text-[#53687a] md:text-lg">We build research infrastructure for complex brain and mental health questions. Multimodal data and computational methods help partners explore biomarkers, stratify populations, and understand response across development and real-world settings.</p><Link href="#contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#147c79]">Discuss a research objective <ArrowRight className="h-4 w-4" /></Link>
+            <div className="mt-9 grid gap-3 sm:grid-cols-3">{capabilities.map(({ icon: Icon, number, title, description }) => <article key={title} className="rounded-2xl border border-[#102f49]/10 bg-white p-5"><div className="flex items-center justify-between"><Icon className="h-5 w-5 text-[#147c79]" /><span className="text-[10px] font-bold tracking-widest text-[#8a9aa6]">{number}</span></div><h3 className="mt-7 text-sm font-bold">{title}</h3><p className="mt-2 text-xs leading-5 text-[#647889]">{description}</p></article>)}</div>
           </div>
         </div>
       </section>
 
-      <section id="platform" className="px-6 py-24 md:px-10 lg:px-16 lg:py-36">
-        <div className="mx-auto max-w-[1440px]">
-          <SectionIntro eyebrow="The SIPL intelligence architecture" title="Care, hospital, and discovery, connected in one system." text="SIPL is building infrastructure that connects point-of-care assessment, hospital workflows, and governed scientific discovery. LifeBack™ is the clinical doorway into this larger ecosystem." />
-          <div className="mt-14 grid gap-4 md:grid-cols-3">{platformCards.map(({ icon: Icon, label, title, text, href }) => <Link href={href} key={title} className="group flex min-h-[320px] flex-col rounded-[24px] border border-[#0a3470]/12 bg-white/65 p-7 transition hover:-translate-y-1 hover:border-[#0d5da9]/40 hover:shadow-[0_24px_60px_rgba(7,52,112,.1)]"><div className="mb-12 grid h-12 w-12 place-items-center rounded-2xl bg-[#06142f] text-[#a9ddff]"><Icon className="h-5 w-5" /></div><p className="text-[10px] font-bold tracking-[0.16em] text-[#0d5da9]">{label}</p><h3 className="mt-3 text-2xl font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-[#61748c]">{text}</p><span className="mt-auto pt-6 text-sm font-bold text-[#0d5da9]">Explore capability <ArrowRight className="ml-1 inline h-4 w-4 transition group-hover:translate-x-1" /></span></Link>)}</div>
-          <div className="mt-7 rounded-[24px] bg-[#e6f1fa] p-7 md:p-10"><div className="flex flex-col justify-between gap-3 border-b border-[#0a3470]/15 pb-6 md:flex-row md:items-end"><p className="mb-0 text-[10px] font-bold tracking-[0.16em] text-[#0d5da9]">A SYSTEM THAT LEARNS</p><h3 className="mb-0 text-xl font-semibold">Every stage strengthens the next.</h3></div><div className="grid gap-7 pt-8 sm:grid-cols-2 lg:grid-cols-6">{systemSteps.map(([number, title, text]) => <div key={number}><span className="text-xs font-bold text-[#0d5da9]">{number}</span><b className="mt-4 block text-sm">{title}</b><small className="mt-2 block text-xs leading-5 text-[#61748c]">{text}</small></div>)}</div></div>
+      <section id="investors" className="overflow-hidden bg-[#102f49] px-6 py-20 text-white md:px-10 lg:px-16 lg:py-24">
+        <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+          <div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#8ed5c6]">Investor &amp; strategic partners</p><h2 className="text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">A specialised BioAI platform connecting care and discovery.</h2><p className="mt-5 max-w-xl text-base leading-7 text-white/65">SIPL is building at the convergence of brain health, multimodal biomarkers, genomics, clinical workflows, and biopharma research.</p><Link href="/contact" className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#8ed5c6] px-6 text-sm font-bold text-[#102f49] transition hover:bg-white">Start an investor conversation <ArrowRight className="h-4 w-4" /></Link></div>
+          <div className="grid gap-3">{investmentThesis.map(([title, text], index) => <article key={title} className="grid gap-3 border-b border-white/15 py-5 sm:grid-cols-[3rem_1fr] sm:gap-5"><span className="text-xs font-bold tracking-[0.18em] text-[#8ed5c6]">0{index + 1}</span><div><h3 className="text-lg font-semibold">{title}</h3><p className="mt-2 max-w-xl text-sm leading-6 text-white/60">{text}</p></div></article>)}</div>
         </div>
       </section>
 
-      <section id="lifeback" className="overflow-hidden bg-[#08234b] px-6 py-24 text-white md:px-10 lg:px-16 lg:py-36">
-        <div className="mx-auto max-w-[1440px]"><div className="max-w-4xl"><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8ed8ff]">LifeBack™ · SIPL flagship clinical platform</p><h2 className="max-w-4xl font-serif text-4xl leading-tight md:text-6xl">One evidence-linked view of depression, built from audio, video, and clinical signals.</h2><p className="mt-7 max-w-2xl text-base leading-7 text-white/65">LifeBack™ brings audio, video, and a structured clinical interview into a single assessment workflow. It organises and measures the signals; the clinician interprets the full picture and makes the care decision.</p></div>
-          <div className="mt-14 overflow-hidden rounded-[28px] border border-white/15 bg-[#0c3268] shadow-[0_36px_90px_rgba(0,0,0,.25)]"><div className="flex min-h-18 items-center justify-between border-b border-white/10 px-5 md:px-8"><div className="flex items-center gap-3"><span className="h-2.5 w-2.5 rounded-full bg-[#8ed8ff] shadow-[0_0_0_6px_rgba(142,216,255,.12)]" /><strong>LifeBack™</strong><small className="hidden text-white/50 sm:inline">Professional assessment workspace</small></div><span className="rounded-full border border-[#8ed8ff]/30 px-3 py-2 text-[9px] font-bold tracking-[0.14em] text-[#8ed8ff]">CLINICIAN-SUPPORTED</span></div><div className="flex gap-2 overflow-x-auto border-b border-white/10 p-4">{tabs.map((tab) => <button key={tab} type="button" role="tab" aria-selected={activeTab === tab} onClick={() => setActiveTab(tab)} className={`whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-bold transition ${activeTab === tab ? "bg-[#9ed9ff] text-[#06142f]" : "text-white/55 hover:text-white"}`}>{tab}</button>)}</div><LifeBackPanel activeTab={activeTab} /></div>
-          <div className="mt-10 flex flex-wrap gap-10 border-t border-white/15 pt-7">{[["Granted", "Indian patent"], ["97%", "HAM-D agreement"], ["500+", "hospital assessments"]].map(([value, label]) => <div key={label}><b className="font-serif text-2xl">{value}</b><span className="mt-1 block text-[10px] uppercase tracking-[0.1em] text-white/50">{label}</span></div>)}</div><div className="mt-9 flex flex-wrap gap-3"><Link href={EXTERNAL_LINKS.LIFEBACK_PLATFORM} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#9ed9ff] px-6 text-sm font-bold text-[#06142f] hover:bg-white">Start Assessment <ArrowRight className="h-4 w-4" /></Link><Link href={EXTERNAL_LINKS.LIFEBACK_PLATFORM} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-white/25 px-6 text-sm font-bold hover:bg-white/10">Explore LifeBack™</Link><Link href="#evidence" className="inline-flex min-h-12 items-center rounded-full border border-white/25 px-6 text-sm font-bold hover:bg-white/10">See validation evidence</Link></div>
+      <section id="partners" className="border-y border-[#102f49]/[0.08] bg-white px-6 py-20 md:px-10 lg:px-16 lg:py-24">
+        <div className="mx-auto max-w-[1240px]">
+          <div className="grid gap-6 md:grid-cols-[.8fr_1.2fr] md:items-end md:gap-12">
+            <div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#147c79]">Who we work with</p><h2 className="text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-4xl">One scientific foundation. Different partner questions.</h2></div>
+            <p className="max-w-2xl text-base leading-7 text-[#53687a]">We work with teams close to the science and the people it serves. Partnerships begin with a clearly defined question, intended use, and evidence pathway.</p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{partnerTypes.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl border border-[#102f49]/10 bg-[#f7fafb] p-6 transition hover:-translate-y-1 hover:border-[#147c79]/35"><span className="grid h-11 w-11 place-items-center rounded-xl bg-[#dff1ec] text-[#147c79]"><Icon className="h-5 w-5" /></span><h3 className="mt-6 text-base font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-[#647889]">{text}</p></article>)}</div>
         </div>
       </section>
 
-      <section id="evidence" className="px-6 py-24 md:px-10 lg:px-16 lg:py-36"><div className="mx-auto max-w-[1440px]"><SectionIntro eyebrow="Science & evidence" title="Research is not a phase. It is the foundation." text="Every model, biomarker, and clinical pathway is treated as a testable scientific hypothesis that must earn its place in care." /><div className="mt-14 grid gap-6 lg:grid-cols-[.75fr_1.25fr]"><div className="flex min-h-[360px] flex-col justify-end rounded-[26px] bg-[#06142f] p-9 text-white"><strong className="font-serif text-8xl leading-none text-[#9ed9ff]">97%</strong><p className="mt-7 max-w-sm text-xl leading-8 text-white/70">agreement with HAM-D across 500+ assessments at RML Hospital.</p></div><div className="grid gap-px overflow-hidden rounded-[26px] bg-[#0a3470]/15 sm:grid-cols-2">{[['Clinically grounded', 'Research starts with clinical relevance and a defined intended use.'], ['Multimodal by design', 'Evidence is examined across complementary biological, behavioural, and clinical signals.'], ['Measured transparently', 'Performance, uncertainty, limitations, and subgroup behaviour are evaluated explicitly.'], ['Human supervised', 'Qualified professionals remain responsible for interpretation and care.']].map(([title, text]) => <article key={title} className="bg-[#f5f9fe] p-7"><b className="text-lg">{title}</b><p className="mt-3 text-sm leading-6 text-[#61748c]">{text}</p></article>)}</div></div><div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-y border-[#0a3470]/15 py-6 text-xs font-bold text-[#0d5da9]"><span>Literature grounding</span><span>→</span><span>Ethics review</span><span>→</span><span>Data quality</span><span>→</span><span>Model evaluation</span><span>→</span><span>External validation</span></div></div></section>
+      <section id="approach" className="bg-[#e8f2ef] px-6 py-20 md:px-10 lg:px-16 lg:py-24">
+        <div className="mx-auto max-w-[1240px]">
+          <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+            <div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#147c79]">Our approach</p><h2 className="text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">Scientific depth, responsible AI, practical collaboration.</h2><p className="mt-5 max-w-xl text-base leading-7 text-[#53687a]">Every research question starts with clinical relevance, clear data governance, and transparent evaluation. Qualified professionals remain responsible for interpretation and care.</p><Link href="/inside-sipl/meet-the-team" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#147c79]">Meet the team <ArrowRight className="h-4 w-4" /></Link></div>
+            <div className="grid gap-3 sm:grid-cols-2">{[["01", "Purpose & consent", "Use information with clear purpose and appropriate permissions."], ["02", "Privacy & governance", "Protect sensitive data with defined access and accountable processes."], ["03", "Evidence & validation", "Evaluate performance, uncertainty, and limitations with scientific discipline."], ["04", "Human oversight", "Keep qualified professionals accountable for interpretation and care."]].map(([number, title, text]) => <article key={number} className="rounded-2xl border border-[#147c79]/10 bg-white/75 p-5"><p className="text-[10px] font-bold tracking-[0.18em] text-[#147c79]">{number}</p><h3 className="mt-4 text-sm font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-[#647889]">{text}</p></article>)}</div>
+          </div>
+        </div>
+      </section>
 
-      <section id="partners" className="bg-[#e6f1fa] px-6 py-24 md:px-10 lg:px-16 lg:py-36"><div className="mx-auto max-w-[1440px]"><SectionIntro eyebrow="Who we serve" title="One ecosystem. A distinct pathway for every partner." /><div className="mt-14 grid border-l border-t border-[#0a3470]/15 sm:grid-cols-2 lg:grid-cols-3">{partnerCards.map(([number, title, text]) => <article key={number} className="min-h-[230px] border-b border-r border-[#0a3470]/15 p-7 transition hover:bg-white/55"><span className="text-[10px] font-bold text-[#0d5da9]">{number}</span><h3 className="mt-12 text-xl font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-[#61748c]">{text}</p></article>)}</div></div></section>
+      <section id="advisory-board" className="px-6 py-16 md:px-10 lg:px-16">
+        <div className="mx-auto flex max-w-[1240px] flex-col gap-6 rounded-[1.75rem] border border-[#147c79]/15 bg-white p-7 shadow-[0_18px_55px_rgba(16,47,73,0.06)] sm:flex-row sm:items-center sm:justify-between sm:p-10">
+          <div className="flex items-start gap-5"><span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#e8f2ef] text-[#147c79]"><Microscope className="h-5 w-5" /></span><div><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#147c79]">Coming soon</p><h2 className="text-2xl font-semibold tracking-[-0.03em] md:text-3xl">Advisory Board</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-[#647889]">We are bringing together experienced voices across clinical care, neuroscience, genomics, research, and biopharma. More to come.</p></div></div>
+          <span className="inline-flex w-fit shrink-0 items-center rounded-full border border-[#147c79]/20 bg-[#f4f8fb] px-4 py-2 text-xs font-semibold text-[#147c79]">In formation</span>
+        </div>
+      </section>
 
-      <section id="biopharma" className="bg-[#06142f] px-6 py-24 text-white md:px-10 lg:px-16 lg:py-36"><div className="mx-auto grid max-w-[1440px] gap-16 lg:grid-cols-[.9fr_1.1fr] lg:gap-24"><div><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#9ed9ff]">BioAI for biopharma</p><h2 className="font-serif text-4xl leading-tight md:text-6xl">Connect patient biology, clinical outcomes, and therapeutic discovery.</h2><p className="mt-7 max-w-xl text-base leading-7 text-white/60">SIPL&apos;s multimodal intelligence infrastructure supports responsible research across discovery, clinical development, and real-world evidence.</p><Link href="/contact" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-[#06142f] hover:bg-[#9ed9ff]">Discuss a research objective <ArrowRight className="h-4 w-4" /></Link></div><div className="border-t border-white/15">{[['Biomarker research', 'disease · progression · response · safety'], ['Patient stratification', 'clinically and biologically meaningful cohorts'], ['Clinical-study intelligence', 'characterisation · outcome measurement · follow-up'], ['Pharmacogenomic research', 'treatment response · tolerability · variability'], ['Real-world evidence', 'governed longitudinal data beyond controlled trials']].map(([title, text]) => <div key={title} className="flex flex-col justify-between gap-2 border-b border-white/15 py-6 sm:flex-row"><b>{title}</b><span className="text-sm text-white/50 sm:text-right">{text}</span></div>)}</div></div></section>
-
-      <section id="about" className="px-6 py-24 md:px-10 lg:px-16 lg:py-36"><div className="mx-auto max-w-[1440px]"><div className="grid gap-12 lg:grid-cols-2 lg:gap-24"><div><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#0d5da9]">About SIPL</p><h2 className="font-serif text-4xl leading-tight md:text-6xl">Building enduring intelligence for better brain health.</h2></div><div className="space-y-5 text-lg leading-8 text-[#4a607b]"><p>Sequoia Insilico Pvt. Ltd. is a deep-science BioAI company working at the intersection of clinical care, artificial intelligence, neuroscience, genomics, and life-sciences research.</p><p>Since its 2019 pivot from computational-biology services, SIPL has focused on making brain and mental health measurable, longitudinal, and precise.</p><Link href="/inside-sipl/meet-the-team" className="inline-flex items-center gap-2 text-sm font-bold text-[#0d5da9]">Meet the team <ArrowRight className="h-4 w-4" /></Link></div></div><div className="mt-16 grid gap-px bg-[#0a3470]/15 sm:grid-cols-2 lg:grid-cols-4">{[['Purpose', 'Turn fragmented information into useful, explainable intelligence.'], ['Curiosity', 'Treat every model and pathway as open to testing and revision.'], ['Responsibility', 'Keep clinical safety, privacy, and human oversight at the centre.'], ['Integrity', 'Communicate evidence, uncertainty, and limitations with discipline.']].map(([title, text]) => <article key={title} className="bg-[#f5f9fe] p-7"><b>{title}</b><p className="mt-10 text-sm leading-6 text-[#61748c]">{text}</p></article>)}</div></div></section>
-
-      <section id="investors" className="bg-[#e6f1fa] px-6 py-24 md:px-10 lg:px-16 lg:py-36"><div className="mx-auto max-w-[1440px]"><SectionIntro eyebrow="Investors & strategic partners" title="A specialised BioAI platform connecting care and discovery." text="SIPL is building intelligence infrastructure at the convergence of brain health, multimodal biomarkers, genomics, clinical workflows, and biopharma research." /><div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[['01', 'Domain depth', 'Specialised focus on brain and mental health.'], ['02', 'Multimodal context', 'Clinical, behavioural, biological, and longitudinal information in one record.'], ['03', 'Ecosystem reach', 'Applications across care, research, genomics, and biopharma.'], ['04', 'Responsible scale', 'Human oversight, validation, and transparent limitations built in.']].map(([number, title, text]) => <article key={number} className="rounded-[22px] bg-white p-7"><strong className="text-xs text-[#0d5da9]">{number}</strong><h3 className="mt-12 text-xl font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-[#61748c]">{text}</p></article>)}</div><div className="mt-5 grid gap-6 rounded-[24px] bg-[#06142f] p-8 text-white lg:grid-cols-[1fr_1fr_auto] lg:items-center"><div><span className="text-[10px] font-bold tracking-[0.15em] text-[#9ed9ff]">WHY NOW, WHY SIPL</span><h3 className="mt-2 text-2xl font-semibold">Validated, protected, India-native, and globally relevant.</h3></div><div className="grid grid-cols-2 gap-3 text-sm text-white/65"><span><b className="text-white">97%</b> HAM-D agreement</span><span><b className="text-white">500+</b> assessments</span><span><b className="text-white">FHIR R4</b> direction</span><span><b className="text-white">Seed</b> round active</span></div><Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#9ed9ff] px-6 text-sm font-bold text-[#06142f] hover:bg-white">Request investor access</Link></div></div></section>
-
-      <section id="trust" className="px-6 py-24 md:px-10 lg:px-16 lg:py-36"><div className="mx-auto max-w-[1440px]"><SectionIntro eyebrow="Responsible AI, security & trust" title="AI supports the professional. The professional leads the care." /><div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{trustCards.map(([number, title, text]) => <article key={number} className="rounded-[22px] border border-[#0a3470]/12 p-7"><span className="text-[10px] font-bold text-[#0d5da9]">{number}</span><b className="mt-12 block text-lg">{title}</b><p className="mt-3 text-sm leading-6 text-[#61748c]">{text}</p></article>)}</div><div className="mt-8 flex flex-col gap-2 rounded-2xl border border-dashed border-[#0a3470]/25 bg-white/45 p-6 sm:flex-row sm:items-center sm:gap-5"><ShieldCheck className="h-6 w-6 shrink-0 text-[#0d5da9]" /><div><b className="text-sm">Security and compliance</b><p className="mt-1 text-sm text-[#61748c]">Privacy, role-based access, auditability, and human oversight are designed into the platform architecture.</p></div></div></div></section>
-
-      <section className="relative overflow-hidden bg-[#06142f] px-6 py-32 text-center text-white md:px-10 lg:px-16 lg:py-44"><div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(92,183,255,.25),transparent_28%),repeating-radial-gradient(circle_at_50%_50%,rgba(255,255,255,.06)_0_1px,transparent_1px_54px)]" /><div className="relative mx-auto max-w-4xl"><p className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#9ed9ff]">The vision</p><h2 className="font-serif text-4xl leading-tight md:text-6xl">From one intelligence layer to a population-scale brain-health atlas.</h2><p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-white/60">SIPL is building toward an AI-native model of care where multimodal assessment, genomic and imaging data, EHR context, decision support, and longitudinal monitoring converge into one discovery-linked system.</p></div></section>
-
-      <section id="contact" className="px-6 py-20 md:px-10 lg:px-16 lg:py-28"><div className="mx-auto max-w-[1440px] rounded-[28px] bg-[linear-gradient(120deg,#0b3470,#087bb1)] p-8 text-white md:p-12 lg:p-16"><div className="max-w-4xl"><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#b9e5ff]">Partner with SIPL</p><h2 className="font-serif text-4xl leading-tight md:text-6xl">Let&apos;s build the next generation of brain and mental healthcare.</h2><p className="mt-6 max-w-2xl text-base leading-7 text-white/70">Hospital, research, genomics, biopharma, or investment: start with the objective and we will route the conversation to the right team.</p><Link href="/contact" className="mt-8 inline-flex min-h-13 items-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-[#06142f] hover:bg-[#b9e5ff]">Start a conversation <ArrowRight className="h-4 w-4" /></Link><span className="mt-4 block text-sm text-white/70">New Delhi, India</span></div></div></section>
+      <section id="contact" className="bg-[#102f49] px-6 py-20 text-white md:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20"><div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#8ed5c6]">Partner with SIPL</p><h2 className="text-3xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">Let’s build better evidence together.</h2><p className="mt-5 max-w-lg text-base leading-7 text-white/65">For biopharma, clinical, research, and genomics collaborations, tell us what you are working on.</p></div><div className="rounded-2xl bg-white p-6 text-[#10243b] sm:p-8"><h3 className="text-xl font-semibold">Start a conversation</h3><p className="mt-2 text-sm text-[#647889]">Share a few details and our team will follow up.</p><div className="mt-6"><ContactForm /></div></div></div>
+      </section>
     </div>
   );
-}
-
-function SectionIntro({ eyebrow, title, text }: Readonly<{ eyebrow: string; title: string; text?: string }>) {
-  return <div className="max-w-4xl"><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#0d5da9]">{eyebrow}</p><h2 className="font-serif text-4xl leading-tight tracking-[-0.03em] md:text-6xl">{title}</h2>{text && <p className="mt-6 max-w-3xl text-lg leading-8 text-[#61748c]">{text}</p>}</div>;
-}
-
-function OrbitalVisual() {
-  const signals = [["Voice", Mic, "left-[9%] top-[27%]"], ["Video", Video, "right-[8%] top-[25%]"], ["Clinical", Stethoscope, "left-[7%] top-[58%]"], ["Genomics", Dna, "right-[6%] top-[59%]"]];
-  return <div className="relative mx-auto flex min-h-[500px] w-full max-w-[620px] items-center justify-center"><div className="relative aspect-[.9] w-full overflow-hidden rounded-[38px] bg-[radial-gradient(circle_at_50%_42%,rgba(106,202,255,.5),transparent_25%),linear-gradient(145deg,#0b3c78,#06142f_68%,#0b6c9e)] shadow-[0_40px_100px_rgba(3,40,88,.25)]"><div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:40px_40px]" /><p className="absolute left-7 top-7 text-[10px] tracking-[0.18em] text-white/60">SIPL · FLAGSHIP PLATFORM: LIFEBACK™</p><div className="absolute left-1/2 top-[45%] aspect-square w-[62%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15" /><div className="absolute left-1/2 top-[45%] aspect-square w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15" />{signals.map(([label, Icon, position]) => { const SignalIcon = Icon as typeof Mic; return <div key={label as string} className={`absolute ${position as string} flex items-center gap-2 rounded-full border border-white/20 bg-[#06142f]/70 px-3 py-2 text-xs text-white backdrop-blur-md`}><span className="grid h-6 w-6 place-items-center rounded-full bg-[#8ed8ff]/15 text-[#8ed8ff]"><SignalIcon className="h-3.5 w-3.5" /></span>{label as string}</div>; })}<div className="absolute left-1/2 top-[45%] grid aspect-square w-40 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-[#9ed9ff]/60 bg-[#06142f]/85 text-center shadow-[0_0_0_15px_rgba(158,217,255,.06),0_0_80px_rgba(142,216,255,.2)]"><strong className="text-sm leading-tight tracking-[0.08em]">ONE<br />STRUCTURED<br />VIEW</strong></div><div className="absolute bottom-[8%] left-[8%] right-[8%] flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md"><span className="h-2.5 w-2.5 rounded-full bg-[#9ed9ff] shadow-[0_0_20px_#9ed9ff]" /><div><b className="block text-xs text-white">Evidence-linked context</b><small className="mt-1 block text-[11px] text-white/55">confidence · uncertainty · longitudinal change</small></div></div></div></div>;
-}
-
-function LifeBackPanel({ activeTab }: Readonly<{ activeTab: Tab }>) {
-  if (activeTab === "Longitudinal Monitoring") return <div className="grid gap-6 p-6 md:grid-cols-3 md:p-12"><div className="md:col-span-3"><span className="text-[10px] font-bold tracking-[0.16em] text-[#9ed9ff]">LONGITUDINAL CARE</span><h3 className="mt-3 text-2xl font-semibold md:text-4xl">Track meaningful change across visits, not only a single score.</h3><p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">Repeated assessments are organised so professionals can compare behavioural and clinical change over time.</p></div>{[['VISIT 01', 'Baseline', 'Audio · Video · Clinical'], ['VISIT 02', 'Follow-up', 'Change from baseline'], ['VISIT 03', 'Review', 'Outcome context']].map(([visit, title, text]) => <div key={visit} className="rounded-2xl border border-white/10 bg-[#0a2958] p-6"><span className="text-[10px] tracking-[0.14em] text-[#9ed9ff]">{visit}</span><strong className="mt-3 block text-2xl">{title}</strong><small className="mt-2 block text-white/50">{text}</small></div>)}</div>;
-  if (activeTab === "Research Layer") return <div className="grid gap-4 p-6 md:grid-cols-3 md:p-12"><div className="md:col-span-3"><span className="text-[10px] font-bold tracking-[0.16em] text-[#9ed9ff]">RESEARCH &amp; BIOLOGY</span><h3 className="mt-3 text-2xl font-semibold md:text-4xl">Extend the clinical record into governed biomarker research.</h3></div>{[['GENOMICS', 'Biological context', 'Connect genomic structure to biotypes for biological grounding and risk research.'], ['NEUROCIRCUITS', 'Biotyping in development', 'Explore modality-level signals to inform research and treatment strategy.'], ['DISCOVERY', 'Governed evidence', 'Support biomarker investigation, patient stratification, and the next validation cycle.']].map(([label, title, text]) => <div key={label} className="rounded-2xl border border-white/10 bg-[#0a2958] p-6"><span className="text-[10px] tracking-[0.14em] text-[#9ed9ff]">{label}</span><h3 className="mt-4 text-xl font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-white/55">{text}</p></div>)}</div>;
-  return <div className="p-6 md:p-12"><div className="mb-8 grid gap-6 md:grid-cols-[1fr_.48fr] md:items-end"><div><span className="text-[10px] font-bold tracking-[0.16em] text-[#9ed9ff]">ASSESSMENT FLOW</span><h3 className="mt-3 text-2xl font-semibold md:text-4xl">One patient. Multiple signals. One integrated assessment.</h3></div><p className="mb-0 text-sm leading-6 text-white/55">The modalities are considered together so no single audio, video, or questionnaire signal is treated as the diagnosis.</p></div><div className="grid gap-4 md:grid-cols-3">{[["01", "Audio assessment", "Speech and voice features are analysed as behavioural clinical context.", Mic], ["02", "Video assessment", "Facial and behavioural signals provide complementary information.", Video], ["03", "Clinical interview & scales", "A structured interview flow is combined with standardised measures.", Stethoscope]].map(([number, title, text, Icon]) => { const CardIcon = Icon as typeof Mic; return <article key={number as string} className="rounded-2xl border border-white/10 bg-[#0a2958] p-6"><span className="text-[10px] text-white/35">{number as string}</span><div className="mt-6 grid h-11 w-11 place-items-center rounded-xl border border-[#9ed9ff]/30 bg-[#9ed9ff]/10 text-[#9ed9ff]"><CardIcon className="h-5 w-5" /></div><h3 className="mt-5 text-xl font-semibold">{title as string}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/55">{text as string}</p><div className="mt-5 flex flex-wrap gap-2"><span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-white/65">Signal quality</span><span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-white/65">Clinical context</span></div></article>; })}</div><div className="mt-5 grid gap-4 rounded-2xl bg-[#edf5fc] p-5 text-[#07152f] md:grid-cols-[.35fr_1fr]"><div><span className="text-[10px] font-bold tracking-[0.14em] text-[#0d5da9]">MULTIMODAL FUSION</span><strong className="mt-3 block text-lg">Evidence-linked assessment context</strong><small className="mt-1 block text-xs text-[#61748c]">confidence · uncertainty · agreement</small></div><div className="rounded-xl bg-white p-4"><div className="flex justify-between text-[9px] font-bold tracking-[0.12em] text-[#61748c]"><span>LIFEBACK™ / CLINICIAN VIEW</span><b className="text-[#0d5da9]">ASSESSMENT</b></div><div className="mt-5 flex items-center justify-between border-b border-[#0a3470]/10 pb-4"><div><small className="block text-[10px] text-[#61748c]">Structured output</small><strong className="mt-1 block text-xl">Professional review</strong><span className="block text-[10px] text-[#61748c]">Review all modalities together</span></div><div className="grid h-14 w-14 place-items-center rounded-full border-8 border-[#c2e5fb] text-xs font-bold text-[#0d5da9]">AI</div></div><p className="mb-0 mt-4 text-[10px] leading-5 text-[#61748c]"><strong className="text-[#07152f]">Professional interpretation required.</strong> LifeBack™ supports assessment and decision-making; it does not replace clinical evaluation.</p></div></div></div>;
 }

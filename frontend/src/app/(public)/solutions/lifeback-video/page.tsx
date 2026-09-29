@@ -3,8 +3,8 @@ import { CardGrid, EditorialHero, EditorialSection } from "@/components/layout/E
 import { generateSeoMetadata } from "@/shared/lib/seo";
 
 export const metadata = generateSeoMetadata({
-  title: "LifeBack™ Video | SIPL",
-  description: "Video-based behavioural intelligence for LifeBack™ multimodal assessment.",
+  title: "SIPL Video | SIPL",
+  description: "Video-based behavioural intelligence for SIPL multimodal assessment.",
   path: "/solutions/lifeback-video",
 });
 
@@ -23,11 +23,11 @@ const videoCards = [
   },
 ];
 
-export default function LifeBackVideoPage() {
+export default function SIPLVideoPage() {
   return (
     <PublicLayout>
       <div className="bg-[#F5F8FC]">
-        <EditorialHero eyebrow="LifeBack™ Video" title="Video-based behavioural intelligence.">
+        <EditorialHero eyebrow="SIPL Video" title="Video-based behavioural intelligence.">
           <p>
             Video-based behavioural intelligence helps capture visual, motor, affective, and interaction-level signals as part of a broader clinical picture.
           </p>
@@ -37,12 +37,12 @@ export default function LifeBackVideoPage() {
             Mental and nervous system disorders often appear through patterns of behaviour, expression, movement, interaction, and change over time. Video analysis helps structure these observations as part of multimodal clinical intelligence.
           </p>
         </EditorialSection>
-        <EditorialSection title="What video contributes to LifeBack™.">
+        <EditorialSection title="What video contributes to SIPL.">
           <CardGrid cards={videoCards} />
         </EditorialSection>
         <EditorialSection title="Integrated, not isolated.">
           <p>
-            Video is not interpreted as a standalone answer. LifeBack™ integrates video-based signals with voice, genomics, pharmacogenomics, and clinical data to support structured clinical review.
+            Video is not interpreted as a standalone answer. SIPL integrates video-based signals with voice, genomics, pharmacogenomics, and clinical data to support structured clinical review.
           </p>
         </EditorialSection>
       </div>

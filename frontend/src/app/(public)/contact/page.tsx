@@ -7,7 +7,7 @@ export const metadata = {
   ...generateSeoMetadata({
     title: "Contact SIPL",
     description:
-      "Contact Sequoia Insilico regarding LifeBack™, research partnerships, clinical collaborations, careers, and general enquiries.",
+      "Contact Sequoia Insilico regarding research partnerships, clinical collaborations, careers, investment, and general enquiries.",
     path: "/contact",
   }),
   title: "Contact SIPL",
@@ -27,8 +27,8 @@ export default function ContactPage() {
                 Let’s start a meaningful conversation.
               </h1>
               <p className="mt-8 max-w-xl text-lg leading-8 text-[#001B65]/72">
-                Whether you are interested in LifeBack™, research partnerships, clinical
-                collaboration, careers, or a general enquiry, send us a message and the SIPL team
+                Whether you are interested in research partnerships, clinical collaboration,
+                careers, investment, or a general enquiry, send us a message and the SIPL team
                 will get back to you.
               </p>
               <p className="mt-8 max-w-lg border-l border-[#D4AF37] pl-5 text-sm leading-6 text-[#001B65]/68">

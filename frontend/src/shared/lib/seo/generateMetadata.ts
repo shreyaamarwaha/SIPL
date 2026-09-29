@@ -7,11 +7,11 @@ interface GenerateMetadataProps {
 }
 
 export function generateSeoMetadata({ title, description, path }: GenerateMetadataProps): Metadata {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://lifeback.sipl.com";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://sequoiainsilico.com";
   const url = `${baseUrl}${path}`;
 
   return {
-    title: "SIPL",
+    title,
     applicationName: "SIPL",
     description,
     icons: {
@@ -29,7 +29,7 @@ export function generateSeoMetadata({ title, description, path }: GenerateMetada
       title,
       description,
       url,
-      siteName: "LifeBack™",
+      siteName: "Sequoia Insilico",
       type: "website",
     },
     twitter: {

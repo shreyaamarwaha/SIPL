@@ -1,40 +1,40 @@
 import Link from "next/link";
-import { BrainWaveSeparator } from "@/features/public/landing/components/BrainWaveSeparator";
+import Image from "next/image";
+import SIPLLogo from "@/shared/assets/SIPL_Logo.png";
 
-const governanceLinks = [
-  { label: "FAQ", href: "/faq" },
-  { label: "Dev Tools", href: "/dev-tools" },
-  { label: "Terms of Use", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Security and Trust", href: "/security" },
-  { label: "Ethical AI", href: "/ethical-ai" },
+const navigationLinks = [
+  { label: "Science", href: "/#science" },
+  { label: "Partners", href: "/#partners" },
+  { label: "Evidence & IP", href: "/inside-sipl/publications" },
+  { label: "Investors", href: "/#investors" },
+  { label: "Our approach", href: "/#approach" },
+  { label: "Advisory Board", href: "/#advisory-board" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com" },
-  { label: "Twitter", href: "https://twitter.com" },
-  { label: "Instagram", href: "https://www.instagram.com" },
-  { label: "YouTube", href: "https://www.youtube.com" },
 ];
 
 export function Footer() {
   return (
     <footer className="w-full bg-[#F5F8FC] text-[#001B65]">
-      <BrainWaveSeparator />
-
-      <div className="px-6 pb-10 pt-16 md:px-10 md:pt-20 lg:px-16 xl:px-20">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-20">
-          <FooterColumn title="Governance" links={governanceLinks} />
-          <FooterColumn title="Socials" links={socialLinks} />
+      <div className="border-t border-[#001B65]/15 px-6 py-12 md:px-10 lg:px-16 xl:px-20">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr] md:gap-16">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3" aria-label="SIPL home">
+              <span className="relative block h-10 w-10"><Image src={SIPLLogo} alt="SIPL logo" fill sizes="40px" className="object-contain" /></span>
+              <span className="font-heading text-xl font-bold tracking-[0.12em]">SIPL</span>
+            </Link>
+            <p className="mt-5 max-w-sm text-sm leading-6 text-[#001B65]/70">Sequoia Insilico builds responsible BioAI for brain health, clinical research, and biopharma discovery.</p>
+          </div>
+          <FooterColumn title="Navigate" links={navigationLinks} />
+          <FooterColumn title="Connect" links={socialLinks} />
         </div>
 
-        <div className="mt-16 border-t border-[#001B65] pt-8 md:mt-20">
-          <p className="mt-5 font-body text-base leading-7 text-[#001B65]">
-            iCall: 9152987821 | Vandrevala Foundation: 1860-2662-345 | NIMHANS: 080-46110007
-          </p>
-          <p className="mt-8 font-mono text-[12px] uppercase tracking-[0.14em] text-[#001B65]/70">
-            © 2026 Sequoia Insilico
-          </p>
+        <div className="mt-10 flex flex-col justify-between gap-5 border-t border-[#001B65]/15 pt-6 text-sm text-[#001B65]/70 md:flex-row">
+          <span>© 2026 Sequoia Insilico Pvt. Ltd.</span>
+          <div className="flex gap-5"><Link href="/privacy">Privacy Policy</Link><Link href="/terms">Terms of Use</Link></div>
         </div>
       </div>
     </footer>

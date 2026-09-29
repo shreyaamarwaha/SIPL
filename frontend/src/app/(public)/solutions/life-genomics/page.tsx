@@ -3,8 +3,8 @@ import { EditorialHero, EditorialSection } from "@/components/layout/EditorialSe
 import { generateSeoMetadata } from "@/shared/lib/seo";
 
 export const metadata = generateSeoMetadata({
-  title: "LifeBack™ Genomics | SIPL",
-  description: "Genomics and pharmacogenomics for precision psychiatry within LifeBack™.",
+  title: "SIPL Genomics | SIPL",
+  description: "Genomics and pharmacogenomics for precision psychiatry within SIPL.",
   path: "/solutions/life-genomics",
 });
 
@@ -12,7 +12,7 @@ export default function LifeGenomicsPage() {
   return (
     <PublicLayout>
       <div className="bg-[#F5F8FC]">
-        <EditorialHero eyebrow="LifeBack™ Genomics" title="Genomics and pharmacogenomics for precision psychiatry.">
+        <EditorialHero eyebrow="SIPL Genomics" title="Genomics and pharmacogenomics for precision psychiatry.">
           <p>
             Genomics and pharmacogenomics support precision psychiatry by helping clinicians understand biological variation, treatment response, and medication safety.
           </p>
@@ -32,9 +32,9 @@ export default function LifeGenomicsPage() {
             The majority of psychiatric research underpinning global EBM guidelines has been conducted on Western, predominantly Caucasian populations. SIPL actively generates and integrates Indian-specific clinical and genomic evidence — because applying foreign population norms to Indian patients is not evidence-based medicine; it is epidemiological mismatch.
           </p>
         </EditorialSection>
-        <EditorialSection title="Part of the LifeBack™ intelligence layer.">
+        <EditorialSection title="Part of the SIPL intelligence layer.">
           <p>
-            Genomics becomes clinically useful when interpreted alongside behavioural signals, pharmacogenomics, clinical context, patient values, and clinician judgement. LifeBack™ is designed to bring these streams together into objective, actionable intelligence.
+            Genomics becomes clinically useful when interpreted alongside behavioural signals, pharmacogenomics, clinical context, patient values, and clinician judgement. SIPL is designed to bring these streams together into objective, actionable intelligence.
           </p>
         </EditorialSection>
       </div>

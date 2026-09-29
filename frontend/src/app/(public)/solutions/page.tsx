@@ -3,15 +3,15 @@ import { CardGrid, EditorialHero, EditorialSection, PullQuote, Timeline } from "
 import { generateSeoMetadata } from "@/shared/lib/seo";
 
 export const metadata = generateSeoMetadata({
-  title: "Solutions | LifeBack™",
-  description: "LifeBack™ combines behavioural, physiological, genomic, pharmacogenomic, and clinical data streams to support structured clinical review.",
+  title: "Solutions | SIPL",
+  description: "SIPL combines behavioural, physiological, genomic, pharmacogenomic, and clinical data streams to support structured clinical review.",
   path: "/solutions",
 });
 
 const workflow = [
   {
     title: "Screening",
-    body: "LifeBack™ captures structured inputs across behavioural, physiological, genomic, pharmacogenomic, and clinical data streams.",
+    body: "SIPL captures structured inputs across behavioural, physiological, genomic, pharmacogenomic, and clinical data streams.",
   },
   {
     title: "Analysis",
@@ -19,7 +19,7 @@ const workflow = [
   },
   {
     title: "Insights",
-    body: "LifeBack™ surfaces longitudinal patterns, pharmacogenomic interactions, contraindications, probabilistic risk scores, and evidence-linked outputs.",
+    body: "SIPL surfaces longitudinal patterns, pharmacogenomic interactions, contraindications, probabilistic risk scores, and evidence-linked outputs.",
   },
   {
     title: "Clinical Review",
@@ -40,7 +40,7 @@ export default function SolutionsPage() {
         <EditorialSection title="Why single-modality assessment is not enough.">
           <div className="grid gap-6">
             <p>
-              Mental and nervous system disorders are among the most complex phenomena in biology. Single-modality systems miss information. LifeBack™ combines multiple biological and behavioral signal streams to generate richer clinical evidence.
+              Mental and nervous system disorders are among the most complex phenomena in biology. Single-modality systems miss information. SIPL combines multiple biological and behavioral signal streams to generate richer clinical evidence.
             </p>
             <p>
               No single biomarker — genetic, acoustic, linguistic, or behavioural — is sufficient to characterise the complexity of serious mental illness or nervous system disorders. SIPL&apos;s research philosophy is fundamentally integrative. We pursue signal across modalities because that is where the biological truth lies — in the convergence of evidence, not the loudness of any single channel.
@@ -48,13 +48,13 @@ export default function SolutionsPage() {
           </div>
         </EditorialSection>
 
-        <EditorialSection title="LifeBack™: clinical intelligence across modalities.">
+        <EditorialSection title="SIPL: clinical intelligence across modalities.">
           <div className="grid gap-6">
             <p>
-              LifeBack™ is SIPL’s multimodal neurobiomarker platform, designed to transform how mental and nervous system disorders are assessed, diagnosed, treated, and prevented through objective, actionable intelligence.
+              SIPL is SIPL’s multimodal neurobiomarker platform, designed to transform how mental and nervous system disorders are assessed, diagnosed, treated, and prevented through objective, actionable intelligence.
             </p>
             <p>
-              Through LifeBack™, SIPL fuses genomics, behavioural signals, pharmacogenomics, and clinical data into objective, actionable intelligence — validated in live hospital conditions under ICMR-compliant ethical oversight, and built to work within the real constraints of the Indian healthcare system.
+              Through SIPL, SIPL fuses genomics, behavioural signals, pharmacogenomics, and clinical data into objective, actionable intelligence — validated in live hospital conditions under ICMR-compliant ethical oversight, and built to work within the real constraints of the Indian healthcare system.
             </p>
             <CardGrid
               cards={[

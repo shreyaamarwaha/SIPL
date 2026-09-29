@@ -6,19 +6,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
-import { requestDemoLinkStyles } from "@/shared/ui/Button";
 import SIPLLogo from "@/shared/assets/SIPL_Logo.png";
-import { EXTERNAL_LINKS } from "@/shared/constants/external-links";
 
 const navigationLinks = [
-  { label: "LifeBack", href: "/#lifeback" },
-  { label: "Science", href: "/#evidence" },
-  { label: "Partners", href: "/#partners" },
-  { label: "BioAI", href: "/#biopharma" },
-  { label: "About", href: "/#about" },
+  { label: "Science", href: "/#science" },
+  { label: "Evidence", href: "/#evidence" },
   { label: "Investors", href: "/#investors" },
-  { label: "Trust", href: "/#trust" },
-  { label: "Calendar", href: "/contact" },
+  { label: "Our approach", href: "/#approach" },
+  { label: "Advisory Board", href: "/#advisory-board" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -100,16 +96,9 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center lg:flex">
-          <Link
-            href={EXTERNAL_LINKS.LIFEBACK_PLATFORM}
-            target="_blank"
-            rel="noreferrer"
-            className={requestDemoLinkStyles}
-          >
-            Access Platform
-          </Link>
-        </div>
+        <Link href="/#contact" className="hidden min-h-11 items-center rounded-full bg-[#147c79] px-5 text-sm font-bold text-white lg:inline-flex">
+          Partner with us
+        </Link>
 
         <button
           type="button"
@@ -152,14 +141,8 @@ export function Header() {
               );
             })}
 
-            <Link
-              href={EXTERNAL_LINKS.LIFEBACK_PLATFORM}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeMenu}
-              className={cn(requestDemoLinkStyles, "mt-2 w-full px-6")}
-            >
-              Access Platform
+            <Link href="/#contact" onClick={closeMenu} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-[#147c79] px-6 text-sm font-bold text-white">
+              Partner with us
             </Link>
           </div>
         </nav>

@@ -5,7 +5,7 @@ export default function PrivacyPage() {
     <PublicRoutePage
       eyebrow="Governance"
       title="Privacy Policy"
-      description="Privacy commitments and data handling principles for SIPL public properties and LifeBack™ screening workflows."
+      description="Privacy commitments and data handling principles for SIPL public properties and SIPL screening workflows."
     />
   );
 }

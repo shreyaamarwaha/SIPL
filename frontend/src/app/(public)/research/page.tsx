@@ -11,7 +11,7 @@ export const metadata = generateSeoMetadata({
 const researchPhilosophy = [
   {
     title: "Science is not a phase — it is a permanent state",
-    body: "At SIPL, research is not something we did before we built a product. It is the continuous substrate of everything we build. Every model, every biomarker, every clinical decision pathway in LifeBack™ is a living scientific hypothesis — subject to revision, replication, and challenge as new evidence emerges. We do not graduate from research mode; we deepen it.",
+    body: "At SIPL, research is not something we did before we built a product. It is the continuous substrate of everything we build. Every model, every biomarker, every clinical decision pathway in SIPL is a living scientific hypothesis — subject to revision, replication, and challenge as new evidence emerges. We do not graduate from research mode; we deepen it.",
   },
   {
     title: "India-first, India-specific science as first step",
@@ -31,7 +31,7 @@ const validationSteps = [
   {
     eyebrow: "S1",
     title: "Literature grounding before model development",
-    body: "Every LifeBack™ feature begins with a systematic review of peer-reviewed evidence. We establish biological plausibility and prior clinical validity before a single line of model code is written. Opinion and intuition are inputs to discussion — not to architecture.",
+    body: "Every SIPL feature begins with a systematic review of peer-reviewed evidence. We establish biological plausibility and prior clinical validity before a single line of model code is written. Opinion and intuition are inputs to discussion — not to architecture.",
   },
   {
     eyebrow: "S2",
@@ -41,7 +41,7 @@ const validationSteps = [
   {
     eyebrow: "S3",
     title: "Live hospital validation — not controlled simulations",
-    body: "LifeBack™ has been validated in real clinical conditions across multiple hospital sites — with real patients, real clinicians, real time constraints, and real noise. We reject lab-only validation as insufficient for clinical AI. The real world is the only valid test environment.",
+    body: "SIPL has been validated in real clinical conditions across multiple hospital sites — with real patients, real clinicians, real time constraints, and real noise. We reject lab-only validation as insufficient for clinical AI. The real world is the only valid test environment.",
   },
   {
     eyebrow: "S4",
@@ -51,7 +51,7 @@ const validationSteps = [
   {
     eyebrow: "S5",
     title: "Continuous post-deployment monitoring",
-    body: "Validation does not end at deployment. LifeBack™ includes systematic performance monitoring, bias auditing, and clinical outcome tracking across all live deployments. When real-world performance diverges from validation results, we investigate and act — not explain it away.",
+    body: "Validation does not end at deployment. SIPL includes systematic performance monitoring, bias auditing, and clinical outcome tracking across all live deployments. When real-world performance diverges from validation results, we investigate and act — not explain it away.",
   },
 ];
 
@@ -74,19 +74,19 @@ const clinicianDoes = [
 const ebmCards = [
   {
     title: "Best available evidence, continuously updated",
-    body: "LifeBack™'s clinical decision pathways are anchored in the highest available tier of evidence — systematic reviews, meta-analyses, and randomised controlled trial data where it exists in psychiatry. Where RCT evidence is absent or insufficient, we are explicit about that gap and calibrate confidence accordingly. We do not dress observational evidence in the language of causation.",
+    body: "SIPL's clinical decision pathways are anchored in the highest available tier of evidence — systematic reviews, meta-analyses, and randomised controlled trial data where it exists in psychiatry. Where RCT evidence is absent or insufficient, we are explicit about that gap and calibrate confidence accordingly. We do not dress observational evidence in the language of causation.",
   },
   {
     title: "Clinical expertise is irreplaceable evidence",
-    body: "EBM is not the subordination of clinical experience to statistical aggregates. The clinician's pattern recognition, contextual knowledge, and patient relationship are forms of evidence that no model fully captures. LifeBack™ is designed to amplify clinical expertise, not override it with population-level averages applied to individual patients.",
+    body: "EBM is not the subordination of clinical experience to statistical aggregates. The clinician's pattern recognition, contextual knowledge, and patient relationship are forms of evidence that no model fully captures. SIPL is designed to amplify clinical expertise, not override it with population-level averages applied to individual patients.",
   },
   {
     title: "Patient values and context as clinical data",
-    body: "Evidence-based medicine integrates patient preferences, lived experience, cultural context, and individual circumstances into clinical decision-making. LifeBack™ captures structured patient-reported outcomes and contextual data — because the best treatment is not just the most statistically effective one, but the one this patient will adhere to and benefit from.",
+    body: "Evidence-based medicine integrates patient preferences, lived experience, cultural context, and individual circumstances into clinical decision-making. SIPL captures structured patient-reported outcomes and contextual data — because the best treatment is not just the most statistically effective one, but the one this patient will adhere to and benefit from.",
   },
   {
     title: "Uncertainty is clinical information",
-    body: "Where the evidence is weak, conflicting, or absent, LifeBack™ communicates that explicitly. Calibrated uncertainty — presented transparently to the clinician — is more valuable than false confidence. A system that hedges its ignorance behind confident outputs is not evidence-based; it is evidence-washing.",
+    body: "Where the evidence is weak, conflicting, or absent, SIPL communicates that explicitly. Calibrated uncertainty — presented transparently to the clinician — is more valuable than false confidence. A system that hedges its ignorance behind confident outputs is not evidence-based; it is evidence-washing.",
   },
   {
     title: "Indian populations demand Indian evidence",
@@ -97,15 +97,15 @@ const ebmCards = [
 const safetyCards = [
   {
     title: "Explainability as a safety requirement",
-    body: "A clinical AI system whose reasoning cannot be explained to the treating clinician is a safety risk — not a feature. Every LifeBack™ output is accompanied by the evidence chain that produced it. Black-box outputs have no place in clinical decision support.",
+    body: "A clinical AI system whose reasoning cannot be explained to the treating clinician is a safety risk — not a feature. Every SIPL output is accompanied by the evidence chain that produced it. Black-box outputs have no place in clinical decision support.",
   },
   {
     title: "Mandatory override and escalation pathways",
-    body: "Clinicians can always override any LifeBack™ recommendation. Override events are logged, reviewed, and used to improve the system — they are treated as signal, not as noise. Clear escalation pathways exist for edge cases, emergencies, and safety-critical situations.",
+    body: "Clinicians can always override any SIPL recommendation. Override events are logged, reviewed, and used to improve the system — they are treated as signal, not as noise. Clear escalation pathways exist for edge cases, emergencies, and safety-critical situations.",
   },
   {
     title: "Consent, privacy, and data dignity",
-    body: "Every patient whose data informs LifeBack™ has given informed, explicit consent. Data is handled under the strictest applicable standards — ABDM, DPDP Act, ICMR guidelines. Patient data is never used for any purpose beyond what was explicitly consented to. Privacy is not a compliance checkbox — it is a patient right we take personally.",
+    body: "Every patient whose data informs SIPL has given informed, explicit consent. Data is handled under the strictest applicable standards — ABDM, DPDP Act, ICMR guidelines. Patient data is never used for any purpose beyond what was explicitly consented to. Privacy is not a compliance checkbox — it is a patient right we take personally.",
   },
   {
     title: "Bias monitoring as ongoing clinical safety",
@@ -146,7 +146,7 @@ export default function ResearchPage() {
         <EditorialSection title="How we do science, and why it matters.">
           <div className="grid gap-8">
             <p>
-              LifeBack™ operates at the intersection of deep science and live clinical care. These principles define how we approach research, validate evidence, position AI within the clinical relationship, and hold ourselves to the highest standard of patient safety — without exception.
+              SIPL operates at the intersection of deep science and live clinical care. These principles define how we approach research, validate evidence, position AI within the clinical relationship, and hold ourselves to the highest standard of patient safety — without exception.
             </p>
             <CardGrid cards={researchPhilosophy} columns="two" />
           </div>
@@ -164,7 +164,7 @@ export default function ResearchPage() {
         <EditorialSection title="Decision support, not decision replacement.">
           <div className="grid gap-8">
             <p>
-              LifeBack™ is a decision support system — not a decision system. The clinician is not a user interface between the AI and the patient. The clinician is the clinician. The AI is the instrument.
+              SIPL is a decision support system — not a decision system. The clinician is not a user interface between the AI and the patient. The clinician is the clinician. The AI is the instrument.
             </p>
             <div className="grid gap-5 md:grid-cols-2">
               <div className="rounded-[28px] border border-[#001B65]/10 bg-[#F9F8F3] p-6 md:p-8">
@@ -177,7 +177,7 @@ export default function ResearchPage() {
               </div>
             </div>
             <PullQuote>
-              An AI system that makes clinicians feel redundant has failed — regardless of its accuracy metrics. Our measure of success is a clinician who feels more informed, more confident, and more capable because LifeBack™ is in the room.
+              An AI system that makes clinicians feel redundant has failed — regardless of its accuracy metrics. Our measure of success is a clinician who feels more informed, more confident, and more capable because SIPL is in the room.
             </PullQuote>
           </div>
         </EditorialSection>
@@ -189,7 +189,7 @@ export default function ResearchPage() {
         <EditorialSection title="Do no harm — built into the architecture.">
           <div className="grid gap-8">
             <p>
-              Patient safety is not a feature layer added on top of LifeBack™ — it is a structural constraint that shapes every design decision from the ground up. Safety reviews precede every release. No output that could directly precipitate patient harm ships without clinical sign-off.
+              Patient safety is not a feature layer added on top of SIPL — it is a structural constraint that shapes every design decision from the ground up. Safety reviews precede every release. No output that could directly precipitate patient harm ships without clinical sign-off.
             </p>
             <CardGrid cards={safetyCards} />
           </div>
