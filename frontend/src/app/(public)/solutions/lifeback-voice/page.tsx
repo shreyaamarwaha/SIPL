@@ -3,8 +3,8 @@ import { CardGrid, EditorialHero, EditorialSection } from "@/components/layout/E
 import { generateSeoMetadata } from "@/shared/lib/seo";
 
 export const metadata = generateSeoMetadata({
-  title: "LifeBack™ Voice | SIPL",
-  description: "Voice analysis as a behavioural signal stream within LifeBack™ multimodal assessment.",
+  title: "SIPL Voice | SIPL",
+  description: "Voice analysis as a behavioural signal stream within SIPL multimodal assessment.",
   path: "/solutions/lifeback-voice",
 });
 
@@ -23,11 +23,11 @@ const voiceCards = [
   },
 ];
 
-export default function LifeBackVoicePage() {
+export default function SIPLVoicePage() {
   return (
     <PublicLayout>
       <div className="bg-[#F5F8FC]">
-        <EditorialHero eyebrow="LifeBack™ Voice" title="Voice as a behavioural signal stream.">
+        <EditorialHero eyebrow="SIPL Voice" title="Voice as a behavioural signal stream.">
           <p>
             Voice analysis contributes acoustic, linguistic, behavioural, and longitudinal signal streams that can help surface clinically relevant patterns within a broader multimodal assessment.
           </p>
@@ -37,7 +37,7 @@ export default function LifeBackVoicePage() {
             Speech carries more than words. Acoustic patterns, linguistic structure, timing, affect, and longitudinal variation can all contribute to a richer understanding of mental and nervous system health.
           </p>
         </EditorialSection>
-        <EditorialSection title="What voice contributes to LifeBack™.">
+        <EditorialSection title="What voice contributes to SIPL.">
           <CardGrid cards={voiceCards} />
         </EditorialSection>
         <EditorialSection title="Voice is one part of the multimodal system.">

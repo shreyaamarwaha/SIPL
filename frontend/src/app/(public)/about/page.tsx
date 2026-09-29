@@ -29,7 +29,7 @@ export default function AboutPage() {
       <div className="bg-[#F5F8FC]">
         <EditorialHero eyebrow="About SIPL" title="Clinical-grade AI infrastructure for mental and nervous system healthcare.">
           <p>
-            SIPL builds multimodal clinical intelligence systems for psychiatry and neurology, with LifeBack™ as its flagship neurobiomarker platform for objective, actionable clinical intelligence.
+            SIPL builds multimodal clinical intelligence systems for psychiatry and neurology, with SIPL as its flagship neurobiomarker platform for objective, actionable clinical intelligence.
           </p>
         </EditorialHero>
 

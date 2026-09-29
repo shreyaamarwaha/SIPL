@@ -26,7 +26,7 @@ export default function LoginPage() {
               </div>
 
               <h1 className="text-2xl font-serif text-[#0A0C10] text-center mb-2">Welcome Back</h1>
-              <p className="text-center text-[#4A5568] mb-8 text-sm">Secure access to the LifeBack™ Platform.</p>
+              <p className="text-center text-[#4A5568] mb-8 text-sm">Secure access to the SIPL Platform.</p>
 
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>

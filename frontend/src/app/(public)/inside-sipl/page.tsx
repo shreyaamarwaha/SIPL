@@ -77,7 +77,7 @@ const longTermCards = [
   },
   {
     title: "Interoperability as a strategic asset",
-    body: "We build on open standards — FHIR R4, HL7, ABDM, SNOMED — because the future of healthcare is connected, not siloed. LifeBack™ is designed to integrate, extend, and federate — not to lock hospitals into a proprietary ecosystem.",
+    body: "We build on open standards — FHIR R4, HL7, ABDM, SNOMED — because the future of healthcare is connected, not siloed. SIPL is designed to integrate, extend, and federate — not to lock hospitals into a proprietary ecosystem.",
   },
   {
     title: "The best ideas come from the bedside",

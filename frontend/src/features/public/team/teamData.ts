@@ -10,6 +10,18 @@ export type TeamMember = {
 
 export const teamMembers: TeamMember[] = [
   {
+    id: "anupama-singh",
+    name: "Dr. Anupama Singh",
+    position: "Clinical Research",
+    shortBio:
+      "Clinical researcher contributing domain expertise to SIPL’s responsible mental-health and clinical intelligence work.",
+    initials: "AS",
+    fullBio: [
+      "Dr. Anupama Singh contributes clinical and research expertise to Sequoia Insilico Pvt. Ltd.’s work in mental-health assessment and clinical intelligence.",
+      "Her role supports the translation of careful research into clinically meaningful, responsible technology and strengthens collaboration between healthcare practice and multidisciplinary research.",
+    ],
+  },
+  {
     id: "harsh-bhasin",
     name: "Dr. Harsh Bhasin",
     position: "Co-PI (ML Engineer)",
@@ -58,7 +70,7 @@ export const teamMembers: TeamMember[] = [
     initials: "SS",
     fullBio: [
       "Saurabh Singh is an undergraduate student pursuing a B.Tech. in Computer Science and Engineering at Bennett University, India. He is an AWS Certified Solutions Architect – Associate and a full-stack developer with interests in software engineering, artificial intelligence, cloud computing, and digital healthcare technologies.",
-      "He currently serves as a Frontend Developer Intern at Sequoia Insilico Pvt. Ltd., where he contributes to LifeBack, an AI-powered mental-health platform for depression assessment and monitoring. His work focuses on building scalable, user-centric web applications and supporting the translation of research into practical healthcare solutions.",
+      "He currently serves as a Frontend Developer Intern at Sequoia Insilico Pvt. Ltd., where he contributes to SIPL, an AI-powered mental-health platform for depression assessment and monitoring. His work focuses on building scalable, user-centric web applications and supporting the translation of research into practical healthcare solutions.",
       "In addition to software development, he is involved in computational mental-health research and is co-authoring a Systematic Literature Review on video-based depression detection and monitoring using computer vision, deep learning, multimodal learning, and foundation models.",
       "Beyond his technical contributions, he serves as President of Dean Career Cloud at Bennett University, previously served as Head of Technology for the GeeksforGeeks Student Chapter at Bennett University, and mentors contributors in the AI Agents Track of GirlScript Summer of Code 2026. His broader interests include AI for healthcare, scalable software systems, and the development of technology-driven solutions with meaningful real-world impact.",
     ],

@@ -1,25 +1,26 @@
 import { PublicLayout } from "@/layouts/PublicLayout";
 import { CardGrid, EditorialHero, EditorialSection } from "@/components/layout/EditorialSections";
 import { generateSeoMetadata } from "@/shared/lib/seo";
+import Link from "next/link";
 
 export const metadata = generateSeoMetadata({
-  title: "Publications & IP | SIPL",
-  description: "SIPL scientific output, patents, intellectual property, and research collaboration structure.",
+  title: "Evidence & IP | SIPL",
+  description: "Reported clinical evaluation, intellectual property, and grant milestones from Sequoia Insilico.",
   path: "/inside-sipl/publications",
 });
 
-const emptyStates = [
+const evidenceRecords = [
   {
-    title: "Peer-reviewed publications",
-    body: "Publication details will be added here with titles, authors, venues, citations, DOI links, and approved PDFs.",
+    title: "Hospital evaluation",
+    body: "SIPL reports 97% agreement with the HAM-D clinical standard across 500+ assessments at RML Hospital. Agreement is a reported validation metric, not a claim of diagnostic accuracy. Study design, cohort details, and limitations should be reviewed alongside the headline figure.",
   },
   {
-    title: "Patents and intellectual property",
-    body: "Patent details will be added here with titles, application or grant numbers, jurisdictions, public summaries, and technology areas.",
+    title: "Patent and IP",
+    body: "SIPL reports Indian Patent No. 202511025669 and an active WIPO PCT filing. Patent scope, ownership, jurisdiction, and current status should be confirmed through the relevant patent records during diligence.",
   },
   {
-    title: "Research collaborations",
-    body: "Research collaboration details will be added here once institution names, partnership scopes, and logo permissions are approved for public display.",
+    title: "Grant-backed development",
+    body: "SIPL reports support through the BIRAC Grand Challenges India GCE-III programme for product development and validation. Grant support is not itself evidence of clinical performance or commercial adoption.",
   },
 ];
 
@@ -27,13 +28,19 @@ export default function InsideSiplPublicationsPage() {
   return (
     <PublicLayout>
       <div className="bg-[#F5F8FC]">
-        <EditorialHero eyebrow="Publications & IP" title="Scientific output, patents, and research collaborations.">
+        <EditorialHero eyebrow="Evidence & IP" title="Milestones with the context to assess them.">
           <p>
-            SIPL advances clinical AI through research, publication, intellectual property, and institutional collaboration.
+            We share reported validation, intellectual property, and grant milestones with clear limits. Investors and research partners should consider the underlying methods and records alongside each headline claim.
           </p>
         </EditorialHero>
-        <EditorialSection title="Publication and IP records.">
-          <CardGrid cards={emptyStates} />
+        <EditorialSection title="Reported evidence and milestones.">
+          <CardGrid cards={evidenceRecords} />
+          <p className="mt-10 max-w-3xl leading-7 text-[#001B65]/70">
+            A public bibliography and detailed validation protocol are not listed on this page. For supporting records, methodology, and current IP documentation, please contact SIPL.
+          </p>
+          <Link href="/contact" className="mt-6 inline-flex min-h-12 items-center rounded-full bg-[#001B65] px-6 text-sm font-bold text-white transition hover:bg-[#147c79]">
+            Request supporting information
+          </Link>
         </EditorialSection>
       </div>
     </PublicLayout>

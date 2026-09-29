@@ -5,7 +5,7 @@ export default function FaqPage() {
     <PublicRoutePage
       eyebrow="Governance"
       title="FAQ"
-      description="Frequently asked questions about SIPL, LifeBack™, and the clinical screening infrastructure behind the platform."
+      description="Frequently asked questions about SIPL, SIPL, and the clinical screening infrastructure behind the platform."
     />
   );
 }

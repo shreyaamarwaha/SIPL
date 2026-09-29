@@ -5,7 +5,7 @@ export default function TermsPage() {
     <PublicRoutePage
       eyebrow="Governance"
       title="Terms of Use"
-      description="Terms governing access to SIPL digital properties, LifeBack™ materials, and platform-related resources."
+      description="Terms governing access to SIPL digital properties, SIPL materials, and platform-related resources."
     />
   );
 }
