@@ -44,21 +44,35 @@ export function InvestorLandingPage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[500px]" aria-label="Clinical, behavioural, and genomic research signals connected into one evidence layer">
+          <div className="relative mx-auto w-full max-w-[500px]" aria-label="Clinical, genomic, molecular, and phenotypic information enters SIPL's BioAI intelligence layer and supports evidence, insights, stratification, and outcomes">
             <div className="absolute inset-8 rounded-full bg-[#8ed5c6]/25 blur-3xl" />
             <div className="relative rounded-[2rem] border border-[#147c79]/15 bg-white/80 p-5 shadow-[0_32px_90px_rgba(16,47,73,0.12)] backdrop-blur">
               <div className="flex items-center justify-between border-b border-[#102f49]/10 pb-4"><div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#147c79]">SIPL · Research framework</p><h2 className="mt-1 text-lg font-semibold">A connected view of biology</h2></div><Network className="h-5 w-5 text-[#147c79]" /></div>
-              <div className="relative my-5 grid min-h-[220px] place-items-center overflow-hidden rounded-2xl bg-[#eff7f5]">
-                <div className="absolute h-48 w-48 rounded-full border border-dashed border-[#147c79]/30" />
-                <div className="absolute h-32 w-32 rounded-full border border-[#147c79]/25" />
-                <div className="absolute h-2 w-2 rounded-full bg-[#cfaa59] shadow-[0_0_0_8px_rgba(207,170,89,.14)]" />
-                <div className="absolute left-[13%] top-[23%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Clinical</div>
-                <div className="absolute right-[11%] top-[26%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Behavioural</div>
-                <div className="absolute bottom-[18%] left-[22%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Genomic</div>
-                <div className="absolute bottom-[17%] right-[18%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Outcomes</div>
-                <div className="absolute h-20 w-20 rounded-full bg-[#147c79] text-white grid place-items-center text-center text-[10px] font-bold uppercase leading-4 tracking-widest shadow-xl">Evidence<br/>layer</div>
+              <div className="relative my-5 hidden h-[300px] overflow-hidden rounded-2xl bg-[#eff7f5] md:block">
+                <div className="absolute left-1/2 top-[43%] h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#147c79]/30" />
+                <div className="absolute left-1/2 top-[43%] h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#147c79]/25" />
+                <div className="absolute left-1/2 top-[43%] h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#cfaa59] shadow-[0_0_0_8px_rgba(207,170,89,.14)]" />
+                <div className="absolute left-[8%] top-[20%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Clinical</div>
+                <div className="absolute right-[8%] top-[20%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Genomic</div>
+                <div className="absolute bottom-[27%] left-[8%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Molecular</div>
+                <div className="absolute bottom-[27%] right-[8%] rounded-full border border-white bg-white px-3 py-2 text-xs font-semibold shadow-sm">Phenotypic</div>
+                <div className="absolute left-1/2 top-[43%] grid h-24 w-24 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#147c79] text-center text-[10px] font-bold uppercase leading-4 tracking-[0.12em] text-white shadow-xl">BioAI<br />Intelligence</div>
+                <div className="absolute inset-x-3 bottom-3 flex items-center justify-center gap-1.5">
+                  {["Evidence", "Insights", "Stratification", "Outcomes"].map((output) => <span key={output} className="rounded-full border border-[#147c79]/15 bg-white/90 px-2.5 py-1.5 text-[9px] font-semibold text-[#315c60]">{output}</span>)}
+                </div>
               </div>
-              <div className="flex items-center gap-3 rounded-xl bg-[#102f49] px-4 py-3 text-white"><ShieldCheck className="h-5 w-5 shrink-0 text-[#8ed5c6]" /><p className="text-xs leading-5 text-white/80">Research-led · Human-supervised · Evidence-linked</p></div>
+              <div className="my-5 rounded-2xl bg-[#eff7f5] p-4 md:hidden">
+                <div className="grid grid-cols-2 gap-2">
+                  {["Clinical", "Genomic", "Molecular", "Phenotypic"].map((input) => <span key={input} className="rounded-xl border border-white bg-white px-3 py-2.5 text-center text-xs font-semibold text-[#315c60]">{input}</span>)}
+                </div>
+                <div className="flex justify-center py-2 text-[#147c79]"><ArrowDown className="h-4 w-4" /></div>
+                <div className="mx-auto w-fit rounded-2xl bg-[#147c79] px-6 py-3 text-center text-xs font-bold uppercase leading-4 tracking-[0.12em] text-white">BioAI<br />Intelligence</div>
+                <div className="flex justify-center py-2 text-[#147c79]"><ArrowDown className="h-4 w-4" /></div>
+                <div className="flex flex-wrap justify-center gap-1.5">
+                  {["Evidence", "Insights", "Stratification", "Outcomes"].map((output) => <span key={output} className="rounded-full border border-[#147c79]/15 bg-white/90 px-2.5 py-1.5 text-[9px] font-semibold text-[#315c60]">{output}</span>)}
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-xl bg-[#102f49] px-4 py-3 text-white"><ShieldCheck className="h-5 w-5 shrink-0 text-[#8ed5c6]" /><p className="text-xs leading-5 text-white/80">Research-led · Multimodal · Human-supervised · Evidence-linked</p></div>
             </div>
           </div>
         </div>
