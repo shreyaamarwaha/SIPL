@@ -9,12 +9,11 @@ import { cn } from "@/shared/lib/utils";
 import SIPLLogo from "@/shared/assets/SIPL_Logo.png";
 
 const navigationLinks = [
+  { label: "About", href: "/#about" },
   { label: "Science", href: "/#science" },
-  { label: "Evidence", href: "/#evidence" },
+  { label: "BioAI", href: "/#bioai" },
+  { label: "Partners", href: "/#partners" },
   { label: "Investors", href: "/#investors" },
-  { label: "Our approach", href: "/#approach" },
-  { label: "Advisory Board", href: "/#advisory-board" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -50,7 +49,7 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 w-full transition-all duration-300",
         isScrolled
-          ? "border-b border-[#001B65]/10 bg-[#F5F8FC]/82 shadow-[0_12px_34px_rgba(0,27,101,0.08)] backdrop-blur-xl"
+          ? "border-b border-[#102F49]/10 bg-[#F5F8FC]/90 shadow-[0_12px_34px_rgba(16,47,73,0.07)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       )}
     >
@@ -71,12 +70,12 @@ export function Header() {
               className="object-contain"
             />
           </span>
-          <span className="font-heading text-[22px] font-bold tracking-[0.12em] text-[#001B65]">
+          <span className="font-heading text-[22px] font-bold tracking-[0.12em] text-[#102F49]">
             SIPL
           </span>
         </Link>
 
-        <nav className="hidden max-w-[46rem] flex-wrap items-center justify-end gap-x-9 gap-y-1 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden max-w-[46rem] flex-wrap items-center justify-end gap-x-7 gap-y-1 lg:flex" aria-label="Primary navigation">
           {navigationLinks.map((link) => {
             const isActive = pathname === link.href;
 
@@ -85,8 +84,8 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "py-2 font-heading text-[15px] font-semibold text-[#001B65] transition-colors hover:text-[#001B65] hover:underline hover:decoration-[#D4AF37] hover:decoration-2 hover:underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F5F8FC]",
-                  isActive && "underline decoration-[#D4AF37] decoration-2 underline-offset-8"
+                  "py-2 font-heading text-[14px] font-medium text-[#102F49] transition-colors hover:text-[#147C79] hover:underline hover:decoration-[#147C79] hover:decoration-2 hover:underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#147C79] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F5F8FC]",
+                  isActive && "underline decoration-[#147C79] decoration-2 underline-offset-8"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -96,13 +95,13 @@ export function Header() {
           })}
         </nav>
 
-        <Link href="/#contact" className="hidden min-h-11 items-center rounded-full bg-[#147c79] px-5 text-sm font-bold text-white lg:inline-flex">
-          Partner with us
+        <Link href="/#contact" className="hidden min-h-11 items-center rounded-full bg-[#102F49] px-5 text-sm font-semibold text-white transition hover:bg-[#147C79] lg:inline-flex">
+          Contact
         </Link>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-[4px] border border-[#001B65]/15 text-[#001B65] lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#102F49]/15 text-[#102F49] lg:hidden"
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((current) => !current)}
@@ -119,7 +118,7 @@ export function Header() {
       >
         <nav
           aria-label="Mobile navigation"
-          className="max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-[#001B65]/10 bg-[#F5F8FC]/95 px-6 pb-8 pt-5 shadow-[0_18px_44px_rgba(0,27,101,0.12)] backdrop-blur-xl"
+          className="max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-[#102F49]/10 bg-[#F5F8FC]/95 px-6 pb-8 pt-5 shadow-[0_18px_44px_rgba(16,47,73,0.12)] backdrop-blur-xl"
         >
           <div className="grid gap-1">
             {navigationLinks.map((link) => {
@@ -131,8 +130,8 @@ export function Header() {
                   href={link.href}
                   onClick={closeMenu}
                   className={cn(
-                    "rounded-[4px] py-3 font-heading text-[18px] font-semibold text-[#001B65] hover:text-[#001B65] hover:underline hover:decoration-[#D4AF37] hover:underline-offset-4",
-                    isActive && "underline decoration-[#D4AF37] decoration-2 underline-offset-4"
+                    "rounded-md py-3 font-heading text-[18px] font-semibold text-[#102F49] hover:text-[#147C79] hover:underline hover:decoration-[#147C79] hover:underline-offset-4",
+                    isActive && "underline decoration-[#147C79] decoration-2 underline-offset-4"
                   )}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -141,8 +140,8 @@ export function Header() {
               );
             })}
 
-            <Link href="/#contact" onClick={closeMenu} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-[#147c79] px-6 text-sm font-bold text-white">
-              Partner with us
+            <Link href="/#contact" onClick={closeMenu} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-[#102F49] px-6 text-sm font-bold text-white">
+              Contact SIPL
             </Link>
           </div>
         </nav>

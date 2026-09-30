@@ -12,15 +12,15 @@ export const metadata = generateSeoMetadata({
 const evidenceRecords = [
   {
     title: "Hospital evaluation",
-    body: "SIPL reports 97% agreement with the HAM-D clinical standard across 500+ assessments at RML Hospital. Agreement is a reported validation metric, not a claim of diagnostic accuracy. Study design, cohort details, and limitations should be reviewed alongside the headline figure.",
+    body: "SIPL reports 91% agreement with clinician-rated HAM-D across 500+ assessments in a clinical validation collaboration with ABVIMS and Dr. RML Hospital, New Delhi. Agreement is a reported validation metric, not a claim of diagnostic accuracy. Study design, cohort details, and limitations should be reviewed alongside the headline figure.",
   },
   {
     title: "Patent and IP",
-    body: "SIPL reports Indian Patent No. 202511025669 and an active WIPO PCT filing. Patent scope, ownership, jurisdiction, and current status should be confirmed through the relevant patent records during diligence.",
+    body: "SIPL reports published Indian Patent No. 202511025669 and a WIPO PCT application in process. Patent scope, ownership, jurisdiction, and current status should be confirmed through the relevant patent records during diligence.",
   },
   {
     title: "Grant-backed development",
-    body: "SIPL reports support through the BIRAC Grand Challenges India GCE-III programme for product development and validation. Grant support is not itself evidence of clinical performance or commercial adoption.",
+    body: "SIPL reports a ₹50L+ equity-free award through Grand Challenges India GCE-III, supported by BIRAC, DBT, and the Bill & Melinda Gates Foundation. Grant support is not itself evidence of clinical performance or commercial adoption.",
   },
 ];
 
