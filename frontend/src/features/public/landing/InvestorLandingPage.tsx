@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { ContactForm } from "@/features/public/contact/ContactForm";
 import { teamMembers } from "@/features/public/team/teamData";
+import { HeroStoryline } from "@/features/public/landing/components/HeroStoryline";
 
 const proofPoints = [
   ["91%", "HAM-D agreement, reported"],
@@ -64,6 +65,7 @@ export function InvestorLandingPage() {
   return (
     <div className="overflow-hidden bg-[#F5F8FC] text-[#10243B] selection:bg-[#DFF1EC]">
       <section className="light-hero relative flex min-h-[min(900px,calc(100svh-80px))] flex-col justify-center px-6 pb-10 pt-32 md:px-10 lg:px-16">
+        <HeroStoryline />
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_84%_16%,rgba(20,124,121,.09),transparent_34%),radial-gradient(ellipse_at_15%_86%,rgba(212,175,55,.07),transparent_32%)]" />
         <div className="relative mx-auto w-full max-w-[1120px] text-center">
           <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.2em] text-[#147C79]">Sequoia Insilico Pvt. Ltd. · BioAI for brain &amp; mental health</p>
