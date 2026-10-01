@@ -1,11 +1,49 @@
-import { PublicRoutePage } from "@/components/layout/PublicRoutePage";
+import { InformationPage } from "@/components/layout/InformationPage";
+import { generateSeoMetadata } from "@/shared/lib/seo";
+
+export const metadata = generateSeoMetadata({
+  title: "Responsible AI | SIPL",
+  description: "How SIPL approaches human oversight, evidence, transparency, and responsible use of AI in health research.",
+  path: "/ethical-ai",
+});
+
+const sections = [
+  {
+    title: "People remain accountable",
+    paragraphs: [
+      "AI can help organise complex evidence. It does not take responsibility for a clinical decision. Qualified professionals remain responsible for care, and research teams remain responsible for how a system is designed, evaluated, and used.",
+      "SIPL’s public website and LifeBack preview do not provide diagnosis or treatment. Any future clinical workflow needs a clearly defined role for the system and the people who oversee it.",
+    ],
+  },
+  {
+    title: "Evidence before deployment",
+    paragraphs: [
+      "A model should be evaluated for its specific intended use before it informs a real workflow. Evaluation should test data quality, performance, limitations, and behaviour across the populations and settings where it may be used.",
+      "We do not treat a promising result in one dataset as proof that a system is ready for every clinic or population.",
+    ],
+  },
+  {
+    title: "Make limits and uncertainty visible",
+    paragraphs: [
+      "Users need to understand what information contributes to an output, what the output can and cannot say, and when evidence is incomplete. Poor-quality or missing inputs should not be presented as certainty.",
+    ],
+  },
+  {
+    title: "Respect the people represented in data",
+    paragraphs: [
+      "Research involving health, behavioural, or genomic information requires appropriate permission, governance, and safeguards. Data should be handled for a clear purpose, with access limited to the people and services that need it.",
+      "Population representation is part of model quality. We aim to identify where evidence is limited and where further validation is needed rather than implying universal performance.",
+    ],
+  },
+  {
+    title: "Review the system over time",
+    paragraphs: [
+      "Responsible use does not end when a model is built. Research and deployments should have processes to review performance, investigate concerns, correct problems, and pause use when the evidence no longer supports it.",
+      "These principles describe SIPL’s approach; they are not a claim of certification or a substitute for product-specific governance documentation.",
+    ],
+  },
+];
 
 export default function EthicalAiPage() {
-  return (
-    <PublicRoutePage
-      eyebrow="Governance"
-      title="Ethical AI"
-      description="SIPL's position on human-in-the-loop AI, non-diagnostic screening, and clinical responsibility."
-    />
-  );
+  return <InformationPage eyebrow="Responsible AI" title="Intelligence should strengthen human judgement." description="SIPL’s approach to building and evaluating AI for health research starts with clear purpose, meaningful evidence, and accountable human oversight." sections={sections} updated="1 October 2026" />;
 }

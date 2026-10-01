@@ -1526,7 +1526,9 @@ footer .wrap{gap:20px}
     var a = e.target.closest('a[href^="/"]');
     if(a){
       var path = new URL(a.href, window.location.href).pathname;
-      if(a.target === '_top' || path === '/research' || path === '/lifeback') return;
+      var livePages = {'/research':1,'/lifeback':1,'/blog':1,'/calendar':1,'/career':1,'/careers':1,'/ethical-ai':1,'/faq':1,'/privacy':1,'/security':1,'/terms':1};
+      if(a.target === '_top') return;
+      if(livePages[path]){ a.target = '_top'; return; }
       e.preventDefault();
       showToast('Not built in this preview yet — ' + a.getAttribute('href'));
     }
@@ -1593,6 +1595,7 @@ window.addEventListener('hashchange',route);route();})();
     <h2 id="sipl-contact-title">Let's talk.</h2>
     <p id="sipl-contact-description" class="sipl-contact-description">Tell us your objective and we'll route you to the right person. We read every message and reply from New Delhi.</p>
     <form id="siplContactForm" class="sipl-contact-form">
+      <div class="sipl-contact-honeypot" aria-hidden="true"><label>Leave this field blank<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
       <label>Name<input name="name" type="text" autocomplete="name" required></label>
       <label>Email<input name="email" type="email" autocomplete="email" required></label>
       <label><span class="sipl-contact-label-text">Organisation <em>(optional)</em></span><input name="organisation" type="text" autocomplete="organization"></label>
@@ -1610,7 +1613,7 @@ window.addEventListener('hashchange',route);route();})();
       </label>
       <label>Message<textarea name="message" rows="4" required placeholder="Tell us a little about your objective, timeline, or question."></textarea></label>
       <button class="btn btn-sky sipl-contact-submit" type="submit">Send message</button>
-      <p class="sipl-contact-success" id="siplContactSuccess" role="status" hidden>Thanks — your message is ready for the SIPL team. This preview does not send submissions yet.</p>
+      <p class="sipl-contact-success" id="siplContactSuccess" role="status" aria-live="polite" hidden></p>
     </form>
   </section>
 </div>
@@ -1636,7 +1639,9 @@ body.sipl-contact-open{overflow:hidden}
 .sipl-contact-form textarea{resize:vertical;min-height:98px}
 .sipl-contact-form input:focus,.sipl-contact-form select:focus,.sipl-contact-form textarea:focus{border-color:#147c79;background:#fff;box-shadow:0 0 0 3px rgba(20,124,121,.13)}
 .sipl-contact-submit{width:100%;margin-top:2px;justify-content:center;border:0;cursor:pointer}
-.sipl-contact-success{margin:0;padding:12px 14px;border-radius:10px;background:#e8f5f0;border:1px solid #b8dfd2;color:#176b5d;font-size:13px;line-height:1.45}
+ .sipl-contact-success{margin:0;padding:12px 14px;border-radius:10px;background:#e8f5f0;border:1px solid #b8dfd2;color:#176b5d;font-size:13px;line-height:1.45}
+ .sipl-contact-success.error{background:#fff0f0;border-color:#e4b7b7;color:#7c2020}
+ .sipl-contact-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 @media(max-width:560px){.sipl-contact-modal{padding:12px}.sipl-contact-card{max-height:calc(100vh - 24px);padding:26px 20px 20px;border-radius:20px}.sipl-contact-close{top:12px;right:12px}.sipl-contact-kicker{margin-right:46px}.sipl-contact-description{font-size:14px;margin-bottom:20px}}
 @media(prefers-reduced-motion:reduce){.sipl-contact-form input,.sipl-contact-form select,.sipl-contact-form textarea{transition:none}}
 </style>
@@ -1672,10 +1677,32 @@ body.sipl-contact-open{overflow:hidden}
   closeButtons.forEach(function(button){button.addEventListener('click',closeModal);});
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape' && modal.classList.contains('is-open')) closeModal();});
   if(form){
-    form.addEventListener('submit',function(ev){
+    form.addEventListener('submit',async function(ev){
       ev.preventDefault();
+      if(!form.reportValidity()) return;
+      var button=form.querySelector('button[type="submit"]');
       var success=document.getElementById('siplContactSuccess');
-      if(success) success.hidden=false;
+      var originalLabel=button.textContent;
+      var values=new FormData(form);
+      var message='Objective: '+String(values.get('objective')||'Other')+' | Organisation: '+String(values.get('organisation')||'Not provided')+' | '+String(values.get('message')||'');
+      button.disabled=true;
+      button.textContent='Sending…';
+      success.classList.remove('error');
+      success.hidden=false;
+      success.textContent='Sending your message…';
+      try{
+        var response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:String(values.get('name')||'').trim(),email:String(values.get('email')||'').trim(),message:message,website:String(values.get('website')||'')})});
+        var result=await response.json();
+        if(!response.ok) throw new Error(result.message||'We could not send your message. Please try again.');
+        success.textContent='Thank you. Your message has been sent to the SIPL team.';
+        form.reset();
+      }catch(error){
+        success.classList.add('error');
+        success.textContent=error.message||'We could not send your message. Please try again shortly.';
+      }finally{
+        button.disabled=false;
+        button.textContent=originalLabel;
+      }
     });
   }
 })();
