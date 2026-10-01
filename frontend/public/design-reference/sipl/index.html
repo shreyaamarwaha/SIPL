@@ -928,7 +928,7 @@ footer .wrap{gap:20px}
             </ul>
           </div>
         </div>
-        <p style="margin:14px 0 0"><a class="tlink" href="/research">View all publications</a></p>
+        <p style="margin:14px 0 0"><a class="tlink" href="/research" target="_top">View all publications</a></p>
       </div>
     </div>
   </div>
@@ -1525,6 +1525,8 @@ footer .wrap{gap:20px}
   document.addEventListener('click', function(e){
     var a = e.target.closest('a[href^="/"]');
     if(a){
+      var path = new URL(a.href, window.location.href).pathname;
+      if(a.target === '_top' || path === '/research' || path === '/lifeback') return;
       e.preventDefault();
       showToast('Not built in this preview yet — ' + a.getAttribute('href'));
     }
