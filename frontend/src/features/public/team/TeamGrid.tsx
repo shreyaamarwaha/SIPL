@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, UserRound, X } from "lucide-react";
 import { teamMembers, type TeamMember } from "./teamData";
 
 const focusableSelector =
@@ -90,9 +90,9 @@ export function TeamGrid() {
             ) : (
               <div
                 aria-hidden="true"
-                className="flex h-24 w-24 items-center justify-center rounded-full border border-[#001B65]/15 bg-[#001B65] font-heading text-2xl font-semibold tracking-[-0.02em] text-[#F9F8F3] shadow-[inset_0_0_0_5px_rgba(212,175,55,0.18)]"
+                className="flex h-24 w-24 items-center justify-center rounded-full border border-[#001B65]/15 bg-[#E7F1EF] text-[#147C79]"
               >
-                {member.initials}
+                <UserRound className="h-10 w-10" strokeWidth={1.5} />
               </div>
             )}
 
