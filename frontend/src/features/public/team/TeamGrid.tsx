@@ -81,7 +81,7 @@ export function TeamGrid() {
               <div className="relative h-24 w-24 overflow-hidden rounded-full border border-[#001B65]/12">
                 <Image
                   src={member.image}
-                  alt=""
+                  alt={member.name}
                   fill
                   sizes="96px"
                   className="object-cover"
