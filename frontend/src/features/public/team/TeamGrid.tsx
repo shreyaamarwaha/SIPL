@@ -75,50 +75,50 @@ export function TeamGrid() {
         {teamMembers.map((member) => (
           <article
             key={member.id}
-            className="flex min-h-[390px] flex-col border border-[#001B65]/12 bg-[#F9F8F3] p-6 shadow-[0_14px_36px_rgba(0,27,101,0.06)] md:p-8"
+            className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-[#DCE4EA] bg-white shadow-[0_14px_36px_rgba(16,36,59,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(16,36,59,0.12)]"
           >
             {member.image ? (
-              <div className="relative h-24 w-24 overflow-hidden rounded-full border border-[#001B65]/12">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#ECEFED]">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  sizes="96px"
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  className="object-cover transition duration-500 group-hover:scale-[1.025]"
                 />
               </div>
             ) : (
               <div
                 aria-hidden="true"
-                className="flex h-24 w-24 items-center justify-center rounded-full border border-[#001B65]/15 bg-[#E7F1EF] text-[#147C79]"
+                className="flex aspect-[4/3] w-full items-center justify-center bg-[#ECEFED] text-[#147C79]"
               >
-                <UserRound className="h-10 w-10" strokeWidth={1.5} />
+                <UserRound className="h-16 w-16" strokeWidth={1.2} />
               </div>
             )}
 
-            <div className="mt-7">
+            <div className="flex flex-1 flex-col p-6 md:p-7">
               <h3 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-[#001B65]">
                 {member.name}
               </h3>
               <p className="mt-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#001B65]/62">
                 {member.position}
               </p>
+
+              <p className="mt-4 line-clamp-4 flex-1 text-[15px] leading-7 text-[#001B65]/72">
+                {member.shortBio}
+              </p>
+
+              <button
+                type="button"
+                className="mt-6 inline-flex min-h-11 w-fit items-center gap-2 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-[#147C79] underline decoration-[#8ED5C6] decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#147C79] focus-visible:ring-offset-4"
+                aria-haspopup="dialog"
+                aria-expanded={activeMember?.id === member.id}
+                onClick={(event) => openDialog(member, event.currentTarget)}
+              >
+                Read full bio
+                <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+              </button>
             </div>
-
-            <p className="mt-5 line-clamp-4 text-[15px] leading-7 text-[#001B65]/72">
-              {member.shortBio}
-            </p>
-
-            <button
-              type="button"
-              className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-6 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-[#001B65] underline decoration-[#D4AF37] decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F9F8F3]"
-              aria-haspopup="dialog"
-              aria-expanded={activeMember?.id === member.id}
-              onClick={(event) => openDialog(member, event.currentTarget)}
-            >
-              Read full bio
-              <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
-            </button>
           </article>
         ))}
       </div>

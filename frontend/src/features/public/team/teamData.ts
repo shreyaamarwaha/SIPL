@@ -16,7 +16,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Clinical researcher contributing domain expertise to SIPL’s responsible mental-health and clinical intelligence work.",
     initials: "AS",
-    image: "/team/anupama-singh.jpg",
+    image: "/team/anupama-singh-studio.jpg",
     fullBio: [
       "Dr. Anupama Singh contributes clinical and research expertise to Sequoia Insilico Pvt. Ltd.’s work in mental-health assessment and clinical intelligence.",
       "Her role supports the translation of careful research into clinically meaningful, responsible technology and strengthens collaboration between healthcare practice and multidisciplinary research.",
@@ -29,7 +29,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Researcher and academic specializing in deep learning, algorithms, medical imaging, and computational mental health.",
     initials: "HB",
-    image: "/team/harsh-bhasin.jpeg",
+    image: "/team/harsh-bhasin-studio.jpg",
     fullBio: [
       "Dr. Harsh Bhasin is a researcher and academic specializing in deep learning, algorithms, and medical imaging, with over a decade of experience in computational mental health. He is currently associated with Bennett University, India, and previously served as a deep learning consultant and faculty member at institutions including Jamia Hamdard and Delhi Technological University.",
       "He earned his Ph.D. from Jawaharlal Nehru University, New Delhi, under the prestigious Visvesvaraya Fellowship of the Ministry of Electronics and Information Technology, Government of India. His doctoral work focused on machine learning-based diagnosis and conversion prediction of Mild Cognitive Impairment. He has also contributed to a government-funded collaborative project on depression diagnosis involving SIPL and Ram Manohar Lohia Hospital, advancing data-driven neuropsychiatric assessment.",
@@ -43,7 +43,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Researcher and data scientist working across machine learning, affective computing, multimodal learning, and computational psychiatry.",
     initials: "TS",
-    image: "/team/tejwant-singh.jpg",
+    image: "/team/tejwant-singh-studio.jpg",
     fullBio: [
       "Tejwant Singh is a researcher and data scientist specializing in machine learning, affective computing, and computational psychiatry. He is currently associated with Sequoia Insilico Pvt. Ltd., New Delhi, where he contributes to data-driven neuropsychiatric assessment. He completed his B.Tech. in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning from Manav Rachna University in 2025.",
       "His research spans a broad frontier at the intersection of multimodal learning and psychiatric diagnostics, encompassing EEG-based disorder modelling, audio-acoustic and linguistic feature fusion, cross-modal representation learning, and genomic transferability across psychiatric conditions. A central theme of his work is the construction of modality-bridged latent spaces—shared representations learned across heterogeneous clinical signals—enabling robust diagnosis and transfer across disorders such as Major Depressive Disorder and PTSD.",
@@ -57,7 +57,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Computer science student and AI researcher with experience in medical informatics, full-stack development, and responsible AI.",
     initials: "AS",
-    image: "/team/ankit-singh.jpeg",
+    image: "/team/ankit-singh-studio.jpg",
     fullBio: [
       "Ankit Singh is a final-year B.Tech. student in Computer Science and Engineering at Echelon Institute of Technology, Haryana, with over eight months of research experience in medical informatics and AI. His interests include machine learning, deep learning, model interpretability, scalable oversight, responsible AI deployment, and full-stack development.",
       "He previously served as a Data Scientist and ML Research Intern at Sequoia Insilico Pvt. Ltd., where he worked under Dr. Harsh Bhasin on medical informatics and neurodegenerative-disease analytics. There, he built an end-to-end tuberculosis detection pipeline from chest X-rays achieving 92% recall and developed Alzheimer’s progression models reaching approximately 85% AUC using PCA-based feature reduction and ensemble methods. He also contributed code, model implementations, and notebooks to four nationally published AI and computer-science textbooks from Atlantic Publishers, Apress, BPB, and New Age International.",
@@ -72,7 +72,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Full-stack developer and AWS Certified Solutions Architect contributing to SIPL’s user-facing healthcare applications.",
     initials: "SS",
-    image: "/team/saurabh-singh.jpeg",
+    image: "/team/saurabh-singh-studio.jpg",
     fullBio: [
       "Saurabh Singh is an undergraduate student pursuing a B.Tech. in Computer Science and Engineering at Bennett University, India. He is an AWS Certified Solutions Architect – Associate and a full-stack developer with interests in software engineering, artificial intelligence, cloud computing, and digital healthcare technologies.",
       "He currently serves as a Frontend Developer Intern at Sequoia Insilico Pvt. Ltd., where he contributes to SIPL, an AI-powered mental-health platform for depression assessment and monitoring. His work focuses on building scalable, user-centric web applications and supporting the translation of research into practical healthcare solutions.",
@@ -102,7 +102,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Computer Science graduate interested in machine learning, healthcare informatics, predictive analytics, and full-stack AI applications.",
     initials: "RM",
-    image: "/team/rakshita-makkar.jpeg",
+    image: "/team/rakshita-makkar-studio.jpg",
     fullBio: [
       "Rakshita Makkar is a Computer Science and Engineering graduate with a strong interest in machine learning, artificial intelligence, deep learning, and healthcare informatics. She is passionate about building intelligent, data-driven solutions for real-world challenges, particularly in healthcare, environmental monitoring, and education.",
       "She completed a Research Internship at the Centre for Health Innovations, Manav Rachna International Institute of Research and Studies, where she worked on developing a speech-based Parkinson’s disease detection system using acoustic-feature analysis and ensemble machine-learning techniques. Her research focuses on improving the early detection of Parkinson’s disease through accurate, explainable, and reliable AI models, and her work has been published in IEEE conference proceedings.",
@@ -117,7 +117,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Backend developer experienced in enterprise APIs, scalable services, AI-powered integrations, and cloud-based applications.",
     initials: "SM",
-    image: "/team/shreya-marwaha.jpeg",
+    image: "/team/shreya-marwaha-studio.jpg",
     fullBio: [
       "Shreya Marwaha is an undergraduate student pursuing a B.Tech. in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at Manav Rachna University, India. She is a backend developer with experience in Java, Spring Boot, REST APIs, PostgreSQL, and system integration, with interests spanning software engineering, enterprise technologies, artificial intelligence, and cloud-based applications.",
       "She currently works as an IT Executive – Digital & Innovation CoE at PNB MetLife, where she contributes to enterprise digital-transformation initiatives by developing and enhancing scalable backend services, integrating AI-powered solutions, and building APIs for internal business applications. Her work includes implementing secure, production-grade features, optimizing system performance, and collaborating across cross-functional teams to deliver business-critical solutions.",
@@ -132,7 +132,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Machine-learning researcher and senior data scientist experienced in production AI, MLOps, predictive modelling, and large-scale data systems.",
     initials: "VD",
-    image: "/team/vishal-deshwal.jpeg",
+    image: "/team/vishal-deshwal-studio.jpg",
     fullBio: [
       "Vishal Deshwal is a machine-learning researcher and Senior Data Scientist with strong experience in AI, deep learning, MLOps, predictive modelling, generative AI, and large-scale data systems. He has completed a Ph.D. in Machine Learning, with research focused on deep learning, neural architectures, activation functions, and practical machine-learning systems.",
       "He currently works as a Senior Data Scientist at Western Sydney University, where he has led and contributed to several production-level AI and machine-learning initiatives. His work includes developing a large-scale wildfire-prediction system that processed over 17 billion pixels, an AI-based email-triage system handling around 50,000 emails per quarter in production, and a student job-matching solution serving around 10,000 students every month.",
