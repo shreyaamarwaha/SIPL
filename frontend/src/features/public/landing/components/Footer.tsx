@@ -21,7 +21,7 @@ const trustLinks = [
   { label: "Terms", href: "/terms/" },
 ];
 
-const socialLinks = [{ label: "LinkedIn", href: "https://www.linkedin.com" }];
+const socialLinks = [{ label: "LinkedIn", href: "https://www.linkedin.com/company/sequoia-insilico-private-ltd/" }];
 
 export function Footer() {
   return (
