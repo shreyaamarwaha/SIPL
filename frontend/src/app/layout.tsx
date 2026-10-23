@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Inter, Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
+import { getPublicSiteUrl } from "@/shared/lib/seo/generateMetadata";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -22,6 +23,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getPublicSiteUrl()),
   title: "SIPL | Biopharma-grade Clinical Intelligence",
   applicationName: "SIPL",
   description:

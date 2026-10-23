@@ -33,13 +33,6 @@
 @media (max-width:900px){.team-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.team-cards,.advisors-grid,.clinic-cards{grid-template-columns:1fr}.team-card{aspect-ratio:auto}.team-card picture{display:block}.team-card img{position:relative;inset:auto;display:block;width:100%;height:auto;transform:none}.team-card-copy{position:static;transform:none;background:#fff;backdrop-filter:none}.team-card:hover .team-card-copy,.team-card:focus-within .team-card-copy{transform:none}.team-card-copy p{max-width:42ch}.team-work-bridge{padding:22px}}
 </style><title>SIPL | Connected Intelligence for Brain Healthcare</title><meta name="description" content="Sequoia Insilico develops responsible, explainable AI infrastructure for clinical brain and mental healthcare, research, and biopharma."><meta name="keywords" content="Sequoia Insilico, SIPL, BioAI, brain healthcare, precision psychiatry, clinical AI"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<style id="sipl-mobile-intro">
-@media (max-width:600px){
-  #intro{display:none!important}
-  .hero.intro-playing .hero-copy{opacity:1;pointer-events:auto}
-}
-</style>
-
 <style id="sipl-about-logo-size">
 .about-side{align-items:center}
 .about-side .brand-img{width:min(100%,300px);max-width:300px}
@@ -2195,7 +2188,13 @@ body.sipl-contact-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.intro-line,.intro,.hero-copy{transition-duration:.2s}}
 @media (max-width:600px){
   .hero{padding:0 24px}
-  .intro-progress{bottom:26px}
+  .intro{padding:20px}
+  .intro-inner{height:220px}
+  .intro-line{font-size:clamp(26px,7.2vw,38px);line-height:1.2}
+  .intro-line.final{font-size:clamp(42px,11vw,58px);line-height:1.05}
+  .intro-line.pinned{max-width:calc(100% - 88px);font-size:10px!important;letter-spacing:.14em}
+  .intro-skip{top:18px;right:16px;font-size:10px}
+  .intro-progress{bottom:26px;width:128px}
   .hero-actions{flex-direction:column;align-items:center}
   .hero-actions .btn{width:min(100%,280px);text-align:center}
 }

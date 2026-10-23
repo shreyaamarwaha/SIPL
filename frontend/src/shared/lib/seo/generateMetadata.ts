@@ -6,9 +6,26 @@ interface GenerateMetadataProps {
   path: string;
 }
 
+const PRODUCTION_SITE_URL = "https://www.sequoiainsilico.com";
+
+export function getPublicSiteUrl(): string {
+  const configuredUrl = process.env.NEXT_PUBLIC_APP_URL?.trim();
+
+  if (!configuredUrl) return PRODUCTION_SITE_URL;
+
+  try {
+    const parsedUrl = new URL(configuredUrl);
+    const isLocalHost = ["localhost", "127.0.0.1", "0.0.0.0"].includes(parsedUrl.hostname);
+    if (process.env.NODE_ENV === "production" && isLocalHost) return PRODUCTION_SITE_URL;
+    return parsedUrl.origin;
+  } catch {
+    return PRODUCTION_SITE_URL;
+  }
+}
+
 export function generateSeoMetadata({ title, description, path }: GenerateMetadataProps): Metadata {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://sequoiainsilico.com";
-  const url = `${baseUrl}${path}`;
+  const baseUrl = getPublicSiteUrl();
+  const url = new URL(path, `${baseUrl}/`).toString();
 
   return {
     title,
