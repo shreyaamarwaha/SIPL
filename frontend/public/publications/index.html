@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Publications &amp; Talks | SIPL</title>
+  <meta name="description" content="SIPL publications, science reviews, conference talks and events.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:light;--ink:#10243B;--text:#33465C;--muted:#718092;--accent:#147C79;--bg:#F7FAFB;--card:#fff;--line:#DCE4EA;--band:#E8F4F1}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scrollbar-gutter:stable}
+    body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 Inter,Arial,sans-serif}
+    a{color:inherit}
+    .pub-wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+    .pub-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;border-bottom:2px solid rgba(184,216,211,.72);background:rgba(247,250,249,.78);font-family:"Plus Jakarta Sans",Inter,sans-serif;backdrop-filter:blur(18px);transition:background .24s ease,border-color .24s ease,box-shadow .24s ease}
+    .pub-nav.is-scrolled{border-bottom-color:#b8d8d3;background:rgba(255,255,255,.97);box-shadow:0 6px 20px rgba(15,44,69,.1)}
+    .pub-nav .pub-wrap{display:flex;align-items:center;justify-content:space-between;height:80px;gap:38px;padding:0 32px}
+    .pub-logo{position:relative;top:2px;display:flex;flex:none;flex-direction:column;gap:4px;color:#0b304b;font-size:24px;font-weight:600;letter-spacing:-.05em;line-height:1.1;text-decoration:none}
+    .pub-logo span{display:flex;align-items:center;gap:7px;font-size:25px}
+    .pub-logo-emblem-lockup{display:inline-flex;align-items:center;gap:0;flex-direction:column;color:#8a6522;font-size:8px;letter-spacing:.12em;line-height:1;transform:translateY(1px)}
+    .pub-logo-emblem{width:30px;height:30px;flex:none;object-fit:contain}
+    .pub-logo-emblem-label{margin-top:-1px;color:#8a6522;font:700 7px/1 "Plus Jakarta Sans",Inter,sans-serif;letter-spacing:.14em}
+    .pub-logo small{margin-top:3px;color:#1e716b;font:600 10px/1 Inter,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase}
+    .pub-nav-list{display:flex;align-items:center;gap:6px;margin:0 0 0 auto;padding:0;list-style:none}
+    .pub-nav-list a,.pub-nav-list .pub-about{display:block;border:1px solid transparent;border-radius:999px;padding:9px 11px;color:var(--ink);font-size:13px;font-weight:600;text-decoration:none;transition:color .2s ease,background .2s ease,border-color .2s ease}
+    .pub-nav-list a:hover,.pub-nav-list a:focus-visible,.pub-nav-list .pub-about:hover,.pub-nav-list .pub-about:focus-visible{border-color:#b8d8d3;background:#e8f4f1;color:var(--accent);outline:0}
+    .pub-nav-list>li{position:relative}
+    .pub-nav-list>li.has-drop::after{position:absolute;top:100%;right:0;left:0;height:14px;content:""}
+    .pub-nav-dropdown{position:absolute;top:calc(100% + 14px);left:50%;display:flex;min-width:210px;flex-direction:column;gap:2px;margin:0;padding:6px;visibility:hidden;transform:translate(-50%,-8px);border:1px solid var(--line);border-radius:10px;background:rgba(250,252,253,.98);box-shadow:0 20px 44px rgba(16,36,59,.14),0 0 0 4px rgba(16,36,59,.03);list-style:none;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .25s cubic-bezier(.16,1,.3,1),visibility .22s}
+    .pub-nav-list li.has-drop:hover .pub-nav-dropdown,.pub-nav-list li.has-drop:focus-within .pub-nav-dropdown{visibility:visible;transform:translate(-50%,0);opacity:1;pointer-events:auto}
+    .pub-nav-dropdown a{border-radius:6px;padding:8px 10px;font-family:Inter,Arial,sans-serif;font-size:13.5px;text-align:center;white-space:nowrap}
+    .pub-nav-dropdown a+a{border-top:1px solid var(--line)}
+    .pub-platform{flex:none;border-radius:999px;background:linear-gradient(135deg,#0d9a8d,#087d78);box-shadow:0 8px 18px rgba(8,125,120,.18);padding:12px 18px;color:#fff;font-size:13px;font-weight:600;text-decoration:none}
+    .pub-platform:hover{filter:brightness(1.08)}
+    .pub-nav-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;gap:4px;flex-direction:column;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.7);color:var(--ink);cursor:pointer}
+    .pub-nav-toggle span{display:block;width:17px;height:2px;border-radius:4px;background:currentColor;transition:transform .2s ease}
+    .pub-nav.menu-open .pub-nav-toggle span:first-child{transform:translateY(3px) rotate(45deg)}
+    .pub-nav.menu-open .pub-nav-toggle span:last-child{transform:translateY(-3px) rotate(-45deg)}
+    .pub-main{padding:70px 0 100px}
+    .back{display:inline-flex;align-items:center;gap:8px;margin-bottom:68px;color:var(--muted);font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-decoration:none;transition:color .2s ease}
+    .back:hover,.back:focus-visible{color:var(--ink)}
+    .back:focus-visible,.filter:focus-visible,.pub-action:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+    .eyebrow{margin:0 0 16px;color:#147c79;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:15px;font-weight:600;letter-spacing:.18em;line-height:1.4;text-transform:uppercase}
+    .pub-head{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:end;margin-bottom:66px}
+    h1{max-width:650px;margin:0;color:#0A0D18;font-family:"Instrument Serif",Georgia,serif;font-size:clamp(56px,7vw,96px);font-weight:400;letter-spacing:-.055em;line-height:.92}
+    .lede{max-width:470px;margin:0 0 5px;color:var(--muted);font-size:18px;line-height:1.55}
+    .filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:32px}
+    .filter{appearance:none;border:1px solid var(--line);background:var(--card);padding:10px 18px;color:var(--muted);font:600 10px/1.2 "Plus Jakarta Sans",Inter,sans-serif;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+    .filter:hover{border-color:var(--accent);color:var(--accent)}
+    .filter[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
+    .filter-status{margin:0 0 14px;color:var(--muted);font-size:12px}
+    .publication-list{border-top:1px solid var(--line)}
+    .publication-row{display:grid;grid-template-columns:190px minmax(0,1fr) 190px;gap:38px;align-items:center;padding:37px 0;border-bottom:1px solid var(--line)}
+    .publication-row[hidden]{display:none !important}
+    .row-type{display:flex;align-items:flex-start;gap:13px}
+    .row-icon{display:grid;place-items:center;width:44px;height:44px;border:1px solid transparent;border-radius:10px;color:#fff;flex:none;box-shadow:0 8px 18px rgba(16,36,59,.14);transition:transform .2s ease,box-shadow .2s ease}
+    .row-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .publication-row:hover .row-icon,.publication-row:focus-within .row-icon{transform:translateY(-2px);box-shadow:0 12px 24px rgba(16,36,59,.2)}
+    .publication-row[data-type="publication"] .row-icon{background:linear-gradient(145deg,#4A2A22,#281715);color:#FFF1DE}
+    .publication-row[data-type="review"] .row-icon{background:linear-gradient(145deg,#403455,#241E38);color:#E6D7FF}
+    .publication-row[data-type="conference"] .row-icon{background:linear-gradient(145deg,#176E73,#103D52);color:#B9F1E5}
+    .publication-row[data-type="event"] .row-icon{background:linear-gradient(145deg,#72502F,#352B35);color:#FFE2A8}
+    .row-type-text{padding-top:1px}
+    .row-type-label{display:block;color:#2b4052;font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.24em;line-height:1.35;text-transform:uppercase}
+    .row-year{display:block;margin-top:4px;color:#5f7180;font-size:13px}
+    .row-content h2{max-width:690px;margin:0;color:#0A0D18;font-family:"Instrument Serif",Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-.03em;line-height:1.08}
+    .row-content p{max-width:690px;margin:7px 0 0;color:var(--muted);font-size:16px;line-height:1.5}
+    .row-meta{display:block;margin-top:17px;color:var(--muted);font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase}
+    .row-actions{display:flex;flex-direction:column;align-items:stretch;gap:9px;padding-top:0}
+    .pub-action{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);background:var(--card);padding:10px 13px;color:var(--ink);font-family:"Plus Jakarta Sans",Inter,sans-serif;font-size:12px;font-weight:600;text-decoration:none;transition:border-color .2s ease,color .2s ease,transform .2s ease}
+    .pub-action:hover{border-color:var(--accent);color:var(--accent);transform:translateX(2px)}
+    .pub-action svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+    .empty{display:none;padding:50px 0;color:var(--muted);text-align:center}
+    @media (max-width:920px){
+      .pub-wrap{padding:0 28px}
+      .pub-head{grid-template-columns:1fr;gap:22px;margin-bottom:50px}
+      .publication-row{grid-template-columns:150px minmax(0,1fr);gap:28px}
+      .row-actions{grid-column:2;grid-row:2;flex-direction:row;flex-wrap:wrap;padding-top:0}
+    }
+    @media (max-width:1020px){
+      .pub-nav .pub-wrap{height:72px;gap:16px}
+      .pub-nav-list{display:none}
+      .pub-platform{padding:10px 13px;font-size:12px}
+      .pub-nav-toggle{display:flex}
+      .pub-nav.menu-open .pub-nav-list{position:absolute;top:calc(100% + 10px);right:14px;left:14px;display:flex;align-items:stretch;gap:3px;flex-direction:column;margin:0;padding:12px;border:1px solid #b8d8d3;border-radius:18px;background:#fff;box-shadow:0 22px 50px rgba(15,44,69,.16)}
+      .pub-nav.menu-open .pub-nav-list>li>a,.pub-nav.menu-open .pub-nav-list .pub-about{padding:11px 12px;border-radius:10px;font-size:14px}
+      .pub-nav.menu-open .pub-nav-dropdown{position:static;display:flex;margin:0;padding:0 0 4px 10px;visibility:visible;transform:none;border:0;background:transparent;box-shadow:none;opacity:1;pointer-events:auto}
+      .pub-nav.menu-open .pub-nav-dropdown a{padding:8px 12px;font-size:13px}
+    }
+    @media (max-width:600px){
+      .pub-main{padding:34px 0 68px}
+      .pub-wrap{padding:0 20px}
+      .back{margin-bottom:52px}
+      h1{font-size:clamp(50px,15vw,72px)}
+      .lede{font-size:16px}
+      .filters{gap:7px}
+      .filter{padding:9px 12px;letter-spacing:.16em}
+      .publication-row{grid-template-columns:1fr;gap:18px;padding:28px 0}
+      .row-actions{grid-column:auto;grid-row:auto}
+      .row-content h2{font-size:27px}
+      .row-content p{font-size:14px}
+      .row-actions{display:grid;grid-template-columns:1fr 1fr}
+      .pub-action{font-size:12px}
+    }
+    @media (max-width:520px){
+      .pub-nav .pub-wrap{padding-right:20px;padding-left:20px}
+      .pub-logo{font-size:21px}
+      .pub-logo span{font-size:22px}
+      .pub-logo small{font-size:9px}
+      .pub-logo-emblem{width:26px;height:26px}
+      .pub-platform{display:none}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.back,.pub-action{transition:none}}
+  </style>
+</head>
+<body>
+  <nav class="pub-nav" aria-label="SIPL primary navigation">
+    <div class="pub-wrap">
+      <a class="pub-logo" href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#home-final" aria-label="Sequoia Insilico home"><span>Sequoia Insilico<span class="pub-logo-emblem-lockup"><img class="pub-logo-emblem" src="/brand/sipl-emblem.png" alt="" aria-hidden="true" width="32" height="32"><small class="pub-logo-emblem-label">SIPL</small></span></span><small>Measure. Monitor. Discover.</small></a>
+      <ul class="pub-nav-list">
+        <li class="has-drop"><a class="pub-about" href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#about">About</a><ul class="pub-nav-dropdown"><li><a href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#team">Team</a></li><li><a href="/sipl/partners/">Partners &amp; collaborators</a></li></ul></li>
+        <li><a href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#science">Science</a></li>
+        <li><a href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#bioai">BioAI</a></li>
+        <li><a href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#trust">Trust</a></li>
+        <li><a href="/investors/">Investors</a></li>
+        <li><a href="/sipl/join-us/">Join Us</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/publications/" aria-current="page">Publications</a></li>
+        <li><a href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#lifeback">LifeBack®</a></li>
+      </ul>
+      <button class="pub-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+      <a class="pub-platform" href="https://demo.sequoiainsilico.com/">Access platform</a>
+    </div>
+  </nav>
+  <main class="pub-main" id="publication-list">
+    <div class="pub-wrap">
+      <a class="back" id="publicationBack" href="/SIPLwebsiteversion4_changedwithmanus.html?final=1#home-final" aria-label="Back to SIPL home">&larr; Back to SIPL home</a>
+      <header class="pub-head">
+        <div>
+          <p class="eyebrow">Publications &amp; talks</p>
+          <h1>From the lab to<br>the world.</h1>
+        </div>
+        <p class="lede">Our latest work, one click away. Agree, disagree or want in? Write to us.</p>
+      </header>
+
+      <nav class="filters" aria-label="Filter publications and talks">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="publication" aria-pressed="false">Publication</button>
+        <button class="filter" type="button" data-filter="review" aria-pressed="false">Science review</button>
+        <button class="filter" type="button" data-filter="conference" aria-pressed="false">Conference</button>
+        <button class="filter" type="button" data-filter="event" aria-pressed="false">Event</button>
+      </nav>
+      <p class="filter-status" aria-live="polite">Showing all 6 items</p>
+
+      <section class="publication-list" aria-label="Publications, reviews, conferences and events">
+        <article class="publication-row" data-type="publication">
+          <div class="row-type">
+            <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h8l3 3V20H7z"/><path d="M15 3.5v4h3M10 12h5M10 15h5"/></svg></span>
+            <span class="row-type-text"><span class="row-type-label">Publication</span><span class="row-year">2026</span></span>
+          </div>
+          <div class="row-content">
+            <h2>Validating an AI-assisted HAM-D assessment against clinician ratings</h2>
+            <p>91% agreement across 500+ assessments with ABVIMS and Dr. RML Hospital, New Delhi.</p>
+            <span class="row-meta">SIPL clinical validation report</span>
+          </div>
+          <div class="row-actions">
+            <a class="pub-action" href="#publication-list" aria-label="Read the SIPL clinical validation report">Read paper <span aria-hidden="true">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="publication-row" data-type="publication">
+          <div class="row-type">
+            <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h8l3 3V20H7z"/><path d="M15 3.5v4h3M10 12h5M10 15h5"/></svg></span>
+            <span class="row-type-text"><span class="row-type-label">Publication</span><span class="row-year">2025</span></span>
+          </div>
+          <div class="row-content">
+            <h2>Indian Patent No. 202511025669</h2>
+            <p>A published SIPL invention supporting the company’s work in responsible, explainable brain-health intelligence.</p>
+            <span class="row-meta">Published patent · WIPO PCT application in process</span>
+          </div>
+          <div class="row-actions">
+            <a class="pub-action" href="#publication-list" aria-label="View the SIPL patent record">View record <span aria-hidden="true">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="publication-row" data-type="review">
+          <div class="row-type">
+            <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h8l3 3V20H7z"/><path d="M15 3.5v4h3M10 12h5M10 15h5"/></svg></span>
+            <span class="row-type-text"><span class="row-type-label">Science review</span><span class="row-year">2026</span></span>
+          </div>
+          <div class="row-content">
+            <h2>What voice and facial behaviour can tell us about depression</h2>
+            <p>A plain-language review of digital biomarkers and where they help — and fall short — in psychiatric care.</p>
+            <span class="row-meta">Sequoia Insilico science review</span>
+          </div>
+          <div class="row-actions">
+            <a class="pub-action" href="#publication-list" aria-label="Read the SIPL science review on voice and facial behaviour">Read review <span aria-hidden="true">&nearr;</span></a>
+            <a class="pub-action" href="https://in.linkedin.com/company/sequoia-insilico-private-ltd" target="_blank" rel="noopener noreferrer" aria-label="Discuss the science review with SIPL on LinkedIn">Discuss with SIPL <span aria-hidden="true">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="publication-row" data-type="review">
+          <div class="row-type">
+            <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3.5h8l3 3V20H7z"/><path d="M15 3.5v4h3M10 12h5M10 15h5"/></svg></span>
+            <span class="row-type-text"><span class="row-type-label">Science review</span><span class="row-year">2026</span></span>
+          </div>
+          <div class="row-content">
+            <h2>Why multimodal signals matter in mental-health assessment</h2>
+            <p>How clinical, behavioural, neuroscience and genomic signals come together to make assessment more precise and adaptive.</p>
+            <span class="row-meta">Sequoia Insilico science review</span>
+          </div>
+          <div class="row-actions">
+            <a class="pub-action" href="#publication-list" aria-label="Read the SIPL multimodal signals science review">Read review <span aria-hidden="true">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="publication-row" data-type="conference">
+          <div class="row-type">
+            <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="13" rx="4"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></span>
+            <span class="row-type-text"><span class="row-type-label">Conference</span><span class="row-year">2026</span></span>
+          </div>
+          <div class="row-content">
+            <h2>Connected intelligence for brain and mental healthcare</h2>
+            <p>SIPL’s research presentation on bringing clinical care, behavioural signals, neuroscience, genomics and discovery into one responsible AI infrastructure.</p>
+            <span class="row-meta">SIPL research presentation</span>
+          </div>
+          <div class="row-actions">
+            <a class="pub-action" href="#publication-list" aria-label="View the SIPL conference presentation">View presentation <span aria-hidden="true">&nearr;</span></a>
+            <a class="pub-action" href="https://in.linkedin.com/company/sequoia-insilico-private-ltd" target="_blank" rel="noopener noreferrer" aria-label="Discuss the SIPL conference presentation on LinkedIn">Discuss with SIPL <span aria-hidden="true">&nearr;</span></a>
+          </div>
+        </article>
+
+        <article class="publication-row" data-type="event">
+          <div class="row-type">
+            <span class="row-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4M16 3v4M4 10h16M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg></span>
+            <span class="row-type-text"><span class="row-type-label">Event</span><span class="row-year">Upcoming</span></span>
+          </div>
+          <div class="row-content">
+            <h2>LifeBack clinical intelligence briefing</h2>
+            <p>An upcoming conversation on clinical validation, responsible AI and the path from evidence to care.</p>
+            <span class="row-meta">SIPL · New Delhi / online</span>
+          </div>
+          <div class="row-actions">
+            <a class="pub-action" href="https://in.linkedin.com/company/sequoia-insilico-private-ltd" target="_blank" rel="noopener noreferrer" aria-label="Discuss the LifeBack clinical intelligence briefing with SIPL on LinkedIn">Discuss with SIPL <span aria-hidden="true">&nearr;</span></a>
+          </div>
+        </article>
+      </section>
+      <p class="empty" id="empty-state">No items in this category yet.</p>
+    </div>
+  </main>
+  <script>
+    (() => {
+      const filters = [...document.querySelectorAll('[data-filter]')];
+      const rows = [...document.querySelectorAll('.publication-row')];
+      const empty = document.getElementById('empty-state');
+      filters.forEach((filter) => filter.addEventListener('click', () => {
+        const selected = filter.dataset.filter;
+        filters.forEach((item) => item.setAttribute('aria-pressed', String(item === filter)));
+        let visible = 0;
+        rows.forEach((row) => {
+          const show = selected === 'all' || row.dataset.type === selected;
+          row.hidden = !show;
+          if (show) visible += 1;
+        });
+        empty.style.display = visible ? 'none' : 'block';
+        const status = document.querySelector('.filter-status');
+        if (status) status.textContent = `Showing ${selected === 'all' ? 'all' : selected.replace('-', ' ')} ${visible} item${visible === 1 ? '' : 's'}`;
+      }));
+    })();
+    (() => {
+      const nav = document.querySelector('.pub-nav');
+      const toggle = document.querySelector('.pub-nav-toggle');
+      if (!nav || !toggle) return;
+      const close = () => {
+        nav.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+      };
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('menu-open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      });
+      nav.querySelectorAll('.pub-nav-list a').forEach((link) => link.addEventListener('click', close));
+      window.addEventListener('resize', () => { if (window.innerWidth > 1020) close(); });
+      const updateScrolled = () => nav.classList.toggle('is-scrolled', window.scrollY > 12);
+      updateScrolled();
+      window.addEventListener('scroll', updateScrolled, { passive: true });
+    })();
+    (() => {
+      const back = document.getElementById('publicationBack');
+      if (!back) return;
+      const from = new URLSearchParams(window.location.search).get('from');
+      if (from === 'science') {
+        back.href = '/SIPLwebsiteversion4_changedwithmanus.html?final=1#science';
+        back.textContent = '← Back to Science';
+        back.setAttribute('aria-label', 'Back to Science');
+      }
+    })();
+  </script>
+</body>
+</html>

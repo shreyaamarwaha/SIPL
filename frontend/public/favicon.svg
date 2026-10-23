@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="LifeBack">
+  <rect width="512" height="512" rx="116" fill="#10243B"/>
+  <path d="M139 256c0-64.6 52.4-117 117-117h47c38.1 0 69 30.9 69 69v96c0 38.1-30.9 69-69 69h-47c-64.6 0-117-52.4-117-117Z" fill="none" stroke="#F7FAFF" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M181 256h47l25-45 35 89 22-44h43" fill="none" stroke="#65D7D2" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="181" cy="256" r="12.5" fill="#65D7D2"/>
+  <circle cx="353" cy="256" r="12.5" fill="#65D7D2"/>
+</svg>
