@@ -16,7 +16,7 @@ export function VisionSection() {
   }, []);
 
   return (
-    <section className="py-32 md:py-48 lg:py-64 bg-[#001B65] text-white overflow-hidden relative">
+    <section className="py-32 md:py-48 lg:py-64 bg-[#0F2C45] text-white overflow-hidden relative">
       <video
         ref={videoRef}
         autoPlay

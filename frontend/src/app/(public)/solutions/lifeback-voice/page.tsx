@@ -26,7 +26,7 @@ const voiceCards = [
 export default function SIPLVoicePage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC]">
+      <div className="bg-[#F7FAF9]">
         <EditorialHero eyebrow="SIPL Voice" title="Voice as a behavioural signal stream.">
           <p>
             Voice analysis contributes acoustic, linguistic, behavioural, and longitudinal signal streams that can help surface clinically relevant patterns within a broader multimodal assessment.

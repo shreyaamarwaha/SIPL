@@ -98,7 +98,7 @@ const dailyCommitments = [
 export default function InsideSiplPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC]">
+      <div className="bg-[#F7FAF9]">
         <EditorialHero eyebrow="Inside SIPL" title="Built like a Sequoia: patient, deep, enduring.">
           <p>
             The Sequoia name reflects the belief that enduring systems can begin from small seeds. For SIPL, that means building patiently: a strong team, long-term clinical infrastructure, and a platform where science, clinicians, and technology grow together toward better mental health care.
@@ -107,7 +107,7 @@ export default function InsideSiplPage() {
 
         <EditorialSection title="Technology in service of clinical clarity.">
           <div className="grid gap-6">
-            <p className="font-heading text-2xl font-semibold leading-9 text-[#001B65]">
+            <p className="font-heading text-2xl font-semibold leading-9 text-[#0F2C45]">
               Technology should help clinicians see more clearly, not replace the people responsible for care.
             </p>
             <p>
@@ -141,7 +141,7 @@ export default function InsideSiplPage() {
         <EditorialSection title="How we show up, every day.">
           <div className="grid gap-4">
             {dailyCommitments.map((commitment) => (
-              <p key={commitment} className="border-l border-[#D4AF37] pl-5 font-heading text-base font-semibold leading-7 text-[#001B65]">
+              <p key={commitment} className="border-l border-[#C49327] pl-5 font-heading text-base font-semibold leading-7 text-[#0F2C45]">
                 {commitment}
               </p>
             ))}

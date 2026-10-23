@@ -93,12 +93,12 @@ export function ScheduleRequestForm() {
         <Button type="submit" size="lg" disabled={state === "sending"} className="min-w-56 gap-3">
           {state === "sending" ? <><LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" /> Sending request</> : <>Request a time <ArrowRight className="h-4 w-4" aria-hidden="true" /></>}
         </Button>
-        <p className="max-w-sm text-xs leading-5 text-[#001B65]/56">
+        <p className="max-w-sm text-xs leading-5 text-[#0F2C45]/56">
           This sends a meeting request. SIPL will confirm availability by email; a time is not booked until confirmed.
         </p>
       </div>
       <div aria-live="polite" aria-atomic="true">
-        {state === "success" && <p className="border-l-2 border-[#147C79] pl-4 text-sm font-semibold leading-6 text-[#001B65]">Request received. The SIPL team will confirm a time by email.</p>}
+        {state === "success" && <p className="border-l-2 border-[#087D78] pl-4 text-sm font-semibold leading-6 text-[#0F2C45]">Request received. The SIPL team will confirm a time by email.</p>}
         {state === "error" && <p role="alert" className="border-l-2 border-[#A63838] pl-4 text-sm font-semibold leading-6 text-[#7C2020]">{errorMessage || "We could not send your request. Please try again shortly."}</p>}
       </div>
     </form>
@@ -128,5 +128,5 @@ function Field({
   );
 }
 
-const labelClass = "font-heading text-sm font-semibold text-[#001B65]";
-const fieldClass = "mt-2 min-h-13 w-full border border-[#001B65]/22 bg-transparent px-4 py-3 text-sm text-[#001B65] outline-none transition-colors placeholder:text-[#001B65]/40 hover:border-[#001B65]/40 focus:border-[#147C79] focus:ring-2 focus:ring-[#147C79]/20";
+const labelClass = "font-heading text-sm font-semibold text-[#0F2C45]";
+const fieldClass = "mt-2 min-h-13 w-full border border-[#0F2C45]/22 bg-transparent px-4 py-3 text-sm text-[#0F2C45] outline-none transition-colors placeholder:text-[#0F2C45]/40 hover:border-[#0F2C45]/40 focus:border-[#087D78] focus:ring-2 focus:ring-[#087D78]/20";

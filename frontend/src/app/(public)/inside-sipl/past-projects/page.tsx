@@ -45,19 +45,19 @@ const projects = [
 export default function PastProjectsPage() {
   return (
     <PublicLayout>
-      <main className="bg-[#F5F8FC] text-[#001B65]">
+      <main className="bg-[#F7FAF9] text-[#0F2C45]">
         <section className="px-6 pb-20 pt-40 md:px-10 lg:px-16 xl:px-20">
-          <div className="grid w-full gap-12 border-t border-[#001B65]/12 pt-16 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid w-full gap-12 border-t border-[#0F2C45]/12 pt-16 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#001B65]/60">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#0F2C45]/60">
                 Past Projects
               </p>
-              <h1 className="font-heading text-5xl font-semibold leading-[1.02] tracking-[-0.02em] text-[#001B65] md:text-7xl">
+              <h1 className="font-heading text-5xl font-semibold leading-[1.02] tracking-[-0.02em] text-[#0F2C45] md:text-7xl">
                 Past work that shaped SIPL’s clinical AI foundation.
               </h1>
             </div>
 
-            <p className="max-w-3xl text-lg leading-8 text-[#001B65]/72 md:text-xl">
+            <p className="max-w-3xl text-lg leading-8 text-[#0F2C45]/72 md:text-xl">
               SIPL’s archived projects reflect the company’s long-term commitment to applying AI, data science, and clinical intelligence to serious healthcare problems.
             </p>
           </div>
@@ -69,28 +69,28 @@ export default function PastProjectsPage() {
               {projects.map((project, index) => (
                 <article
                   key={project.title}
-                  className="grid gap-8 rounded-[30px] border border-[#001B65]/10 bg-[#F9F8F3] p-7 shadow-[0_18px_54px_rgba(0,27,101,0.07)] md:p-10 lg:grid-cols-[0.36fr_0.64fr]"
+                  className="grid gap-8 rounded-[30px] border border-[#0F2C45]/10 bg-[#FFFFFF] p-7 shadow-[0_18px_54px_rgba(0,27,101,0.07)] md:p-10 lg:grid-cols-[0.36fr_0.64fr]"
                 >
                   <div>
-                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#001B65]/58">
+                    <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#0F2C45]/58">
                       Archive 0{index + 1}
                     </p>
-                    <h2 className="mt-5 font-heading text-3xl font-semibold leading-tight text-[#001B65] md:text-4xl">
+                    <h2 className="mt-5 font-heading text-3xl font-semibold leading-tight text-[#0F2C45] md:text-4xl">
                       {project.title}
                     </h2>
                     {project.subtitle && (
-                      <p className="mt-3 font-heading text-lg font-semibold text-[#001B65]/66">
+                      <p className="mt-3 font-heading text-lg font-semibold text-[#0F2C45]/66">
                         {project.subtitle}
                       </p>
                     )}
-                    <p className="mt-7 border-l border-[#D4AF37] pl-5 text-lg leading-8 text-[#001B65]/78">
+                    <p className="mt-7 border-l border-[#C49327] pl-5 text-lg leading-8 text-[#0F2C45]/78">
                       {project.statement}
                     </p>
                   </div>
 
                   <div className="grid gap-5">
                     {project.body.map((paragraph) => (
-                      <p key={paragraph} className="text-base leading-8 text-[#001B65]/72">
+                      <p key={paragraph} className="text-base leading-8 text-[#0F2C45]/72">
                         {paragraph}
                       </p>
                     ))}

@@ -30,7 +30,7 @@ const workflow = [
 export default function SolutionsPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC]">
+      <div className="bg-[#F7FAF9]">
         <EditorialHero eyebrow="Solutions" title="Multimodal intelligence for clinical assessment.">
           <p>
             SIPL’s solutions combine behavioural, physiological, genomic, pharmacogenomic, and clinical data streams to support structured clinical review.

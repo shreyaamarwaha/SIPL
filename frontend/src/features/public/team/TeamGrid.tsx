@@ -75,7 +75,7 @@ export function TeamGrid() {
         {teamMembers.map((member) => (
           <article
             key={member.id}
-            className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-[#DCE4EA] bg-white shadow-[0_14px_36px_rgba(16,36,59,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(16,36,59,0.12)]"
+            className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-[#D8E5E2] bg-white shadow-[0_14px_36px_rgba(16,36,59,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(16,36,59,0.12)]"
           >
             {member.image ? (
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#ECEFED]">
@@ -90,27 +90,27 @@ export function TeamGrid() {
             ) : (
               <div
                 aria-hidden="true"
-                className="flex aspect-[4/3] w-full items-center justify-center bg-[#ECEFED] text-[#147C79]"
+                className="flex aspect-[4/3] w-full items-center justify-center bg-[#ECEFED] text-[#087D78]"
               >
                 <UserRound className="h-16 w-16" strokeWidth={1.2} />
               </div>
             )}
 
             <div className="flex flex-1 flex-col p-6 md:p-7">
-              <h3 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-[#001B65]">
+              <h3 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-[#0F2C45]">
                 {member.name}
               </h3>
-              <p className="mt-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#001B65]/62">
+              <p className="mt-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#0F2C45]/62">
                 {member.position}
               </p>
 
-              <p className="mt-4 line-clamp-4 flex-1 text-[15px] leading-7 text-[#001B65]/72">
+              <p className="mt-4 line-clamp-4 flex-1 text-[15px] leading-7 text-[#0F2C45]/72">
                 {member.shortBio}
               </p>
 
               <button
                 type="button"
-                className="mt-6 inline-flex min-h-11 w-fit items-center gap-2 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-[#147C79] underline decoration-[#8ED5C6] decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#147C79] focus-visible:ring-offset-4"
+                className="mt-6 inline-flex min-h-11 w-fit items-center gap-2 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-[#087D78] underline decoration-[#A9E2D5] decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78] focus-visible:ring-offset-4"
                 aria-haspopup="dialog"
                 aria-expanded={activeMember?.id === member.id}
                 onClick={(event) => openDialog(member, event.currentTarget)}
@@ -125,7 +125,7 @@ export function TeamGrid() {
 
       {activeMember && (
         <div
-          className="fixed inset-0 z-[100] flex items-end justify-center bg-[#001B65]/55 p-0 backdrop-blur-[3px] sm:items-center sm:p-6"
+          className="fixed inset-0 z-[100] flex items-end justify-center bg-[#0F2C45]/55 p-0 backdrop-blur-[3px] sm:items-center sm:p-6"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
               closeDialog();
@@ -138,19 +138,19 @@ export function TeamGrid() {
             aria-modal="true"
             aria-labelledby={`${activeMember.id}-dialog-title`}
             aria-describedby={`${activeMember.id}-dialog-position`}
-            className="relative max-h-[100dvh] w-full overflow-y-auto bg-[#F9F8F3] px-5 pb-10 pt-20 text-[#001B65] shadow-[0_28px_90px_rgba(0,27,101,0.28)] sm:max-h-[88dvh] sm:max-w-3xl sm:border sm:border-[#001B65]/12 sm:p-12"
+            className="relative max-h-[100dvh] w-full overflow-y-auto bg-[#FFFFFF] px-5 pb-10 pt-20 text-[#0F2C45] shadow-[0_28px_90px_rgba(0,27,101,0.28)] sm:max-h-[88dvh] sm:max-w-3xl sm:border sm:border-[#0F2C45]/12 sm:p-12"
           >
             <button
               ref={closeButtonRef}
               type="button"
               onClick={closeDialog}
-              className="absolute right-5 top-5 inline-flex h-11 w-11 items-center justify-center border border-[#001B65]/18 bg-[#F5F8FC] text-[#001B65] transition-colors hover:border-[#D4AF37] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F9F8F3] sm:right-7 sm:top-7"
+              className="absolute right-5 top-5 inline-flex h-11 w-11 items-center justify-center border border-[#0F2C45]/18 bg-[#F7FAF9] text-[#0F2C45] transition-colors hover:border-[#C49327] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49327] focus-visible:ring-offset-4 focus-visible:ring-offset-[#FFFFFF] sm:right-7 sm:top-7"
               aria-label={`Close ${activeMember.name} biography`}
             >
               <X aria-hidden="true" className="h-5 w-5" />
             </button>
 
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#001B65]/58">
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#0F2C45]/58">
               Team biography
             </p>
             <h2
@@ -161,14 +161,14 @@ export function TeamGrid() {
             </h2>
             <p
               id={`${activeMember.id}-dialog-position`}
-              className="mt-3 font-heading text-base font-semibold text-[#001B65]/68"
+              className="mt-3 font-heading text-base font-semibold text-[#0F2C45]/68"
             >
               {activeMember.position}
             </p>
 
-            <div className="mt-8 space-y-5 border-t border-[#001B65]/12 pt-8">
+            <div className="mt-8 space-y-5 border-t border-[#0F2C45]/12 pt-8">
               {activeMember.fullBio.map((paragraph) => (
-                <p key={paragraph} className="text-[15px] leading-7 text-[#001B65]/78 sm:text-base sm:leading-8">
+                <p key={paragraph} className="text-[15px] leading-7 text-[#0F2C45]/78 sm:text-base sm:leading-8">
                   {paragraph}
                 </p>
               ))}

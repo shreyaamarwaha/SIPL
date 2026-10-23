@@ -125,7 +125,7 @@ function BulletList({ items }: { items: string[] }) {
   return (
     <ul className="grid gap-3">
       {items.map((item) => (
-        <li key={item} className="border-l border-[#D4AF37] pl-4 text-base leading-7 text-[#001B65]/74">
+        <li key={item} className="border-l border-[#C49327] pl-4 text-base leading-7 text-[#0F2C45]/74">
           {item}
         </li>
       ))}
@@ -136,7 +136,7 @@ function BulletList({ items }: { items: string[] }) {
 export default function ResearchPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC]">
+      <div className="bg-[#F7FAF9]">
         <EditorialHero eyebrow="Research" title="Research is not a phase. It is the system.">
           <p>
             SIPL treats every model, biomarker, and clinical decision pathway as a living scientific hypothesis — subject to revision, replication, and challenge as new evidence emerges.
@@ -167,12 +167,12 @@ export default function ResearchPage() {
               SIPL is a decision support system — not a decision system. The clinician is not a user interface between the AI and the patient. The clinician is the clinician. The AI is the instrument.
             </p>
             <div className="grid gap-5 md:grid-cols-2">
-              <div className="rounded-[28px] border border-[#001B65]/10 bg-[#F9F8F3] p-6 md:p-8">
-                <h3 className="mb-5 font-heading text-2xl font-semibold text-[#001B65]">What the AI does</h3>
+              <div className="rounded-[28px] border border-[#0F2C45]/10 bg-[#FFFFFF] p-6 md:p-8">
+                <h3 className="mb-5 font-heading text-2xl font-semibold text-[#0F2C45]">What the AI does</h3>
                 <BulletList items={aiDoes} />
               </div>
-              <div className="rounded-[28px] border border-[#001B65]/10 bg-[#F9F8F3] p-6 md:p-8">
-                <h3 className="mb-5 font-heading text-2xl font-semibold text-[#001B65]">What the clinician does</h3>
+              <div className="rounded-[28px] border border-[#0F2C45]/10 bg-[#FFFFFF] p-6 md:p-8">
+                <h3 className="mb-5 font-heading text-2xl font-semibold text-[#0F2C45]">What the clinician does</h3>
                 <BulletList items={clinicianDoes} />
               </div>
             </div>

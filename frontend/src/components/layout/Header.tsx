@@ -1,42 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/shared/lib/utils";
-import SIPLLogo from "@/shared/assets/SIPL_Logo.png";
+import { BrandLockup } from "@/components/layout/BrandLockup";
 
-const navigationLinks = [
-  { label: "About", href: "/#about" },
+const links = [
   { label: "Science", href: "/#science" },
   { label: "BioAI", href: "/#bioai" },
-  { label: "Partners", href: "/#partners" },
-  { label: "Investors", href: "/#investors" },
+  { label: "Trust", href: "/#trust" },
+  { label: "Investors", href: "/investors/" },
+  { label: "Join Us", href: "/join-us/" },
+  { label: "Contact", href: "/contact/" },
+  { label: "Publications", href: "/publications/" },
+  { label: "LifeBack®", href: "/#lifeback" },
 ];
 
+const aboutLinks = [
+  { label: "About SIPL", href: "/#about" },
+  { label: "Team", href: "/team/" },
+  { label: "Partners & collaborators", href: "/partners/" },
+];
+
+function isCurrentPath(pathname: string, href: string) {
+  if (href.startsWith("/#")) return false;
+  const target = href.replace(/\/$/, "") || "/";
+  return pathname === target || pathname.startsWith(`${target}/`);
+}
+
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 8);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
-
     return () => {
       document.body.style.overflow = "";
     };
@@ -45,49 +43,34 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 w-full transition-all duration-300",
-        isScrolled
-          ? "border-b border-[#102F49]/10 bg-[#F5F8FC]/90 shadow-[0_12px_34px_rgba(16,47,73,0.07)] backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
-      )}
-    >
-      <div className="flex h-20 w-full items-center justify-between px-6 md:px-10 lg:px-16 xl:px-20">
-        <Link
-          href="/"
-          className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F5F8FC]"
-          aria-label="SIPL home"
-          onClick={closeMenu}
-        >
-          <span className="relative block h-11 w-11 shrink-0">
-            <Image
-              src={SIPLLogo}
-              alt="SIPL logo"
-              fill
-              priority
-              sizes="44px"
-              className="object-contain"
-            />
-          </span>
-          <span className="font-heading text-[22px] font-bold tracking-[0.12em] text-[#102F49]">
-            SIPL
-          </span>
-        </Link>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#D8E5E2] bg-[#F7FAF9]/95 shadow-[0_8px_28px_rgba(15,44,69,0.06)] backdrop-blur-xl">
+      <div className="mx-auto flex min-h-[78px] max-w-[1600px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-12">
+        <BrandLockup onClick={closeMenu} />
 
-        <nav className="hidden max-w-[46rem] flex-wrap items-center justify-end gap-x-7 gap-y-1 lg:flex" aria-label="Primary navigation">
-          {navigationLinks.map((link) => {
-            const isActive = pathname === link.href;
-
+        <nav className="hidden items-center gap-4 xl:flex 2xl:gap-6" aria-label="Primary navigation">
+          <div className="group relative">
+            <Link
+              href="/#about"
+              className="inline-flex items-center gap-1 py-3 text-[13px] font-medium text-[#3C5162] transition-colors hover:text-[#087D78] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78]"
+            >
+              About <span aria-hidden="true" className="text-[10px]">⌄</span>
+            </Link>
+            <div className="invisible absolute left-0 top-full z-10 min-w-56 translate-y-2 border border-[#D8E5E2] bg-white p-2 opacity-0 shadow-[0_18px_44px_rgba(15,44,69,0.12)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              {aboutLinks.slice(1).map((link) => (
+                <Link key={link.label} href={link.href} className="block px-3 py-2.5 text-sm text-[#3C5162] hover:bg-[#EEF7F4] hover:text-[#087D78]">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          {links.map((link) => {
+            const active = isCurrentPath(pathname, link.href);
             return (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
-                className={cn(
-                  "py-2 font-heading text-[14px] font-medium text-[#102F49] transition-colors hover:text-[#147C79] hover:underline hover:decoration-[#147C79] hover:decoration-2 hover:underline-offset-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#147C79] focus-visible:ring-offset-4 focus-visible:ring-offset-[#F5F8FC]",
-                  isActive && "underline decoration-[#147C79] decoration-2 underline-offset-8"
-                )}
-                aria-current={isActive ? "page" : undefined}
+                aria-current={active ? "page" : undefined}
+                className={`py-3 text-[13px] font-medium transition-colors hover:text-[#087D78] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78] ${active ? "text-[#087D78]" : "text-[#3C5162]"}`}
               >
                 {link.label}
               </Link>
@@ -95,13 +78,9 @@ export function Header() {
           })}
         </nav>
 
-        <Link href="/#contact" className="hidden min-h-11 items-center rounded-full bg-[#102F49] px-5 text-sm font-semibold text-white transition hover:bg-[#147C79] lg:inline-flex">
-          Contact
-        </Link>
-
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#102F49]/15 text-[#102F49] lg:hidden"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center border border-[#D8E5E2] bg-white text-[#0F2C45] xl:hidden"
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((current) => !current)}
@@ -110,42 +89,22 @@ export function Header() {
         </button>
       </div>
 
-      <div
-        className={cn(
-          "lg:hidden",
-          isMenuOpen ? "block" : "hidden"
-        )}
-      >
-        <nav
-          aria-label="Mobile navigation"
-          className="max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-[#102F49]/10 bg-[#F5F8FC]/95 px-6 pb-8 pt-5 shadow-[0_18px_44px_rgba(16,47,73,0.12)] backdrop-blur-xl"
-        >
+      {isMenuOpen && (
+        <nav aria-label="Mobile navigation" className="max-h-[calc(100dvh-78px)] overflow-y-auto border-t border-[#D8E5E2] bg-[#F7FAF9] px-5 pb-7 pt-4 sm:px-8 xl:hidden">
           <div className="grid gap-1">
-            {navigationLinks.map((link) => {
-              const isActive = pathname === link.href;
-
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={closeMenu}
-                  className={cn(
-                    "rounded-md py-3 font-heading text-[18px] font-semibold text-[#102F49] hover:text-[#147C79] hover:underline hover:decoration-[#147C79] hover:underline-offset-4",
-                    isActive && "underline decoration-[#147C79] decoration-2 underline-offset-4"
-                  )}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-
-            <Link href="/#contact" onClick={closeMenu} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-[#102F49] px-6 text-sm font-bold text-white">
-              Contact SIPL
-            </Link>
+            {aboutLinks.map((link) => (
+              <Link key={link.label} href={link.href} onClick={closeMenu} className="px-2 py-2.5 text-base font-medium text-[#3C5162] hover:text-[#087D78]">
+                {link.label}
+              </Link>
+            ))}
+            {links.map((link) => (
+              <Link key={link.label} href={link.href} onClick={closeMenu} className="px-2 py-2.5 text-base font-medium text-[#3C5162] hover:text-[#087D78]">
+                {link.label}
+              </Link>
+            ))}
           </div>
         </nav>
-      </div>
+      )}
     </header>
   );
 }

@@ -147,7 +147,7 @@ export function ContactForm() {
           aria-describedby={errors.message ? "contact-message-error" : "contact-message-count"}
           className={`${fieldStyles} min-h-44 resize-y py-4`}
         />
-        <p id="contact-message-count" className="mt-2 text-right text-xs text-[#001B65]/54">
+        <p id="contact-message-count" className="mt-2 text-right text-xs text-[#0F2C45]/54">
           {fields.message.length} / {CONTACT_LIMITS.messageMax}
         </p>
       </Field>
@@ -175,7 +175,7 @@ export function ContactForm() {
 
       <div className="min-h-7" aria-live="polite" aria-atomic="true">
         {status === "success" && (
-          <p className="border-l-2 border-[#D4AF37] pl-4 text-sm font-semibold leading-6 text-[#001B65]">
+          <p className="border-l-2 border-[#C49327] pl-4 text-sm font-semibold leading-6 text-[#0F2C45]">
             Thank you. Your message has been sent to the SIPL team.
           </p>
         )}
@@ -190,7 +190,7 @@ export function ContactForm() {
 }
 
 const fieldStyles =
-  "mt-2 min-h-13 w-full border border-[#001B65]/22 bg-transparent px-4 text-base text-[#001B65] outline-none transition-colors placeholder:text-[#001B65]/40 hover:border-[#001B65]/40 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/28 aria-[invalid=true]:border-[#A63838] aria-[invalid=true]:ring-1 aria-[invalid=true]:ring-[#A63838]/20";
+  "mt-2 min-h-13 w-full border border-[#0F2C45]/22 bg-transparent px-4 text-base text-[#0F2C45] outline-none transition-colors placeholder:text-[#0F2C45]/40 hover:border-[#0F2C45]/40 focus:border-[#C49327] focus:ring-2 focus:ring-[#C49327]/28 aria-[invalid=true]:border-[#A63838] aria-[invalid=true]:ring-1 aria-[invalid=true]:ring-[#A63838]/20";
 
 function Field({
   id,
@@ -208,10 +208,10 @@ function Field({
   return (
     <div>
       <div className="flex items-baseline justify-between gap-4">
-        <label htmlFor={id} className="font-heading text-sm font-semibold text-[#001B65]">
+        <label htmlFor={id} className="font-heading text-sm font-semibold text-[#0F2C45]">
           {label}
         </label>
-        {note && <span className="text-xs text-[#001B65]/54">{note}</span>}
+        {note && <span className="text-xs text-[#0F2C45]/54">{note}</span>}
       </div>
       {children}
       {error && (

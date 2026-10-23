@@ -18,22 +18,22 @@ const teamPrinciples = ["Research leadership", "Clinical collaboration", "Engine
 export default function TeamPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC] text-[#001B65]">
+      <div className="bg-[#F7FAF9] text-[#0F2C45]">
         <section className="pb-20 pt-40">
           <Container>
-            <div className="max-w-4xl border-t border-[#001B65]/12 pt-16">
-              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#001B65]/60">
+            <div className="max-w-4xl border-t border-[#0F2C45]/12 pt-16">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#0F2C45]/60">
                 Inside SIPL
               </p>
               <div className="mt-8">
                 <h1 className="font-heading text-5xl font-semibold leading-[1.02] tracking-[-0.02em] md:text-7xl">
                   Meet the Team
                 </h1>
-                <p className="mt-8 max-w-2xl text-lg leading-8 text-[#001B65]/72 md:text-xl">
+                <p className="mt-8 max-w-2xl text-lg leading-8 text-[#0F2C45]/72 md:text-xl">
                   Meet the researchers, engineers, and collaborators building SIPL’s clinical
                   intelligence infrastructure.
                 </p>
-                <div className="mt-12 grid gap-3 border-l border-[#D4AF37] pl-6">
+                <div className="mt-12 grid gap-3 border-l border-[#C49327] pl-6">
                   {teamPrinciples.map((principle) => (
                     <p key={principle} className="font-heading text-base font-semibold">
                       {principle}
@@ -47,8 +47,8 @@ export default function TeamPage() {
 
         <section aria-labelledby="team-grid-heading" className="pb-28">
           <Container>
-            <div className="mb-10 max-w-4xl border-t border-[#001B65]/12 pt-12">
-              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#001B65]/60">
+            <div className="mb-10 max-w-4xl border-t border-[#0F2C45]/12 pt-12">
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#0F2C45]/60">
                 Our people
               </p>
               <div className="mt-8">
@@ -58,7 +58,7 @@ export default function TeamPage() {
                 >
                   Research depth. Engineering discipline. Clinical purpose.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-[#001B65]/72">
+                <p className="mt-5 max-w-2xl text-base leading-8 text-[#0F2C45]/72">
                   A multidisciplinary team translating careful research into dependable clinical
                   intelligence systems.
                 </p>

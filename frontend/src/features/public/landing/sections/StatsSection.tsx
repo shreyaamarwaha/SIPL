@@ -10,7 +10,7 @@ const COMPANY_STATS = [
 
 export function StatsSection() {
   return (
-    <section className="bg-[#001B65] border-b border-white/[0.06] py-12 md:py-16 overflow-hidden">
+    <section className="bg-[#0F2C45] border-b border-white/[0.06] py-12 md:py-16 overflow-hidden">
       <Marquee speed="slow" className="py-2">
         {COMPANY_STATS.map((stat, i) => (
           <div key={i} className="flex items-center mx-8 shrink-0">

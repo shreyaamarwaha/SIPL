@@ -50,7 +50,7 @@ export function BrainWaveSeparator() {
   });
 
   return (
-    <div className="relative h-44 w-full overflow-hidden bg-[#F5F8FC]">
+    <div className="relative h-44 w-full overflow-hidden bg-[#F7FAF9]">
       <svg
         aria-hidden="true"
         className="absolute inset-0 h-full w-full"
@@ -69,7 +69,7 @@ export function BrainWaveSeparator() {
             ref={firstPathRef}
             d={initialPath}
             fill="none"
-            stroke="#001B65"
+            stroke="#0F2C45"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
@@ -79,7 +79,7 @@ export function BrainWaveSeparator() {
             ref={secondPathRef}
             d={initialPath}
             fill="none"
-            stroke="#001B65"
+            stroke="#0F2C45"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"

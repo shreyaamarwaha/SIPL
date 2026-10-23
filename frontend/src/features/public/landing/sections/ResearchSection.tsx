@@ -7,7 +7,7 @@ import { BookOpen } from "lucide-react";
 
 export function ResearchSection() {
   return (
-    <section id="research" className="py-24 md:py-32 bg-[#F5F8FC]">
+    <section id="research" className="py-24 md:py-32 bg-[#F7FAF9]">
       <Container>
         <SectionHeading 
           title="From research questions to measurable intelligence" 
@@ -23,7 +23,7 @@ export function ResearchSection() {
               <p className="text-[#4A5568] leading-relaxed mb-6">
                 Research indicates that psychomotor retardation, a core symptom of depression, manifests acoustically. LifeBack™ analyzes vocal prosody, formants, and articulation rates to identify these subtle physiological changes without requiring specialized hardware.
               </p>
-              <div className="flex items-center text-[#D4AF37] font-medium text-sm group cursor-pointer">
+              <div className="flex items-center text-[#C49327] font-medium text-sm group cursor-pointer">
                 <BookOpen size={16} className="mr-2" />
                 <span>Read foundational research</span>
               </div>
@@ -37,7 +37,7 @@ export function ResearchSection() {
               <p className="text-[#4A5568] leading-relaxed mb-6">
                 By combining established psychometric frameworks (like PHQ-9 and BDI) with dynamic, multi-turn AI interactions, our screening process reduces the self-reporting bias inherent in static questionnaires.
               </p>
-              <div className="flex items-center text-[#D4AF37] font-medium text-sm group cursor-pointer">
+              <div className="flex items-center text-[#C49327] font-medium text-sm group cursor-pointer">
                 <BookOpen size={16} className="mr-2" />
                 <span>View clinical benchmarks</span>
               </div>
@@ -58,7 +58,7 @@ export function ResearchSection() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
               
               <MotionWrapper variant="slideUp" delay={0.2} className="bg-white px-6 py-4 md:text-center">
-                <div className="w-4 h-4 rounded-full bg-[#001B65] md:mx-auto mb-4 border-4 border-white shadow-sm relative md:-mt-[26px]"></div>
+                <div className="w-4 h-4 rounded-full bg-[#0F2C45] md:mx-auto mb-4 border-4 border-white shadow-sm relative md:-mt-[26px]"></div>
                 <div className="font-semibold text-lg text-[#0A0C10] mb-2">Phase 1: Voice</div>
                 <p className="text-sm text-[#4A5568]">Acoustic and linguistic analysis integration.</p>
                 <Badge variant="muted" className="mt-4">Current</Badge>

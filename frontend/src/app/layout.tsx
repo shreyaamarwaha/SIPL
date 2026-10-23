@@ -29,20 +29,20 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/SIPL_Logo.png",
-        type: "image/png",
+        url: "/favicon.svg",
+        type: "image/svg+xml",
       },
     ],
     shortcut: [
       {
-        url: "/SIPL_Logo.png",
-        type: "image/png",
+        url: "/favicon.svg",
+        type: "image/svg+xml",
       },
     ],
     apple: [
       {
-        url: "/SIPL_Logo.png",
-        type: "image/png",
+        url: "/favicon.svg",
+        type: "image/svg+xml",
       },
     ],
   },

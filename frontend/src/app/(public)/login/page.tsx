@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-[#F5F8FC] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#F7FAF9] flex flex-col font-sans">
       <div className="absolute top-8 left-8">
         <Link href="/" className="flex items-center gap-2 text-[#4A5568] hover:text-[#0A0C10] transition-colors font-medium">
           <ArrowLeft size={16} />
@@ -20,7 +20,7 @@ export default function LoginPage() {
           <MotionWrapper variant="slideUp">
             <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#EDEDED]">
               <div className="flex justify-center mb-8">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#001B65] text-white font-serif text-xl font-medium">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0F2C45] text-white font-serif text-xl font-medium">
                   LB
                 </div>
               </div>
@@ -34,7 +34,7 @@ export default function LoginPage() {
                   <input
                     type="email"
                     placeholder="Enter your institutional or personal email"
-                    className="w-full px-4 py-3 rounded-xl border border-[#001B65]/10 bg-[#F9F8F3] focus:outline-none focus:ring-2 focus:ring-[#001B65] focus:bg-white transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-[#0F2C45]/10 bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#0F2C45] focus:bg-white transition-all"
                   />
                 </div>
                 <div>
@@ -42,7 +42,7 @@ export default function LoginPage() {
                   <input
                     type="password"
                     placeholder="Enter your password"
-                    className="w-full px-4 py-3 rounded-xl border border-[#001B65]/10 bg-[#F9F8F3] focus:outline-none focus:ring-2 focus:ring-[#001B65] focus:bg-white transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-[#0F2C45]/10 bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#0F2C45] focus:bg-white transition-all"
                   />
                 </div>
 

@@ -2,15 +2,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sipl-blue: #001B65;
-  --color-pharma-navy: #0d1f4d;
-  --color-pharma-midnight: #081a38;
-  --color-pharma-cyan: #ebf7ff;
-  --color-pharma-mint: #dff5ef;
-  --color-background: #F3F7FB;
-  --color-eggshell: #F9F8F3;
-  --color-muted-gold: #D4AF37;
-  --color-foreground: #0D1F4D;
+  --color-sipl-blue: #0F2C45;
+  --color-pharma-navy: #0F2C45;
+  --color-pharma-midnight: #0F2C45;
+  --color-pharma-cyan: #EEF7F4;
+  --color-pharma-mint: #E5F3EF;
+  --color-background: #F7FAF9;
+  --color-eggshell: #FFFFFF;
+  --color-muted-gold: #C49327;
+  --color-foreground: #0F2C45;
   
   --font-heading: var(--font-plus-jakarta);
   --font-body: var(--font-inter);
@@ -38,8 +38,8 @@
   
   body {
     background:
-      radial-gradient(circle at top left, rgba(0, 27, 101, 0.08), transparent 30%),
-      linear-gradient(180deg, #f3f7fb 0%, #eef5fb 100%);
+      radial-gradient(circle at 90% 0%, rgba(8, 125, 120, 0.06), transparent 30%),
+      #F7FAF9;
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -47,6 +47,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
   }
 
   h1,

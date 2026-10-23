@@ -26,7 +26,7 @@ const videoCards = [
 export default function SIPLVideoPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC]">
+      <div className="bg-[#F7FAF9]">
         <EditorialHero eyebrow="SIPL Video" title="Video-based behavioural intelligence.">
           <p>
             Video-based behavioural intelligence helps capture visual, motor, affective, and interaction-level signals as part of a broader clinical picture.

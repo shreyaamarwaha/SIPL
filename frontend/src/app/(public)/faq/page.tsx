@@ -46,7 +46,7 @@ const questions = [
 export default function FaqPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC] text-[#001B65]">
+      <div className="bg-[#F7FAF9] text-[#0F2C45]">
         <EditorialHero eyebrow="Answers" title="A clearer view of how we work.">
           <p>Short answers about SIPL, our research direction, and how to start a conversation.</p>
         </EditorialHero>
@@ -54,22 +54,22 @@ export default function FaqPage() {
           <Container>
             <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr]">
               <aside className="lg:sticky lg:top-32 lg:self-start">
-                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#147C79]">Quick guide</p>
-                <p className="mt-4 max-w-sm text-base leading-7 text-[#001B65]/68">Find the right route for questions about research, partnerships, LifeBack, and privacy.</p>
-                <Link href="/contact" className="mt-6 inline-flex text-sm font-bold text-[#001B65] underline decoration-[#D4AF37] decoration-2 underline-offset-4">Ask SIPL a question</Link>
+                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#087D78]">Quick guide</p>
+                <p className="mt-4 max-w-sm text-base leading-7 text-[#0F2C45]/68">Find the right route for questions about research, partnerships, LifeBack, and privacy.</p>
+                <Link href="/contact" className="mt-6 inline-flex text-sm font-bold text-[#0F2C45] underline decoration-[#C49327] decoration-2 underline-offset-4">Ask SIPL a question</Link>
               </aside>
               <div className="grid gap-10">
                 {questions.map((group) => (
                   <section key={group.group}>
-                    <h2 className="mb-4 border-b border-[#001B65]/12 pb-4 font-heading text-xl font-semibold md:text-2xl">{group.group}</h2>
+                    <h2 className="mb-4 border-b border-[#0F2C45]/12 pb-4 font-heading text-xl font-semibold md:text-2xl">{group.group}</h2>
                     <div className="grid gap-3">
                       {group.items.map(([question, answer]) => (
-                        <details key={question} className="group rounded-[20px] border border-[#001B65]/10 bg-[#F9F8F3] px-5 py-4 open:border-[#147C79]/30 open:bg-white md:px-6">
-                          <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-heading text-base font-semibold leading-6 marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#147C79] md:text-lg">
+                        <details key={question} className="group rounded-[20px] border border-[#0F2C45]/10 bg-[#FFFFFF] px-5 py-4 open:border-[#087D78]/30 open:bg-white md:px-6">
+                          <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-heading text-base font-semibold leading-6 marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78] md:text-lg">
                             {question}
-                            <ChevronDown aria-hidden="true" className="h-5 w-5 shrink-0 text-[#147C79] transition-transform group-open:rotate-180" />
+                            <ChevronDown aria-hidden="true" className="h-5 w-5 shrink-0 text-[#087D78] transition-transform group-open:rotate-180" />
                           </summary>
-                          <p className="max-w-3xl pb-2 pt-4 text-sm leading-7 text-[#001B65]/70 md:text-base">{answer}</p>
+                          <p className="max-w-3xl pb-2 pt-4 text-sm leading-7 text-[#0F2C45]/70 md:text-base">{answer}</p>
                         </details>
                       ))}
                     </div>

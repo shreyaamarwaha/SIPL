@@ -11,7 +11,7 @@ export const metadata = generateSeoMetadata({
 export default function LifeGenomicsPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F5F8FC]">
+      <div className="bg-[#F7FAF9]">
         <EditorialHero eyebrow="SIPL Genomics" title="Genomics and pharmacogenomics for precision psychiatry.">
           <p>
             Genomics and pharmacogenomics support precision psychiatry by helping clinicians understand biological variation, treatment response, and medication safety.

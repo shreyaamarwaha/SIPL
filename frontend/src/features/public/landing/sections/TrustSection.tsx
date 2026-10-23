@@ -29,20 +29,20 @@ export function TrustSection() {
   ];
 
   return (
-    <section id="trust" className="relative py-24 md:py-32 bg-[#F5F8FC] overflow-hidden">
+    <section id="trust" className="relative py-24 md:py-32 bg-[#F7FAF9] overflow-hidden">
       
       {/* Premium Structured Mesh Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Animated ambient glow shifts */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-white/40 rounded-full blur-[120px] mix-blend-overlay animate-[pulse_8s_ease-in-out_infinite]"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#001B65]/[0.02] rounded-full blur-[100px] mix-blend-multiply animate-[pulse_10s_ease-in-out_infinite_2s]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#0F2C45]/[0.02] rounded-full blur-[100px] mix-blend-multiply animate-[pulse_10s_ease-in-out_infinite_2s]"></div>
 
         {/* Square Mesh Grid (Thin, subtle, neutral) */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#001B651A_1px,transparent_1px),linear-gradient(to_bottom,#001B651A_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0F2C451A_1px,transparent_1px),linear-gradient(to_bottom,#0F2C451A_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         
         {/* Depth / Fades (embedding the grid into the surface) */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#F5F8FC_100%)]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F8FC] via-transparent to-[#F5F8FC] opacity-40"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#F7FAF9_100%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F7FAF9] via-transparent to-[#F7FAF9] opacity-40"></div>
       </div>
 
       <Container className="relative z-10">
@@ -55,13 +55,13 @@ export function TrustSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {cards.map((card, i) => (
             <MotionWrapper key={card.title} variant="slideUp" delay={0.1 * i}>
-              <Card className="h-full bg-[#F9F8F3]/90 backdrop-blur-md border border-white/60 hover:bg-[#F9F8F3] hover:shadow-[0_15px_40px_rgba(0,27,101,0.04)] transition-all duration-500 group relative overflow-hidden">
+              <Card className="h-full bg-[#FFFFFF]/90 backdrop-blur-md border border-white/60 hover:bg-[#FFFFFF] hover:shadow-[0_15px_40px_rgba(0,27,101,0.04)] transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="flex flex-col h-full relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-[#001B65] flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-105 transition-transform duration-500">
+                  <div className="w-14 h-14 rounded-2xl bg-[#0F2C45] flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-105 transition-transform duration-500">
                     <card.icon size={24} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl font-serif mb-4 text-[#0A0C10] group-hover:text-[#001B65] transition-colors duration-300">{card.title}</h3>
+                  <h3 className="text-2xl font-serif mb-4 text-[#0A0C10] group-hover:text-[#0F2C45] transition-colors duration-300">{card.title}</h3>
                   <p className="text-[#4A5568] leading-relaxed text-[15px] md:text-base font-body">{card.description}</p>
                 </div>
               </Card>
@@ -70,11 +70,11 @@ export function TrustSection() {
         </div>
 
         <MotionWrapper variant="fadeIn" delay={0.4}>
-          <div className="bg-[#001B65] rounded-[24px] p-6 md:p-8 text-white flex flex-col sm:flex-row items-center gap-6 justify-between shadow-[0_20px_40px_rgba(0,27,101,0.1)] relative overflow-hidden">
+          <div className="bg-[#0F2C45] rounded-[24px] p-6 md:p-8 text-white flex flex-col sm:flex-row items-center gap-6 justify-between shadow-[0_20px_40px_rgba(0,27,101,0.1)] relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_60%)] pointer-events-none"></div>
             <div className="flex items-center gap-4 relative z-10">
               <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center shrink-0">
-                <Stethoscope size={24} className="text-[#D4AF37]" strokeWidth={1.5} />
+                <Stethoscope size={24} className="text-[#C49327]" strokeWidth={1.5} />
               </div>
               <p className="text-white/90 text-sm md:text-base font-body font-light leading-relaxed max-w-3xl">
                 <strong className="text-white font-medium tracking-wide block sm:inline mb-1 sm:mb-0 mr-2">Important Clinical Disclaimer:</strong> 
