@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LifeBack application
 
-## Getting Started
+This folder is a separate Next.js application with its own dependencies, environment variables, and deployment. It is independent of the SIPL corporate website in `../frontend/`.
 
-First, run the development server:
+## Run locally
 
-```bash
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Configure local services using `.env.example` as a key list. Keep `.env.local` credentials private.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/(public)/`: public product pages and account entry points
+- `src/app/(user)/`: authenticated user pages
+- `src/app/(assessment)/`: assessment journeys
+- `src/app/(clinician)/`: clinician-facing routes
+- `src/app/(reference)/`: static reference-design routes
+- `src/app/api/`: API and webhook handlers
+- `src/components/`: shared application UI
+- `src/features/`: domain-specific features
+- `prisma/`: data model and database seed
+- `public/`: static assets and reference HTML
 
-## Learn More
+## Commands
 
-To learn more about Next.js, take a look at the following resources:
+```powershell
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See the root [`README.md`](../README.md) for how this application relates to the SIPL website.

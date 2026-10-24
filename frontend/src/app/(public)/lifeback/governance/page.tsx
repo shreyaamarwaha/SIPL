@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ReferenceDesignFrame } from "@/components/layout/ReferenceDesignFrame";
+import { StaticHtmlFrame } from "@/components/layout/StaticHtmlFrame";
 
 export const metadata: Metadata = {
   title: "Safety & Governance | LifeBack",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LifeBackGovernancePage() {
   return (
-    <ReferenceDesignFrame
+    <StaticHtmlFrame
       src="/lifeback-site/lifeback/governance.html"
       title="Safety and governance — LifeBack"
     />

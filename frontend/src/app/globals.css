@@ -1,5 +1,10 @@
 @config "../../tailwind.config.ts";
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+:root {
+  --font-plus-jakarta: "Plus Jakarta Sans", Arial, sans-serif;
+}
 
 @theme {
   --color-sipl-blue: #0F2C45;
@@ -13,10 +18,10 @@
   --color-foreground: #0F2C45;
   
   --font-heading: var(--font-plus-jakarta);
-  --font-body: var(--font-inter);
-  --font-sans: var(--font-inter);
+  --font-body: var(--font-plus-jakarta);
+  --font-sans: var(--font-plus-jakarta);
   --font-serif: var(--font-plus-jakarta);
-  --font-mono: var(--font-space-mono);
+  --font-mono: var(--font-plus-jakarta);
 }
 
 /*
@@ -41,6 +46,7 @@
       radial-gradient(circle at 90% 0%, rgba(8, 125, 120, 0.06), transparent 30%),
       #F7FAF9;
     color: var(--color-foreground);
+    font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

@@ -1,4 +1,4 @@
-import { ReferenceDesignFrame } from "@/components/layout/ReferenceDesignFrame";
+import { StaticHtmlFrame } from "@/components/layout/StaticHtmlFrame";
 import { generateSeoMetadata, organizationSchema, medicalSchema } from "@/shared/lib/seo";
 
 export const metadata = generateSeoMetadata({
@@ -14,7 +14,7 @@ export default function Home() {
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, medicalSchema]) }} 
       />
-      <ReferenceDesignFrame src="/design-reference/sipl/index.html" title="Sequoia Insilico — connected intelligence for brain and mental healthcare" />
+      <StaticHtmlFrame src="/sipl-site/index.html" title="Sequoia Insilico — connected intelligence for brain and mental healthcare" />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ReferenceDesignFrame } from "@/components/layout/ReferenceDesignFrame";
+import { StaticHtmlFrame } from "@/components/layout/StaticHtmlFrame";
 
 export const metadata: Metadata = {
   title: "LifeBack | Precision that follows the patient",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LifeBackPage() {
   return (
-    <ReferenceDesignFrame
+    <StaticHtmlFrame
       src="/lifeback-site/lifeback/index.html"
       title="LifeBack — Precision that follows the patient"
     />

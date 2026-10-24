@@ -1,50 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SIPL corporate website
 
-## Getting Started
+This folder is the SIPL public website and its API routes. It is a standalone Next.js application; run its commands from this folder.
 
-First, run the development server:
+## Run locally
 
-```bash
+```powershell
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy `.env.example` to `.env.local` when configuring local settings. Keep credentials out of source control.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to edit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Route pages and API handlers: `src/app/`
+- Shared header, footer, and static-page frame: `src/components/layout/`
+- Public page features and forms: `src/features/public/`
+- Shared UI, SEO, and utilities: `src/shared/`
+- Main landing and team-page content: `public/sipl-site/`
+- Publications page: `public/publications/`
+- LifeBack static fallback pages: `public/lifeback-site/`
+- Team photos: `public/team/`
 
-## Learn More
+The main SIPL landing page is maintained as static HTML with its CSS and browser scripts in separate files. The Next.js `/` and `/team` routes load that site through `StaticHtmlFrame`; `/team` starts at the full team view. See [`ARCHITECTURE.md`](ARCHITECTURE.md) for route details.
 
-To learn more about Next.js, take a look at the following resources:
+## Checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Contact form email
-
-The contact form submits to `/api/contact` and sends enquiries through SMTP to
-`contact@sequoiainsilico.com`. Copy `.env.example` to `.env.local` and provide the SMTP
-credentials before running the app:
-
-```bash
-cp .env.example .env.local
+```powershell
+npm run build
+npm run lint
 ```
 
-Set `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, and `SMTP_FROM_EMAIL`. Keep
-`CONTACT_TO_EMAIL=contact@sequoiainsilico.com`. The API returns an error instead of sending to
-an alternate address when the mail configuration is incomplete.
+Deployment is managed by the SIPL website’s Vercel project. The sibling `lifeback/` application has a separate release process.

@@ -19,9 +19,9 @@ const config: Config = {
       },
       fontFamily: {
         heading: ["var(--font-plus-jakarta)", "ui-sans-serif", "system-ui", "sans-serif"],
-        body: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["var(--font-space-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+        body: ["var(--font-plus-jakarta)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-plus-jakarta)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-plus-jakarta)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       borderRadius: {
         clinical: "4px",

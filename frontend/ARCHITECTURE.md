@@ -1,46 +1,55 @@
-# LifeBack Frontend Architecture
+# SIPL website architecture
 
-This document outlines the domain-driven architecture adopted for the LifeBack frontend application.
-
-## Directory Structure
-
-The codebase is split into feature-specific domains and shared layers to support scalable multi-user layers (Public, User, Clinician, Admin).
+## Application map
 
 ```text
-src/
-├── app/
-│   ├── (public)/     # Public-facing landing pages (Current)
-│   ├── (user)/       # Patient portal (Future)
-│   ├── (clinician)/  # Clinician dashboard (Future)
-│   └── (admin)/      # Administrative console (Future)
-│
-├── features/         # Domain-driven feature boundaries
-│   └── public/
-│       └── landing/  # All components, sections, and logic specific to the landing page
-│
-├── shared/           # Cross-cutting concerns and primitives
-│   ├── analytics/    # Pluggable analytics boundary
-│   ├── animations/   # Framer Motion components and variants
-│   ├── hooks/        # Shared React hooks
-│   ├── lib/          # Utilities, design tokens, SEO logic
-│   ├── types/        # Global TypeScript types
-│   └── ui/           # Shared design system components
-│
-└── layouts/          # Root layout definitions for different access layers
+frontend/
+├── public/
+│   ├── sipl-site/          # Production SIPL landing and team content
+│   │   ├── index.html
+│   │   ├── site.css
+│   │   └── scripts/        # Storyline, page routing, navigation, forms
+│   ├── publications/       # Publications microsite
+│   ├── lifeback-site/      # LifeBack fallback HTML
+│   └── team/               # Team portraits
+└── src/
+    ├── app/                # Next.js routes, metadata, and API endpoints
+    ├── components/layout/  # Header, footer, brand, static HTML frame
+    ├── features/public/    # Contact, careers, team, and public content
+    ├── layouts/            # Shared Next.js page layout
+    └── shared/             # Design system, SEO, hooks, animations, utilities
 ```
 
-## Core Principles
+The SIPL and LifeBack applications live in separate repository folders and use independent Next.js projects. `frontend/` owns the corporate site deployment.
 
-1.  **Strict Feature Boundaries**: Code belongs to the feature that uses it. If multiple features need it, it moves to `shared/`.
-2.  **Absolute Imports**: Imports must use `@/` alias (e.g., `import { Button } from "@/shared/ui"`).
-3.  **Server Components Default**: All components default to Server Components for performance. `use client` is strictly isolated to interactive leaves (e.g., `MotionWrapper`, `MobileMenu`).
-4.  **Design Tokens**: Magic numbers are forbidden. Colors, spacing, and typography are defined in `src/shared/lib/design-tokens.ts`.
-5.  **Strict TypeScript**: `any` is disallowed. Strict null checks and exact optional property types are enforced.
+## Page routing
 
-## Future Expansion
+- `/` loads `public/sipl-site/index.html` through `StaticHtmlFrame`.
+- `/team` loads the same site at `#team`, so the standalone team URL uses the full team page, portraits, and bios from the current design.
+- `/publications` serves the static publications page.
+- Other public routes are Next.js pages under `src/app/(public)/`.
+- `/lifeback` can be routed to the LifeBack origin with `LIFEBACK_ORIGIN`; the local HTML under `public/lifeback-site/` is the fallback.
+- API handlers are under `src/app/api/`.
 
-When implementing Phase 2 (User/Clinician layers):
-1.  Create the page routing in `app/(layer)/`.
-2.  Create the new feature domain in `src/features/(layer)/`.
-3.  Utilize `src/shared/` for consistent design.
-4.  Avoid cross-feature imports unless promoted to `shared/`.
+## Landing page source
+
+`public/sipl-site/index.html` owns the SIPL landing-page markup and its hash-based section/page navigation. Its supporting code is separated by responsibility:
+
+- `site.css` contains the landing page’s ordered style rules.
+- `scripts/intro-story.js` runs the hero storyline.
+- `scripts/page-router.js` switches the static site’s internal views.
+- `scripts/mobile-navigation.js` handles the small-screen menu.
+- `scripts/contact-modal.js` handles the contact form modal.
+- `scripts/investor-enquiry.js` handles investor enquiry status messages.
+
+Keep these files together. The script tags in `index.html` intentionally load in their original order.
+
+## Typography
+
+Plus Jakarta Sans is the shared site typeface. The Next.js font is declared in `src/app/layout.tsx`; Tailwind font aliases are defined in `tailwind.config.ts` and `src/app/globals.css`. Static HTML pages load the same family locally through their font stylesheet declaration.
+
+## Shared components
+
+- `StaticHtmlFrame` embeds a static page while retaining a Next.js route and metadata.
+- `BrandLockup`, `Header`, and `Footer` provide the reusable SIPL identity for React-rendered routes.
+- Public forms and features belong under `src/features/public/`; reusable primitives belong under `src/shared/`.
