@@ -40,7 +40,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-[#0F2C45]/10 pt-6 text-xs text-[#6F8190] sm:flex-row sm:items-center">
           <span>© 2026 Sequoia Insilico Pvt. Ltd.</span>
-          <Link href="/#advisory-board" className="transition-colors hover:text-[#087D78]">Advisory Board · Coming soon</Link>
+          <Link href="/team/#advisors" className="transition-colors hover:text-[#087D78]">Advisory Board · Coming soon</Link>
         </div>
       </div>
     </footer>

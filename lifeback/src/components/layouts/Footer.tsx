@@ -6,7 +6,7 @@ const platformLinks = [
   { label: "About", href: "/about" },
   { label: "Why LifeBack", href: "/why-lifeback" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "SIPL Homepage", href: process.env.NEXT_PUBLIC_SIPL_URL || "https://sequoiainsilico.com" },
+  { label: "SIPL Homepage", href: process.env.NEXT_PUBLIC_SIPL_URL || "https://www.sequoiainsilico.com" },
 ];
 
 

@@ -4,6 +4,7 @@ import { PublicLayout } from "@/layouts/PublicLayout";
 import { Container } from "@/shared/ui/Container";
 
 export type InformationSection = {
+  id?: string;
   title: string;
   paragraphs?: string[];
   bullets?: string[];
@@ -39,6 +40,7 @@ export function InformationPage({
           {sections.map((section, index) => (
             <EditorialSection
               key={section.title}
+              {...(section.id ? { id: section.id } : {})}
               eyebrow={`0${index + 1} / ${eyebrow}`}
               title={section.title}
             >

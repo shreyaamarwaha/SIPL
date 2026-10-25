@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
 
+const siplUrl = process.env.NEXT_PUBLIC_SIPL_URL || "https://www.sequoiainsilico.com";
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -115,7 +117,7 @@ export function Header() {
             </>
           )}
           <Link
-            href={process.env.NEXT_PUBLIC_SIPL_URL || "#"}
+            href={siplUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={getLinkClass("SIPL")}
@@ -217,7 +219,7 @@ export function Header() {
               </>
             )}
             <Link
-              href={process.env.NEXT_PUBLIC_SIPL_URL || "#"}
+              href={siplUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}

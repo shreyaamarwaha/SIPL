@@ -38,18 +38,20 @@ export function EditorialHero({
 }
 
 export function EditorialSection({
+  id,
   eyebrow,
   title,
   children,
   className,
 }: {
+  id?: string;
   eyebrow?: string;
   title: string;
   children: ReactNode;
   className?: string;
 }) {
   return (
-    <section className={cn("pb-24 text-[#0F2C45]", className)}>
+    <section id={id} className={cn("scroll-mt-28 pb-24 text-[#0F2C45]", className)}>
       <Container>
         <div className="grid gap-10 border-t border-[#0F2C45]/12 pt-16 lg:grid-cols-[0.75fr_1.25fr]">
           <div>

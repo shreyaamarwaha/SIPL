@@ -41,6 +41,7 @@ The SIPL and LifeBack applications live in separate repository folders and use i
 - `scripts/mobile-navigation.js` handles the small-screen menu.
 - `scripts/contact-modal.js` handles the contact form modal.
 - `scripts/investor-enquiry.js` handles investor enquiry status messages.
+- `scripts/top-level-navigation.js` keeps same-site links in the main browser frame so every page uses the SIPL navigation.
 
 Keep these files together. The script tags in `index.html` intentionally load in their original order.
 
