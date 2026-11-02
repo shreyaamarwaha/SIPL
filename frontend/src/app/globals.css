@@ -94,3 +94,8 @@
     transform: translateX(-50%);
   }
 }
+
+
+.sipl-investor-info-card { position: relative; isolation: isolate; overflow: hidden; transition: background-color 320ms ease, border-color 320ms ease, box-shadow 360ms ease; }
+.sipl-investor-info-card:hover { border-color: rgb(255 255 255 / 58%); background-color: rgb(255 255 255 / 13%); box-shadow: 0 0 0 1px rgb(255 255 255 / 13%), 0 18px 52px rgb(170 215 255 / 14%), inset 0 1px 0 rgb(255 255 255 / 18%); }
+.sipl-investor-info-card:focus-within { border-color: rgb(255 255 255 / 58%); box-shadow: 0 0 0 2px rgb(255 255 255 / 20%), 0 18px 52px rgb(170 215 255 / 14%); }
