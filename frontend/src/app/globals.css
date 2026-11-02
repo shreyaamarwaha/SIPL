@@ -201,7 +201,7 @@
   background: #F7F9FC;
 }
 
-.sipl-theme .light-hero > div.text-center {
+.sipl-theme .light-hero > .light-hero-content {
   max-width: 1240px;
   border-radius: 40px;
   background: #FFFFFF;
@@ -210,7 +210,7 @@
 }
 
 @media (min-width: 768px) {
-  .sipl-theme .light-hero > div.text-center {
+  .sipl-theme .light-hero > .light-hero-content {
     padding: 3.5rem 3rem;
   }
 }

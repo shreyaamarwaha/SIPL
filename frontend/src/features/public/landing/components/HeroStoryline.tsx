@@ -14,8 +14,8 @@ const story = [
   <>SIPL connects the signals to advance brain-health research.</>,
 ];
 
-const STEP_MS = 1350;
-const FINAL_STEP_MS = 2400;
+const STEP_MS = 2500;
+const FINAL_STEP_MS = 3200;
 
 export function HeroStoryline() {
   const [step, setStep] = useState(0);
@@ -54,7 +54,7 @@ export function HeroStoryline() {
   return (
     <div
       aria-label="SIPL's research story"
-      className="absolute inset-0 z-10 flex items-center justify-center overflow-hidden rounded-[inherit] px-6 pb-20 pt-32 text-center md:px-12 md:pb-20 md:pt-36"
+      className="absolute inset-0 z-10 flex items-center justify-center overflow-hidden rounded-[inherit] px-6 pb-24 pt-36 text-center md:px-12 md:pb-24 md:pt-40"
       role="region"
     >
       <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_76%_34%,rgba(53,113,191,0.16),transparent_45%),radial-gradient(ellipse_at_22%_78%,rgba(96,174,189,0.12),transparent_42%),linear-gradient(135deg,#F7FAFA_0%,#EDF5F6_52%,#F5F8F8_100%)]" />
@@ -93,7 +93,7 @@ export function HeroStoryline() {
         Skip intro
       </button>
 
-      <div className="relative z-10 flex min-h-56 w-full max-w-4xl items-center justify-center md:min-h-64">
+      <div className="relative z-10 flex min-h-64 w-full max-w-4xl items-center justify-center md:min-h-80">
         <AnimatePresence>
           {pinned && (
           <motion.p
@@ -114,8 +114,8 @@ export function HeroStoryline() {
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, y: -14, filter: "blur(4px)" }}
           transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className={`max-w-3xl text-balance font-medium leading-snug tracking-[-0.035em] text-[#102B49] drop-shadow-[0_1px_0_rgba(255,255,255,.7)] ${
-            step === 0 && !pinned ? "text-3xl md:text-5xl" : "text-2xl md:text-4xl"
+          className={`w-full max-w-[min(90vw,56rem)] text-balance font-medium leading-snug tracking-[-0.035em] text-[#102B49] drop-shadow-[0_1px_0_rgba(255,255,255,.7)] ${
+            step === 0 && !pinned ? "text-[clamp(2rem,4.2vw,3.5rem)]" : "text-[clamp(1.75rem,3.4vw,2.75rem)]"
           }`}
           key={step}
         >
