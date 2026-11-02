@@ -997,3 +997,21 @@ body.sipl-contact-open{overflow:hidden}
 .investor-form-aside h3{margin:8px 0 12px}
 .investor-direct-email{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);line-height:1.65}
 @media(max-width:760px){.investor-enquiry-layout{grid-template-columns:1fr}.investor-form-grid,.investor-check-grid{grid-template-columns:1fr}}
+
+/* Match the standalone SIPL landing and team pages to the primary nav font. */
+*,*::before,*::after{font-family:"Plus Jakarta Sans",Arial,sans-serif!important}
+
+/* Place paired section descriptions on the same row as their main headings. */
+.sipl-architecture-head,.sipl-science-head,.sipl-pharma-head,.sipl-precision-head,.sipl-lifeback-replacement-head{grid-template-rows:auto auto;align-items:start;row-gap:0}
+.sipl-architecture-head>div,.sipl-science-head>div,.sipl-pharma-head>div,.sipl-precision-head>div,.sipl-lifeback-replacement-head>div{display:contents}
+.sipl-architecture-head .kicker,.sipl-science-head .kicker,.sipl-pharma-head .kicker,.sipl-precision-head .kicker,.sipl-lifeback-replacement-head .kicker{grid-column:1;grid-row:1}
+.sipl-architecture-head .h2,.sipl-science-head .h2,.sipl-pharma-head .h2,.sipl-precision-head .h2,.sipl-lifeback-replacement-head h2{grid-column:1;grid-row:2}
+.sipl-architecture-head>p,.sipl-science-head>p,.sipl-pharma-head>p,.sipl-precision-head>p,.sipl-lifeback-replacement-head>p{grid-column:2;grid-row:2;align-self:start;margin:0}
+.sipl-lifeback-replacement-head h2{margin-top:0}
+.group-head{align-items:start}
+@media(max-width:920px){
+  .sipl-architecture-head,.sipl-science-head,.sipl-pharma-head,.sipl-precision-head,.sipl-lifeback-replacement-head{grid-template-columns:1fr;grid-template-rows:auto;row-gap:12px}
+  .sipl-architecture-head .kicker,.sipl-science-head .kicker,.sipl-pharma-head .kicker,.sipl-precision-head .kicker,.sipl-lifeback-replacement-head .kicker,
+  .sipl-architecture-head .h2,.sipl-science-head .h2,.sipl-pharma-head .h2,.sipl-precision-head .h2,.sipl-lifeback-replacement-head h2,
+  .sipl-architecture-head>p,.sipl-science-head>p,.sipl-pharma-head>p,.sipl-precision-head>p,.sipl-lifeback-replacement-head>p{grid-column:auto;grid-row:auto}
+}

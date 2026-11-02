@@ -225,7 +225,7 @@ export function CareerApplicationForm() {
           onChange={(event) => updateField("careerPath", event.target.value)}
           aria-invalid={Boolean(errors.careerPath)}
           aria-describedby={errors.careerPath ? "career-careerPath-error" : undefined}
-          className={`${fieldStyles} appearance-none bg-[linear-gradient(45deg,transparent_50%,#0F2C45_50%),linear-gradient(135deg,#0F2C45_50%,transparent_50%)] bg-[position:calc(100%-20px)_22px,calc(100%-15px)_22px] bg-[size:5px_5px,5px_5px] bg-no-repeat pr-12`}
+          className={`${fieldStyles} appearance-none bg-[linear-gradient(45deg,transparent_50%,#131313_50%),linear-gradient(135deg,#131313_50%,transparent_50%)] bg-[position:calc(100%-20px)_22px,calc(100%-15px)_22px] bg-[size:5px_5px,5px_5px] bg-no-repeat pr-12`}
         >
           <option value="" disabled>
             Select a career path
@@ -261,20 +261,20 @@ export function CareerApplicationForm() {
           }
           className={`${fieldStyles} min-h-44 resize-y py-4`}
         />
-        <p id="career-message-count" className="mt-2 text-right text-xs text-[#0F2C45]/54">
+        <p id="career-message-count" className="mt-2 text-right text-xs text-[#131313]/54">
           {fields.message.length} / {CAREER_LIMITS.messageMax}
         </p>
       </Field>
 
       <div>
-        <label htmlFor="career-resume" className="font-heading text-sm font-semibold text-[#0F2C45]">
+        <label htmlFor="career-resume" className="font-heading text-sm font-semibold text-[#131313]">
           Resume / CV — PDF only, maximum 5 MB
         </label>
         <label
           htmlFor="career-resume"
-          className="mt-2 flex min-h-28 cursor-pointer items-center gap-4 border border-dashed border-[#0F2C45]/30 bg-[#F7FAF9]/55 px-5 py-5 text-[#0F2C45] transition-colors hover:border-[#C49327] focus-within:border-[#C49327] focus-within:ring-2 focus-within:ring-[#C49327]/28"
+          className="mt-2 flex min-h-28 cursor-pointer items-center gap-4 border border-dashed border-[#131313]/30 bg-[#EDEDED]/55 px-5 py-5 text-[#131313] transition-colors hover:border-[#8931C4] focus-within:border-[#8931C4] focus-within:ring-2 focus-within:ring-[#8931C4]/28"
         >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#0F2C45]/14 bg-[#FFFFFF]">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#131313]/14 bg-[#FFFFFF]">
             {resume ? (
               <FileText aria-hidden="true" className="h-5 w-5" />
             ) : (
@@ -285,7 +285,7 @@ export function CareerApplicationForm() {
             <span className="block font-heading text-sm font-semibold">
               {resume ? resume.name : "Choose a PDF file"}
             </span>
-            <span className="mt-1 block text-xs text-[#0F2C45]/60">
+            <span className="mt-1 block text-xs text-[#131313]/60">
               {resume ? `${(resume.size / 1024 / 1024).toFixed(2)} MB` : "PDF, up to 5 MB"}
             </span>
           </span>
@@ -312,6 +312,7 @@ export function CareerApplicationForm() {
       <Button
         type="submit"
         size="lg"
+        appearance="sipl"
         disabled={isSubmitting}
         className="w-full gap-3 uppercase tracking-[0.1em]"
       >
@@ -330,7 +331,7 @@ export function CareerApplicationForm() {
 
       <div className="min-h-7" aria-live="polite" aria-atomic="true">
         {status === "success" && (
-          <p className="border-l-2 border-[#C49327] pl-4 text-sm font-semibold leading-6 text-[#0F2C45]">
+          <p className="border-l-2 border-[#8931C4] pl-4 text-sm font-semibold leading-6 text-[#131313]">
             Thank you. Your application has been submitted to the SIPL team.
           </p>
         )}
@@ -345,7 +346,7 @@ export function CareerApplicationForm() {
 }
 
 const fieldStyles =
-  "mt-2 min-h-13 w-full border border-[#0F2C45]/22 bg-transparent px-4 text-base text-[#0F2C45] outline-none transition-colors hover:border-[#0F2C45]/40 focus:border-[#C49327] focus:ring-2 focus:ring-[#C49327]/28 aria-[invalid=true]:border-[#A63838] aria-[invalid=true]:ring-1 aria-[invalid=true]:ring-[#A63838]/20";
+  "mt-2 min-h-13 w-full border border-[#131313]/22 bg-transparent px-4 text-base text-[#131313] outline-none transition-colors hover:border-[#131313]/40 focus:border-[#8931C4] focus:ring-2 focus:ring-[#8931C4]/28 aria-[invalid=true]:border-[#A63838] aria-[invalid=true]:ring-1 aria-[invalid=true]:ring-[#A63838]/20";
 
 function Field({
   id,
@@ -362,11 +363,11 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="font-heading text-sm font-semibold text-[#0F2C45]">
+      <label htmlFor={id} className="font-heading text-sm font-semibold text-[#131313]">
         {label}
       </label>
       {description && (
-        <p id={`${id}-description`} className="mt-1 text-xs leading-5 text-[#0F2C45]/60">
+        <p id={`${id}-description`} className="mt-1 text-xs leading-5 text-[#131313]/60">
           {description}
         </p>
       )}

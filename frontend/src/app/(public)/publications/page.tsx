@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { StaticHtmlFrame } from "@/components/layout/StaticHtmlFrame";
+import { PublicationsListing } from "@/features/public/publications/PublicationsListing";
+import { PublicLayout } from "@/layouts/PublicLayout";
 
 export const metadata: Metadata = {
   title: "Publications & Talks | SIPL",
@@ -8,9 +9,8 @@ export const metadata: Metadata = {
 
 export default function PublicationsPage() {
   return (
-    <StaticHtmlFrame
-      src="/publications/index.html"
-      title="Publications and talks — SIPL"
-    />
+    <PublicLayout>
+      <PublicationsListing />
+    </PublicLayout>
   );
 }

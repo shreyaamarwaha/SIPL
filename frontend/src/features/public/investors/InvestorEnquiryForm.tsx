@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import { ArrowRight, LoaderCircle } from "lucide-react";
 
-const inputClass = "mt-2 w-full border border-[#D8E5E2] bg-white px-4 py-3 text-sm text-[#0F2C45] outline-none transition placeholder:text-[#6F8190]/70 focus:border-[#087D78] focus:ring-2 focus:ring-[#087D78]/15";
+const inputClass = "mt-2 w-full border border-[#D6D6D6] bg-white px-4 py-3 text-sm text-[#131313] outline-none transition placeholder:text-[#4A5568]/70 focus:border-[#8931C4] focus:ring-2 focus:ring-[#8931C4]/15";
 const investorTypes = ["Angel investor", "Venture capital fund", "Family office", "Corporate / strategic investor", "Institutional investor", "Other"];
 const stages = ["Pre-seed", "Seed", "Series A", "Growth / strategic"];
 const areas = ["Clinical AI", "Brain and mental health", "Genomics / biopharma", "LifeBack®"];
@@ -94,18 +94,18 @@ export function InvestorEnquiryForm() {
       <Field label="Relevant portfolio companies (optional)"><input className={inputClass} name="portfolio" maxLength={300} /></Field>
       <Field label="Why does SIPL interest you?"><textarea className={`${inputClass} min-h-32 resize-y`} name="reason" minLength={10} maxLength={1500} required /></Field>
 
-      <label className="flex items-start gap-3 text-sm leading-6 text-[#3C5162]">
-        <input className="mt-1 accent-[#087D78]" name="consent" type="checkbox" required />
+      <label className="flex items-start gap-3 text-sm leading-6 text-[#4A5568]">
+        <input className="mt-1 accent-[#8931C4]" name="consent" type="checkbox" required />
         <span>I agree that SIPL may use these details to respond to this enquiry. Please do not include personal medical information.</span>
       </label>
 
       <div>
-        <button type="submit" disabled={state === "sending"} className="inline-flex min-h-12 items-center gap-3 rounded-full bg-[#0F2C45] px-6 text-sm font-semibold text-white transition hover:bg-[#087D78] disabled:cursor-wait disabled:opacity-70">
+        <button type="submit" disabled={state === "sending"} className="inline-flex min-h-12 items-center gap-3 rounded-full bg-[#071D66] px-6 text-sm font-semibold text-white transition hover:bg-[#8931C4] disabled:cursor-wait disabled:opacity-70">
           {state === "sending" ? <><LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" /> Sending</> : <>Send investor enquiry <ArrowRight className="h-4 w-4" aria-hidden="true" /></>}
         </button>
       </div>
       <p aria-live="polite" role="status" className="min-h-6 text-sm">
-        {state === "sent" && <span className="font-semibold text-[#087D78]">Thank you. Your investor enquiry has been sent to the SIPL team.</span>}
+        {state === "sent" && <span className="font-semibold text-[#8931C4]">Thank you. Your investor enquiry has been sent to the SIPL team.</span>}
         {state === "error" && <span className="font-semibold text-red-700">{error}</span>}
       </p>
     </form>
@@ -113,17 +113,17 @@ export function InvestorEnquiryForm() {
 }
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return <label className="block text-sm font-semibold text-[#0F2C45]">{label}{children}</label>;
+  return <label className="block text-sm font-semibold text-[#131313]">{label}{children}</label>;
 }
 
 function ChoiceGroup({ name, title, options }: { name: string; title: string; options: string[] }) {
   return (
     <fieldset>
-      <legend className="text-sm font-semibold text-[#0F2C45]">{title}</legend>
+      <legend className="text-sm font-semibold text-[#131313]">{title}</legend>
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
         {options.map((option) => (
-          <label key={option} className="flex items-center gap-3 border border-[#D8E5E2] bg-white px-4 py-3 text-sm text-[#3C5162]">
-            <input type="checkbox" name={name} value={option} className="accent-[#087D78]" />{option}
+          <label key={option} className="flex items-center gap-3 border border-[#D6D6D6] bg-white px-4 py-3 text-sm text-[#4A5568]">
+            <input type="checkbox" name={name} value={option} className="accent-[#8931C4]" />{option}
           </label>
         ))}
       </div>

@@ -33,20 +33,20 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
 
   return (
     <PublicLayout>
-      <div className="bg-[#F7FAF9] text-[#0F2C45]">
+      <div className="bg-[#EDEDED] text-[#131313]">
         <EditorialHero eyebrow={article.category} title={article.title}>
           <p>{article.summary}</p>
-          <p className="mt-5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#0F2C45]/48">
+          <p className="mt-5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#131313]/48">
             SIPL perspective · {article.readingTime}
           </p>
         </EditorialHero>
 
         <section className="pb-28">
           <Container>
-            <div className="mx-auto max-w-3xl border-t border-[#0F2C45]/12 pt-10">
+            <div className="mx-auto max-w-3xl border-t border-[#131313]/12 pt-10">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#087D78] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78]"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#8931C4] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8931C4]"
               >
                 <ArrowLeft aria-hidden="true" className="h-4 w-4" /> All insights
               </Link>
@@ -56,7 +56,7 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
                     <h2 className="font-heading text-2xl font-semibold leading-tight md:text-3xl">
                       {section.heading}
                     </h2>
-                    <div className="mt-5 grid gap-4 text-base leading-8 text-[#0F2C45]/75 md:text-lg">
+                    <div className="mt-5 grid gap-4 text-base leading-8 text-[#131313]/75 md:text-lg">
                       {section.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
@@ -64,12 +64,12 @@ export default async function ArticlePage({ params }: ArticleRouteProps) {
                   </section>
                 ))}
               </div>
-              <div className="mt-12 rounded-[24px] border border-[#087D78]/20 bg-[#E5F3EF] p-6 md:p-8">
+              <div className="mt-12 rounded-[24px] border border-[#8931C4]/20 bg-[#F0EBE1] p-6 md:p-8">
                 <p className="font-heading text-lg font-semibold">Interested in the research?</p>
-                <p className="mt-2 text-sm leading-6 text-[#0F2C45]/70">
+                <p className="mt-2 text-sm leading-6 text-[#131313]/70">
                   Talk with SIPL about research, clinical collaboration, or biopharma discovery.
                 </p>
-                <Link href="/contact" className="mt-5 inline-flex rounded-full bg-[#0F2C45] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#087D78]">
+                <Link href="/contact" className="mt-5 inline-flex rounded-full bg-[#071D66] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#8931C4]">
                   Contact SIPL
                 </Link>
               </div>

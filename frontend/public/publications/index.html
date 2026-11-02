@@ -6,12 +6,14 @@
   <title>Publications &amp; Talks | SIPL</title>
   <meta name="description" content="SIPL publications, science reviews, conference talks and events.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:light;--ink:#0F2C45;--text:#3C5162;--muted:#6F8190;--accent:#087D78;--bg:#F7FAF9;--card:#fff;--line:#D8E5E2;--band:#E5F3EF}
+    :root{color-scheme:light;--sipl-font:"Plus Jakarta Sans",Arial,sans-serif;--ink:#0F2C45;--text:#3C5162;--muted:#6F8190;--accent:#087D78;--bg:#F7FAF9;--card:#fff;--line:#D8E5E2;--band:#E5F3EF}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scrollbar-gutter:stable}
-    body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 "Plus Jakarta Sans",Arial,sans-serif}
+    html{scroll-behavior:smooth;scrollbar-gutter:stable;font-family:var(--sipl-font)}
+    body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 var(--sipl-font);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
     a{color:inherit}
     .pub-wrap{max-width:1240px;margin:0 auto;padding:0 40px}
     .pub-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;border-bottom:2px solid rgba(184,216,211,.72);background:rgba(247,250,249,.78);font-family:"Plus Jakarta Sans",Arial,sans-serif;backdrop-filter:blur(18px);transition:background .24s ease,border-color .24s ease,box-shadow .24s ease}
@@ -113,6 +115,7 @@
       .pub-logo-emblem{width:26px;height:26px}
       .pub-platform{display:none}
     }
+    *,*::before,*::after{font-family:var(--sipl-font)!important}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.back,.pub-action{transition:none}}
   </style>
 </head>

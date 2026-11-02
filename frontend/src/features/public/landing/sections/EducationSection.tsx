@@ -3,7 +3,7 @@ import { MotionWrapper } from "@/shared/animations/MotionWrapper";
 
 export function EducationSection() {
   return (
-    <section id="about" className="py-24 md:py-32 lg:py-40 bg-[#F7FAF9]">
+    <section id="about" className="py-24 md:py-32 lg:py-40 bg-[#EDEDED]">
       <Container>
         <div className="max-w-4xl mx-auto">
           <MotionWrapper variant="slideUp">

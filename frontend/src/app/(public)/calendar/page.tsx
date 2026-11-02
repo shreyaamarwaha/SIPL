@@ -20,7 +20,7 @@ const meetingNotes = [
 export default function CalendarPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F7FAF9] text-[#0F2C45]">
+      <div className="bg-[#EDEDED] text-[#131313]">
         <EditorialHero eyebrow="Talk with SIPL" title="A good collaboration starts with a conversation.">
           <p>
             Tell us what you’re exploring and suggest a time. We’ll review your request and
@@ -34,26 +34,26 @@ export default function CalendarPage() {
               <aside>
                 <div className="grid gap-3">
                   {meetingNotes.map(({ icon: Icon, title, text }) => (
-                    <div key={title} className="flex gap-4 rounded-[22px] border border-[#0F2C45]/10 bg-[#E5F3EF] p-5">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#087D78]">
+                    <div key={title} className="flex gap-4 rounded-[22px] border border-[#131313]/10 bg-[#F0EBE1] p-5">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#8931C4]">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
                       <div>
                         <h2 className="font-heading text-sm font-bold">{title}</h2>
-                        <p className="mt-1 text-sm leading-6 text-[#0F2C45]/66">{text}</p>
+                        <p className="mt-1 text-sm leading-6 text-[#131313]/66">{text}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-                <p className="mt-6 border-l-2 border-[#C49327] pl-4 text-sm leading-6 text-[#0F2C45]/66">
+                <p className="mt-6 border-l-2 border-[#8931C4] pl-4 text-sm leading-6 text-[#131313]/66">
                   Please don’t include patient-identifiable or other sensitive health information in this request.
                 </p>
               </aside>
 
-              <section aria-labelledby="meeting-request-title" className="rounded-[28px] border border-[#0F2C45]/10 bg-[#FFFFFF] p-6 shadow-[0_18px_54px_rgba(0,27,101,0.07)] sm:p-8 md:p-10">
-                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#087D78]">Meeting request</p>
+              <section aria-labelledby="meeting-request-title" className="rounded-[28px] border border-[#131313]/10 bg-[#FFFFFF] p-6 shadow-[0_18px_54px_rgba(0,0,0,0.07)] sm:p-8 md:p-10">
+                <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#8931C4]">Meeting request</p>
                 <h2 id="meeting-request-title" className="mt-3 font-heading text-3xl font-semibold md:text-4xl">Suggest a time that works for you.</h2>
-                <p className="mb-8 mt-3 text-sm leading-6 text-[#0F2C45]/65">Required fields are marked with an asterisk.</p>
+                <p className="mb-8 mt-3 text-sm leading-6 text-[#131313]/65">Required fields are marked with an asterisk.</p>
                 <ScheduleRequestForm />
               </section>
             </div>

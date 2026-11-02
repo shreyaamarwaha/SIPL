@@ -31,7 +31,15 @@ function isCurrentPath(pathname: string, href: string) {
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const updateScrollState = () => setIsScrolled(window.scrollY > 50);
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -52,21 +60,21 @@ export function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-[rgba(184,216,211,0.72)] bg-[rgba(247,250,249,0.78)] font-body shadow-[0_8px_28px_rgba(15,44,69,0.06)] backdrop-blur-xl">
-      <div className="mx-auto flex min-h-[80px] max-w-[1240px] items-center justify-between gap-4 px-8 max-[1279px]:min-h-[72px] max-[1279px]:gap-4 max-[520px]:px-5">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 font-body transition-all duration-500 md:pt-4">
+      <div className={`mx-auto flex min-h-[64px] items-center justify-between gap-4 border transition-all duration-500 max-[1279px]:gap-3 max-[520px]:min-h-[58px] max-[520px]:px-4 ${isScrolled ? "max-w-[1360px] rounded-full border-[#102B49]/[0.08] bg-white/90 px-5 py-2 shadow-[0_12px_36px_rgba(16,43,73,0.09)] backdrop-blur-xl md:px-8" : "max-w-[1440px] rounded-[22px] border-white/70 bg-white/80 px-6 py-2 shadow-[0_8px_28px_rgba(16,43,73,0.055)] backdrop-blur-xl md:px-12 lg:px-16"}`}>
         <BrandLockup onClick={closeMenu} />
 
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
           <div className="group relative after:absolute after:left-0 after:right-0 after:top-full after:h-[14px]">
             <Link
               href="/#about"
-              className="inline-flex items-center gap-1 rounded-full border border-transparent px-[11px] py-[9px] text-[13px] font-semibold text-[#0F2C45] transition-colors hover:border-[#B8D8D3] hover:bg-[#E8F4F1] hover:text-[#087D78] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78]"
+              className="inline-flex items-center gap-1 rounded-full border border-transparent px-[11px] py-[9px] text-[13px] font-semibold text-[#131313] transition-all hover:border-[#34B7C3] hover:bg-[#071D66] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#34B7C3]"
             >
               About
             </Link>
-            <div className="invisible absolute left-1/2 top-[calc(100%+14px)] z-10 flex min-w-[210px] -translate-x-1/2 -translate-y-2 flex-col gap-0.5 rounded-[10px] border border-[#D8E5E2] bg-[rgba(250,252,253,0.98)] p-1.5 opacity-0 shadow-[0_20px_44px_rgba(16,36,59,0.14)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <div className="invisible absolute left-1/2 top-[calc(100%+14px)] z-10 flex min-w-[210px] -translate-x-1/2 -translate-y-2 flex-col gap-0.5 rounded-[10px] border border-[#D6D6D6] bg-[rgba(250,252,253,0.98)] p-1.5 opacity-0 shadow-[0_20px_44px_rgba(16,36,59,0.14)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
               {aboutLinks.slice(1).map((link) => (
-                <Link key={link.label} href={link.href} className="block rounded-md px-3 py-2 text-center text-[13px] text-[#0F2C45] hover:bg-[#E8F4F1] hover:text-[#087D78]">
+                <Link key={link.label} href={link.href} className="block rounded-md border border-transparent px-3 py-2 text-center text-[13px] text-[#131313] transition-colors hover:border-[#34B7C3] hover:bg-[#071D66] hover:text-white">
                   {link.label}
                 </Link>
               ))}
@@ -79,7 +87,7 @@ export function Header() {
                 key={link.label}
                 href={link.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full border px-[11px] py-[9px] text-[13px] font-semibold transition-colors hover:border-[#B8D8D3] hover:bg-[#E8F4F1] hover:text-[#087D78] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78] ${active ? "border-[#B8D8D3] bg-[#E8F4F1] text-[#087D78]" : "border-transparent text-[#0F2C45]"}`}
+                className={`rounded-full border px-[11px] py-[9px] text-[13px] font-semibold transition-all hover:border-[#34B7C3] hover:bg-[#071D66] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#34B7C3] ${active ? "border-[#34B7C3] bg-[#071D66] text-white shadow-[0_5px_14px_rgba(7,29,102,.14)]" : "border-transparent text-[#131313]"}`}
               >
                 {link.label}
               </Link>
@@ -89,7 +97,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-xl border border-[#D8E5E2] bg-white/70 text-[#0F2C45] xl:hidden"
+          className="inline-flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-xl border border-[#071D66] bg-[#071D66] text-white transition-all hover:border-[#34B7C3] hover:bg-[#071D66] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#34B7C3] xl:hidden"
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((current) => !current)}
@@ -99,22 +107,22 @@ export function Header() {
 
         <Link
           href="https://www.sequoiainsilico.com/lifeback"
-          className="inline-flex shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#0D9A8D] to-[#087D78] px-[18px] py-3 text-[13px] font-semibold text-white shadow-[0_8px_18px_rgba(8,125,120,0.18)] transition hover:brightness-110 max-[1279px]:px-[13px] max-[1279px]:py-2.5 max-[1279px]:text-xs max-[520px]:hidden"
+          className="inline-flex shrink-0 items-center justify-center rounded-full border border-transparent bg-[#071D66] px-[18px] py-3 text-[13px] font-semibold text-white shadow-[0_8px_18px_rgba(0,0,0,0.12)] transition-all hover:border-[#34B7C3] hover:bg-[#071D66] hover:shadow-[0_10px_22px_rgba(7,29,102,.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#34B7C3] max-[1279px]:px-[13px] max-[1279px]:py-2.5 max-[1279px]:text-xs max-[520px]:hidden"
         >
           Access platform
         </Link>
       </div>
 
       {isMenuOpen && (
-        <nav aria-label="Mobile navigation" className="absolute left-[14px] right-[14px] top-[calc(100%+10px)] max-h-[calc(100dvh-92px)] overflow-y-auto rounded-[18px] border border-[#B8D8D3] bg-white p-3 shadow-[0_22px_50px_rgba(15,44,69,0.16)] xl:hidden">
+        <nav aria-label="Mobile navigation" className="absolute left-[14px] right-[14px] top-[calc(100%+10px)] max-h-[calc(100dvh-92px)] overflow-y-auto rounded-[18px] border border-[#D6D6D6] bg-white p-3 shadow-[0_22px_50px_rgba(0,0,0,0.16)] xl:hidden">
           <div className="grid gap-0.5">
             {aboutLinks.map((link, index) => (
-              <Link key={link.label} href={link.href} onClick={closeMenu} className={`rounded-[10px] px-3 py-2.5 text-sm font-medium text-[#0F2C45] hover:bg-[#E8F4F1] hover:text-[#087D78] ${index > 0 ? "pl-7 text-[13px]" : ""}`}>
+              <Link key={link.label} href={link.href} onClick={closeMenu} className={`rounded-[10px] border border-transparent px-3 py-2.5 text-sm font-medium text-[#131313] transition-colors hover:border-[#34B7C3] hover:bg-[#071D66] hover:text-white ${index > 0 ? "pl-7 text-[13px]" : ""}`}>
                 {link.label}
               </Link>
             ))}
             {links.map((link) => (
-              <Link key={link.label} href={link.href} onClick={closeMenu} className="rounded-[10px] px-3 py-2.5 text-sm font-medium text-[#0F2C45] hover:bg-[#E8F4F1] hover:text-[#087D78]">
+              <Link key={link.label} href={link.href} onClick={closeMenu} className="rounded-[10px] border border-transparent px-3 py-2.5 text-sm font-medium text-[#131313] transition-colors hover:border-[#34B7C3] hover:bg-[#071D66] hover:text-white">
                 {link.label}
               </Link>
             ))}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, UserRound, X } from "lucide-react";
 import { teamMembers, type TeamMember } from "./teamData";
+import { ScrollReveal } from "@/shared/animations/ScrollReveal";
 
 const focusableSelector =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -71,46 +72,46 @@ export function TeamGrid() {
 
   return (
     <>
-      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <ScrollReveal className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {teamMembers.map((member) => (
           <article
             key={member.id}
-            className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-[#D8E5E2] bg-white shadow-[0_14px_36px_rgba(16,36,59,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(16,36,59,0.12)]"
+            className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-[#D6D6D6] bg-white shadow-[0_14px_36px_rgba(16,36,59,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(16,36,59,0.12)]"
           >
             {member.image ? (
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#ECEFED]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#EDEDED]">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.025]"
+            className="object-cover object-[center_12%] transition-transform duration-700 ease-out group-hover:scale-[1.035]"
                 />
               </div>
             ) : (
               <div
                 aria-hidden="true"
-                className="flex aspect-[4/3] w-full items-center justify-center bg-[#ECEFED] text-[#087D78]"
+                className="flex aspect-[4/3] w-full items-center justify-center bg-[#EDEDED] text-[#8931C4]"
               >
                 <UserRound className="h-16 w-16" strokeWidth={1.2} />
               </div>
             )}
 
             <div className="flex flex-1 flex-col p-6 md:p-7">
-              <h3 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-[#0F2C45]">
+              <h3 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-[#131313]">
                 {member.name}
               </h3>
-              <p className="mt-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#0F2C45]/62">
+              <p className="mt-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#131313]/62">
                 {member.position}
               </p>
 
-              <p className="mt-4 line-clamp-4 flex-1 text-[15px] leading-7 text-[#0F2C45]/72">
+              <p className="mt-4 line-clamp-4 flex-1 text-[15px] leading-7 text-[#131313]/72">
                 {member.shortBio}
               </p>
 
               <button
                 type="button"
-                className="mt-6 inline-flex min-h-11 w-fit items-center gap-2 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-[#087D78] underline decoration-[#A9E2D5] decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087D78] focus-visible:ring-offset-4"
+                className="mt-6 inline-flex min-h-11 w-fit items-center gap-2 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-[#8931C4] underline decoration-[#F0EBE1] decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8931C4] focus-visible:ring-offset-4"
                 aria-haspopup="dialog"
                 aria-expanded={activeMember?.id === member.id}
                 onClick={(event) => openDialog(member, event.currentTarget)}
@@ -121,11 +122,11 @@ export function TeamGrid() {
             </div>
           </article>
         ))}
-      </div>
+      </ScrollReveal>
 
       {activeMember && (
         <div
-          className="fixed inset-0 z-[100] flex items-end justify-center bg-[#0F2C45]/55 p-0 backdrop-blur-[3px] sm:items-center sm:p-6"
+          className="fixed inset-0 z-[100] flex items-end justify-center bg-[#071D66]/55 p-0 backdrop-blur-[3px] sm:items-center sm:p-6"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
               closeDialog();
@@ -138,19 +139,19 @@ export function TeamGrid() {
             aria-modal="true"
             aria-labelledby={`${activeMember.id}-dialog-title`}
             aria-describedby={`${activeMember.id}-dialog-position`}
-            className="relative max-h-[100dvh] w-full overflow-y-auto bg-[#FFFFFF] px-5 pb-10 pt-20 text-[#0F2C45] shadow-[0_28px_90px_rgba(0,27,101,0.28)] sm:max-h-[88dvh] sm:max-w-3xl sm:border sm:border-[#0F2C45]/12 sm:p-12"
+            className="relative max-h-[100dvh] w-full overflow-y-auto bg-[#FFFFFF] px-5 pb-10 pt-20 text-[#131313] shadow-[0_28px_90px_rgba(0,0,0,0.28)] sm:max-h-[88dvh] sm:max-w-3xl sm:border sm:border-[#131313]/12 sm:p-12"
           >
             <button
               ref={closeButtonRef}
               type="button"
               onClick={closeDialog}
-              className="absolute right-5 top-5 inline-flex h-11 w-11 items-center justify-center border border-[#0F2C45]/18 bg-[#F7FAF9] text-[#0F2C45] transition-colors hover:border-[#C49327] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C49327] focus-visible:ring-offset-4 focus-visible:ring-offset-[#FFFFFF] sm:right-7 sm:top-7"
+              className="absolute right-5 top-5 inline-flex h-11 w-11 items-center justify-center border border-[#131313]/18 bg-[#EDEDED] text-[#131313] transition-colors hover:border-[#8931C4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8931C4] focus-visible:ring-offset-4 focus-visible:ring-offset-[#FFFFFF] sm:right-7 sm:top-7"
               aria-label={`Close ${activeMember.name} biography`}
             >
               <X aria-hidden="true" className="h-5 w-5" />
             </button>
 
-            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#0F2C45]/58">
+            <p className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#131313]/58">
               Team biography
             </p>
             <h2
@@ -161,14 +162,14 @@ export function TeamGrid() {
             </h2>
             <p
               id={`${activeMember.id}-dialog-position`}
-              className="mt-3 font-heading text-base font-semibold text-[#0F2C45]/68"
+              className="mt-3 font-heading text-base font-semibold text-[#131313]/68"
             >
               {activeMember.position}
             </p>
 
-            <div className="mt-8 space-y-5 border-t border-[#0F2C45]/12 pt-8">
+            <div className="mt-8 space-y-5 border-t border-[#131313]/12 pt-8">
               {activeMember.fullBio.map((paragraph) => (
-                <p key={paragraph} className="text-[15px] leading-7 text-[#0F2C45]/78 sm:text-base sm:leading-8">
+                <p key={paragraph} className="text-[15px] leading-7 text-[#131313]/78 sm:text-base sm:leading-8">
                   {paragraph}
                 </p>
               ))}

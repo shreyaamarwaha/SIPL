@@ -27,7 +27,7 @@ const evidenceRecords = [
 export default function InsideSiplPublicationsPage() {
   return (
     <PublicLayout>
-      <div className="bg-[#F7FAF9]">
+      <div className="bg-[#EDEDED]">
         <EditorialHero eyebrow="Evidence & IP" title="Milestones with the context to assess them.">
           <p>
             We share reported validation, intellectual property, and grant milestones with clear limits. Investors and research partners should consider the underlying methods and records alongside each headline claim.
@@ -35,10 +35,10 @@ export default function InsideSiplPublicationsPage() {
         </EditorialHero>
         <EditorialSection title="Reported evidence and milestones.">
           <CardGrid cards={evidenceRecords} />
-          <p className="mt-10 max-w-3xl leading-7 text-[#0F2C45]/70">
+          <p className="mt-10 max-w-3xl leading-7 text-[#131313]/70">
             A public bibliography and detailed validation protocol are not listed on this page. For supporting records, methodology, and current IP documentation, please contact SIPL.
           </p>
-          <Link href="/contact" className="mt-6 inline-flex min-h-12 items-center rounded-full bg-[#0F2C45] px-6 text-sm font-bold text-white transition hover:bg-[#087D78]">
+          <Link href="/contact" className="mt-6 inline-flex min-h-12 items-center rounded-full bg-[#071D66] px-6 text-sm font-bold text-white transition hover:bg-[#8931C4]">
             Request supporting information
           </Link>
         </EditorialSection>
