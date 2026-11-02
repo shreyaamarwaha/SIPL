@@ -65,6 +65,7 @@ export function LearningLoop({ steps }: { steps: readonly LearningStep[] }) {
               className="relative z-10 grid grid-cols-[12px_1fr] gap-x-3 border-b border-[#102B49]/[0.08] py-3 last:border-0 md:block md:border-0 md:py-0 md:pr-3"
               initial={false}
               animate={{ opacity: isLit ? 1 : 0.64, y: isLit ? 0 : 3 }}
+              {...(!reduceMotion ? { whileHover: { y: -3, scale: 1.025 } } : {})}
               transition={{ duration: 0.38, ease: "easeOut" }}
             >
               <motion.span
