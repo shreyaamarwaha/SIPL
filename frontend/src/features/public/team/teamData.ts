@@ -123,6 +123,7 @@ export const teamMembers: TeamMember[] = [
       "Beyond his technical contributions, he serves as President of Dean Career Cloud at Bennett University, previously served as Head of Technology for the GeeksforGeeks Student Chapter at Bennett University, and mentors contributors in the AI Agents Track of GirlScript Summer of Code 2026. His broader interests include AI for healthcare, scalable software systems, and the development of technology-driven solutions with meaningful real-world impact.",
     ],
   },
+  /* Aryan's profile is retained here but hidden from the public team cards for now.
   {
     id: "aryan-jha",
     name: "Aryan Jha",
@@ -139,6 +140,7 @@ export const teamMembers: TeamMember[] = [
       "Beyond his technical and research pursuits, Aryan has served as a Graphic Designer for the IEEE SMC Student Chapter, where he contributed to visual communication and student-led technical initiatives. His journey continues to be shaped by curiosity, collaboration, and a belief that good technology is built at the intersection of clarity, discipline, and purpose.",
     ],
   },
+  */
   {
     id: "rakshita-makkar",
     name: "Rakshita Makkar",
