@@ -3,6 +3,7 @@ import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
+  ArrowUpRight,
   AudioLines,
   Building2,
   Dna,
@@ -13,7 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import { ContactForm } from "@/features/public/contact/ContactForm";
-import { teamMembers } from "@/features/public/team/teamData";
+import { advisors, teamMembers } from "@/features/public/team/teamData";
 import { HeroStoryline } from "@/features/public/landing/components/HeroStoryline";
 import { ScrollReveal } from "@/shared/animations/ScrollReveal";
 import { PrincipleFlipCard } from "@/features/public/landing/components/PrincipleFlipCard";
@@ -175,7 +176,7 @@ export function InvestorLandingPage() {
       <ScrollReveal>
 <section id="team" className="px-6 py-20 md:px-10 lg:px-16 lg:py-24">
         <div className="mx-auto grid max-w-[1120px] gap-10 lg:grid-cols-[.75fr_1.25fr] lg:items-start"><div><p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-[#8931C4]">The people behind SIPL</p><h2 className="text-3xl font-semibold leading-tight tracking-[-0.035em] md:text-4xl">Research, clinical perspective, and engineering.</h2><Link href="/team" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#8931C4] px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#071D66] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8931C4]">Meet the whole team <ArrowRight className="h-4 w-4" /></Link></div><div className="grid gap-3 sm:grid-cols-3">{teamHighlights.map((member) => <article key={member.id} className="rounded-xl border border-[#D6D6D6] bg-white p-5">{member.image ? <div className="relative h-14 w-14 overflow-hidden rounded-full border border-[#D6D6D6]"><Image src={member.image} alt={member.name} fill sizes="56px" className="object-cover" /></div> : <span aria-hidden="true" className="grid h-14 w-14 place-items-center rounded-full bg-[#F7F9FC] text-[#8931C4]"><Users className="h-6 w-6" /></span>}<h3 className="mt-4 text-sm font-semibold">{member.name}</h3><p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-[#8931C4]">{member.position}</p><p className="mt-3 text-xs leading-5 text-[#4A5568]">{member.shortBio}</p></article>)}</div></div>
-        <div id="advisory-board" className="mx-auto mt-10 flex max-w-[1120px] flex-col gap-4 rounded-2xl border border-[#D6D6D6] bg-[#EDEDED] p-6 sm:flex-row sm:items-center sm:justify-between md:p-8"><div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#8931C4]">Coming soon</p><h3 className="mt-2 text-xl font-semibold">Advisory Board</h3><p className="mt-2 max-w-2xl text-sm leading-6 text-[#4A5568]">We are bringing together experienced voices across clinical care, neuroscience, genomics, and biopharma. More details will follow.</p></div><span className="w-fit shrink-0 rounded-full border border-[#8931C4]/20 bg-white px-4 py-2 text-xs font-semibold text-[#8931C4]">In formation</span></div>
+        <div id="advisory-board" className="mx-auto mt-10 max-w-[1120px] rounded-2xl border border-[#34B7C3]/20 bg-[#EFF7F7] p-6 md:p-8"><div className="mb-6 flex flex-wrap items-end justify-between gap-4"><div><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#0B8793]">Guidance and experience</p><h3 className="mt-2 text-xl font-semibold">Advisory board</h3><p className="mt-2 max-w-2xl text-sm leading-6 text-[#4A5568]">Legal, infrastructure, and strategic perspectives from SIPL&apos;s named advisors.</p></div><Link href="/team/#advisors" className="text-sm font-semibold text-[#071D66] underline decoration-[#34B7C3] underline-offset-4 hover:text-[#0B8793]">Meet the advisors <ArrowRight className="ml-1 inline h-4 w-4" /></Link></div><div className="grid gap-3 sm:grid-cols-2">{advisors.map((advisor) => <article key={advisor.name} className="group flex items-center gap-4 rounded-xl border border-[#34B7C3]/20 bg-[#071D66] p-4 text-white transition duration-300 hover:-translate-y-1 hover:border-[#7DE0E2]/80 hover:shadow-[0_0_0_1px_rgba(125,224,226,.2),0_16px_36px_rgba(7,29,102,.2),0_0_28px_rgba(52,183,195,.12)]"><div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-white/15 bg-white/10"><Image src={advisor.image} alt={advisor.name} fill sizes="56px" className="object-cover" /></div><div><p className="text-[9px] font-bold uppercase tracking-[0.14em] text-[#7DE0E2]">{advisor.role}</p><h4 className="mt-1 text-sm font-semibold">{advisor.name}</h4></div><ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-[#7DE0E2] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></article>)}</div></div>
       </section>
 </ScrollReveal>
 

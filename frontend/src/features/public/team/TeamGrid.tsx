@@ -76,10 +76,10 @@ export function TeamGrid() {
         {teamMembers.map((member) => (
           <article
             key={member.id}
-            className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-[#D6D6D6] bg-white shadow-[0_14px_36px_rgba(16,36,59,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(16,36,59,0.12)]"
+            className="group flex min-h-full flex-col overflow-hidden rounded-2xl border border-[#34B7C3]/20 bg-[#071D66] text-white shadow-[0_14px_36px_rgba(7,29,102,0.15)] transition duration-300 hover:-translate-y-1 hover:border-[#34B7C3]/80 hover:shadow-[0_0_0_1px_rgba(52,183,195,.22),0_20px_55px_rgba(7,29,102,.24),0_0_38px_rgba(52,183,195,.14)] focus-within:border-[#34B7C3]/80 focus-within:shadow-[0_0_0_1px_rgba(52,183,195,.25),0_20px_55px_rgba(7,29,102,.22)]"
           >
             {member.image ? (
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#EDEDED]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#E7F1F2]">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -91,27 +91,27 @@ export function TeamGrid() {
             ) : (
               <div
                 aria-hidden="true"
-                className="flex aspect-[4/3] w-full items-center justify-center bg-[#EDEDED] text-[#8931C4]"
+                className="flex aspect-[4/3] w-full items-center justify-center bg-[#E7F1F2] text-[#071D66]"
               >
                 <UserRound className="h-16 w-16" strokeWidth={1.2} />
               </div>
             )}
 
             <div className="flex flex-1 flex-col p-6 md:p-7">
-              <h3 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-[#131313]">
+              <h3 className="font-heading text-2xl font-semibold tracking-[-0.02em] text-white">
                 {member.name}
               </h3>
-              <p className="mt-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#131313]/62">
+              <p className="mt-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-[#7DE0E2]">
                 {member.position}
               </p>
 
-              <p className="mt-4 line-clamp-4 flex-1 text-[15px] leading-7 text-[#131313]/72">
+              <p className="mt-4 line-clamp-4 flex-1 text-[15px] leading-7 text-white/78">
                 {member.shortBio}
               </p>
 
               <button
                 type="button"
-                className="mt-6 inline-flex min-h-11 w-fit items-center gap-2 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-[#8931C4] underline decoration-[#F0EBE1] decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8931C4] focus-visible:ring-offset-4"
+                className="mt-6 inline-flex min-h-11 w-fit items-center gap-2 rounded-full border border-white/25 px-4 font-heading text-[13px] font-bold uppercase tracking-[0.12em] text-white transition hover:border-[#7DE0E2] hover:bg-white/10 hover:text-[#7DE0E2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7DE0E2] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071D66]"
                 aria-haspopup="dialog"
                 aria-expanded={activeMember?.id === member.id}
                 onClick={(event) => openDialog(member, event.currentTarget)}

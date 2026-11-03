@@ -8,11 +8,54 @@ export type TeamMember = {
   image?: string;
 };
 
+export type SIPLAdvisor = {
+  name: string;
+  role: string;
+  bio: string;
+  focus: string[];
+  image: string;
+  href: string;
+};
+
+export const advisors: SIPLAdvisor[] = [
+  {
+    name: "Vijay Sardana",
+    role: "Legal Advisor",
+    bio: "Advocate advising SIPL on legal, policy, and regulatory considerations.",
+    focus: ["Law", "Policy", "Regulation"],
+    image: "/team/vijay-sardana.png",
+    href: "https://www.linkedin.com/search/results/all/?keywords=Vijay%20Sardana",
+  },
+  {
+    name: "Sanjay Dongar Patil",
+    role: "Infrastructure and Strategic Advisor",
+    bio: "Urban and environmental planner with 30+ years of experience in infrastructure, statutory planning, and policy.",
+    focus: ["Infrastructure", "Strategy", "Policy and governance"],
+    image: "/team/sanjay-dongar-patil.png",
+    href: "https://www.linkedin.com/in/sanjay-d-patil-392b9215/",
+  },
+];
+
+export const clinicalCollaborators = [
+  {
+    name: "Prof. R. P. Beniwal",
+    affiliation: "ABVIMS and Dr. Ram Manohar Lohia Hospital, New Delhi",
+    contribution: "Clinical collaboration on the LifeBack validation study.",
+    initials: "RB",
+  },
+  {
+    name: "Dr. Qurratulain Hasan",
+    affiliation: "SAAZ Genetics, Hyderabad",
+    contribution: "Clinical genomics collaboration supporting SIPL’s genomics and pharmacogenomics work.",
+    initials: "QH",
+  },
+];
+
 export const teamMembers: TeamMember[] = [
   {
     id: "anupama-singh",
     name: "Dr. Anupama Singh",
-    position: "Clinical Research",
+    position: "Founder and CEO",
     shortBio:
       "Clinical researcher contributing domain expertise to SIPL’s responsible mental-health and clinical intelligence work.",
     initials: "AS",
@@ -25,7 +68,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "harsh-bhasin",
     name: "Dr. Harsh Bhasin",
-    position: "Co-PI (ML Engineer)",
+    position: "Co-founder · ML and AI Lead",
     shortBio:
       "Researcher and academic specializing in deep learning, algorithms, medical imaging, and computational mental health.",
     initials: "HB",
@@ -87,6 +130,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "Computer science student, frontend developer, and researcher interested in dependable AI and thoughtful, human-centred software systems.",
     initials: "AJ",
+    image: "/team/aryan-jha.png",
     fullBio: [
       "Aryan Jha is an undergraduate student pursuing a B.Tech. in Computer Science and Engineering with a specialization in Artificial Intelligence at Manipal Institute of Technology, Bengaluru. His interests lie in building thoughtful software systems, exploring responsible applications of artificial intelligence, and understanding how technology can support better decision-making in complex, high-stakes environments.",
       "He currently serves as a Frontend Developer Intern at Sequoia Insilico Pvt. Ltd., where he contributes to developing user-focused interfaces guided by principles of human-centric design. He is steadily building his foundation as a full-stack developer, with experience across frontend development, application design, backend integration, and database-driven systems.",

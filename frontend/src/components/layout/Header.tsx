@@ -8,6 +8,7 @@ import { BrandLockup } from "@/components/layout/BrandLockup";
 
 const links = [
   { label: "Science", href: "/#science" },
+  { label: "Team", href: "/team/" },
   { label: "BioAI", href: "/#bioai" },
   { label: "Trust", href: "/#trust" },
   { label: "Investors", href: "/investors/" },
@@ -19,7 +20,6 @@ const links = [
 
 const aboutLinks = [
   { label: "About", href: "/#about" },
-  { label: "Team", href: "/team/" },
   { label: "Partners & collaborators", href: "/sipl/partners/" },
 ];
 
