@@ -70,23 +70,25 @@ export function InvestorLandingPage() {
 
   return (
     <div className="overflow-hidden bg-[#EDEDED] text-[#131313] selection:bg-[#F0EBE1]">
-      <section className="light-hero relative flex min-h-[min(900px,calc(100svh-80px))] flex-col justify-center px-6 pb-10 pt-32 md:px-10 lg:px-16">
+      <section className="sipl-main-hero relative flex min-h-[min(900px,calc(100svh-80px))] flex-col justify-center overflow-hidden px-5 pb-8 pt-28 sm:px-8 md:px-10 lg:px-16">
         <HeroBrainBackdrop />
         <HeroStoryline />
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_84%_16%,rgba(11,135,147,.07),transparent_34%),radial-gradient(ellipse_at_15%_86%,rgba(7,29,102,.04),transparent_32%)]" />
-        <ScrollReveal className="light-hero-content relative z-[5] mx-auto w-full max-w-[1120px] text-center">
-          <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8931C4]">Sequoia Insilico Pvt. Ltd. · BioAI for brain &amp; mental health</p>
-          <h1 className="mx-auto max-w-5xl text-[44px] font-medium leading-[1.06] tracking-[-0.045em] md:text-[64px] lg:text-[78px]">Connected intelligence for <span className="text-[#8931C4]">brain and mental healthcare.</span></h1>
-          <p className="mx-auto mt-7 max-w-3xl text-base leading-7 text-[#4A5568] md:text-lg md:leading-8">SIPL brings clinical care, behavioural signals, neuroscience, genomics, and discovery into a responsible research framework for brain and mental health.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="#science" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#071D66] px-6 text-sm font-semibold text-white transition hover:bg-[#8931C4]">Explore the science <ArrowDown className="h-4 w-4" /></Link>
-            <Link href="#investors" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#131313]/20 bg-white/75 px-6 text-sm font-semibold text-[#131313] transition hover:border-[#8931C4]">Investor overview <ArrowRight className="h-4 w-4" /></Link>
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(249,248,244,.98)_0%,rgba(249,248,244,.90)_38%,rgba(249,248,244,.28)_74%,rgba(249,248,244,.08)_100%),radial-gradient(ellipse_at_82%_50%,rgba(177,193,176,.18),transparent_48%)]" />
+        <ScrollReveal className="relative z-[5] mx-auto w-full max-w-[1440px] text-left">
+          <div className="max-w-[1120px]">
+            <p className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#D9DFD8] bg-white/75 px-4 py-2 text-xs font-medium text-[#58665D] shadow-sm backdrop-blur-sm"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#C8663C]" />Clinical AI infrastructure for brain &amp; mental health</p>
+            <h1 className="max-w-[14ch] text-[clamp(3.2rem,7.5vw,8rem)] font-bold leading-[.91] tracking-[-0.075em] text-[#111A13]">Connected intelligence <span className="text-[#285638]">for brain and mental healthcare.</span></h1>
+            <p className="mt-7 max-w-[58rem] text-base leading-7 text-[#56645A] sm:text-lg sm:leading-8 md:text-xl">SIPL brings clinical care, behavioural signals, neuroscience, genomics, and discovery into a responsible research framework for brain and mental health.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="#science" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#285638] px-6 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(40,86,56,.16)] transition hover:bg-[#183C27]">Explore the science <ArrowDown className="h-4 w-4" /></Link>
+              <Link href="#investors" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#C9D2C9] bg-white/75 px-6 text-sm font-semibold text-[#23372A] transition hover:border-[#285638] hover:bg-white">Investor overview <ArrowRight className="h-4 w-4" /></Link>
+            </div>
           </div>
         </ScrollReveal>
-        <ScrollReveal delay={0.12} className="relative mx-auto mt-14 grid w-full max-w-[1120px] grid-cols-2 border-y border-[#131313]/10 py-4 sm:grid-cols-4 sm:py-5">
-          {proofPoints.map(([value, label]) => <div key={label} className="px-2 py-2 text-center sm:border-r sm:border-[#131313]/10 sm:px-5 sm:last:border-r-0"><p className="text-lg font-semibold tracking-tight text-[#131313] md:text-2xl">{value}</p><p className="mt-1 text-[10px] leading-4 text-[#4A5568] md:text-xs">{label}</p></div>)}
+        <ScrollReveal delay={0.12} className="relative z-[5] mx-auto mt-12 grid w-full max-w-[1440px] grid-cols-2 border-y border-[#6F7D70]/20 py-4 sm:mt-14 sm:grid-cols-4 sm:py-5">
+          {proofPoints.map(([value, label]) => <div key={label} className="px-2 py-2 text-left sm:border-r sm:border-[#6F7D70]/20 sm:px-5 sm:last:border-r-0"><p className="text-lg font-semibold tracking-tight text-[#17251A] md:text-2xl">{value}</p><p className="mt-1 text-[10px] leading-4 text-[#56645A] md:text-xs">{label}</p></div>)}
         </ScrollReveal>
-        <p className="relative mx-auto mt-3 max-w-[1120px] text-center text-[10px] leading-4 text-[#4A5568]">Company-reported milestones. Assessment agreement is not a claim of diagnostic accuracy; supporting methods and records should be reviewed during diligence.</p>
+        <p className="relative z-[5] mx-auto mt-3 w-full max-w-[1440px] text-left text-[10px] leading-4 text-[#56645A]">Company-reported milestones. Assessment agreement is not a claim of diagnostic accuracy; supporting methods and records should be reviewed during diligence.</p>
       </section>
 
       <section id="about" className="px-6 py-20 md:px-10 lg:px-16 lg:py-28">
