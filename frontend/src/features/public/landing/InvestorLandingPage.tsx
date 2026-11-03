@@ -16,7 +16,6 @@ import {
 import { ContactForm } from "@/features/public/contact/ContactForm";
 import { advisors, teamMembers } from "@/features/public/team/teamData";
 import { HeroStoryline } from "@/features/public/landing/components/HeroStoryline";
-import { HeroBrainBackdrop } from "@/features/public/landing/components/HeroBrainBackdrop";
 import { ScrollReveal } from "@/shared/animations/ScrollReveal";
 import { PrincipleFlipCard } from "@/features/public/landing/components/PrincipleFlipCard";
 import { LearningLoop } from "@/features/public/landing/components/LearningLoop";
@@ -71,7 +70,6 @@ export function InvestorLandingPage() {
   return (
     <div className="overflow-hidden bg-[#EDEDED] text-[#131313] selection:bg-[#F0EBE1]">
       <section className="light-hero relative flex min-h-[min(900px,calc(100svh-80px))] flex-col justify-center px-6 pb-10 pt-32 md:px-10 lg:px-16">
-        <HeroBrainBackdrop />
         <HeroStoryline />
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_84%_16%,rgba(11,135,147,.07),transparent_34%),radial-gradient(ellipse_at_15%_86%,rgba(7,29,102,.04),transparent_32%)]" />
         <ScrollReveal className="light-hero-content relative z-[5] mx-auto w-full max-w-[1120px] text-center">
