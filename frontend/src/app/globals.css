@@ -214,13 +214,6 @@
   box-shadow: 0 8px 30px rgb(0 0 0 / 0.06);
 }
 
-.sipl-theme .sipl-main-hero {
-  isolation: isolate;
-  margin: 0 1rem 1.5rem;
-  border-radius: 40px;
-  background: #f9f8f4;
-}
-
 @media (min-width: 768px) {
   .sipl-theme .light-hero > .light-hero-content {
     padding: 3.5rem 3rem;
@@ -231,11 +224,6 @@
 .sipl-theme [class~="rounded-3xl"] { border-radius: 32px; }
 
 @media (max-width: 640px) {
-  .sipl-theme .sipl-main-hero {
-    margin-inline: 0.5rem;
-    border-radius: 28px;
-  }
-
   .sipl-theme .light-hero {
     margin-inline: 0.5rem;
     border-radius: 28px;
