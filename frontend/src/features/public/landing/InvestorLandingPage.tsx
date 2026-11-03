@@ -16,6 +16,7 @@ import {
 import { ContactForm } from "@/features/public/contact/ContactForm";
 import { advisors, teamMembers } from "@/features/public/team/teamData";
 import { HeroStoryline } from "@/features/public/landing/components/HeroStoryline";
+import { HeroBrainBackdrop } from "@/features/public/landing/components/HeroBrainBackdrop";
 import { ScrollReveal } from "@/shared/animations/ScrollReveal";
 import { PrincipleFlipCard } from "@/features/public/landing/components/PrincipleFlipCard";
 import { LearningLoop } from "@/features/public/landing/components/LearningLoop";
@@ -70,9 +71,10 @@ export function InvestorLandingPage() {
   return (
     <div className="overflow-hidden bg-[#EDEDED] text-[#131313] selection:bg-[#F0EBE1]">
       <section className="light-hero relative flex min-h-[min(900px,calc(100svh-80px))] flex-col justify-center px-6 pb-10 pt-32 md:px-10 lg:px-16">
+        <HeroBrainBackdrop />
         <HeroStoryline />
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_84%_16%,rgba(137,49,196,.07),transparent_34%),radial-gradient(ellipse_at_15%_86%,rgba(137,49,196,.04),transparent_32%)]" />
-        <ScrollReveal className="light-hero-content relative mx-auto w-full max-w-[1120px] text-center">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_84%_16%,rgba(11,135,147,.07),transparent_34%),radial-gradient(ellipse_at_15%_86%,rgba(7,29,102,.04),transparent_32%)]" />
+        <ScrollReveal className="light-hero-content relative z-[5] mx-auto w-full max-w-[1120px] text-center">
           <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.2em] text-[#8931C4]">Sequoia Insilico Pvt. Ltd. · BioAI for brain &amp; mental health</p>
           <h1 className="mx-auto max-w-5xl text-[44px] font-medium leading-[1.06] tracking-[-0.045em] md:text-[64px] lg:text-[78px]">Connected intelligence for <span className="text-[#8931C4]">brain and mental healthcare.</span></h1>
           <p className="mx-auto mt-7 max-w-3xl text-base leading-7 text-[#4A5568] md:text-lg md:leading-8">SIPL brings clinical care, behavioural signals, neuroscience, genomics, and discovery into a responsible research framework for brain and mental health.</p>
