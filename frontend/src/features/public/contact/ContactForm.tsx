@@ -3,6 +3,7 @@
 import { FormEvent, useRef, useState } from "react";
 import { ArrowRight, LoaderCircle } from "lucide-react";
 import { Button } from "@/shared/ui/Button";
+import { SendEnvelopeAnimation } from "./SendEnvelopeAnimation";
 import {
   CONTACT_LIMITS,
   hasContactErrors,
@@ -24,6 +25,7 @@ export function ContactForm() {
   const [fields, setFields] = useState(initialFields);
   const [errors, setErrors] = useState<ContactFieldErrors>({});
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [showSendAnimation, setShowSendAnimation] = useState(false);
   const lastSubmissionRef = useRef(0);
 
   const updateField = (field: keyof ContactFields, value: string) => {
@@ -71,6 +73,7 @@ export function ContactForm() {
       setFields(initialFields);
       setErrors({});
       setStatus("success");
+      setShowSendAnimation(true);
     } catch {
       setStatus("error");
     }
@@ -79,6 +82,11 @@ export function ContactForm() {
   const isSubmitting = status === "submitting";
 
   return (
+    <>
+    <SendEnvelopeAnimation
+      show={showSendAnimation}
+      onComplete={() => setShowSendAnimation(false)}
+    />
     <form noValidate onSubmit={handleSubmit} className="grid gap-6" aria-busy={isSubmitting}>
       <div
         className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
@@ -187,6 +195,7 @@ export function ContactForm() {
         )}
       </div>
     </form>
+    </>
   );
 }
 
